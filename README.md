@@ -44,9 +44,14 @@ Live site: _[GitHub Pages URL]_
 
 ## Files
 
+To rebuild everything from the raw data: `python3 scripts/build_data.py`
+
+
 | path | what it is |
 |---|---|
 | `data/raw/spotify-us-daily-2025-01-01_to_2026-08-31.csv` | combined raw data (date + Spotify's 9 columns) |
 | `data/raw/daily/regional-us-daily-YYYY-MM-DD.csv` | one raw file per day, Spotify's 9 columns |
 | `scripts/split_daily.py` | rebuilds the daily files from the combined file |
+| `scripts/build_data.py` | builds the analysis file from the raw data and prints a quick profile |
+| `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
 | `README.md` | this file |
