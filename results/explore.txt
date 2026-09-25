@@ -1,0 +1,104 @@
+
+======================================================================
+1. WHO DOMINATED: artists, labels, concentration
+======================================================================
+Top 10 lead artists by total streams (share of all streams):
+  Morgan Wallen                  2.86 B    4.7%
+  Bad Bunny                      1.95 B    3.2%
+  Kendrick Lamar                 1.88 B    3.1%
+  Sabrina Carpenter              1.53 B    2.5%
+  Drake                          1.51 B    2.5%
+  Taylor Swift                   1.47 B    2.4%
+  Ella Langley                   1.20 B    2.0%
+  sombr                          1.01 B    1.7%
+  Noah Kahan                     0.99 B    1.6%
+  Olivia Dean                    0.96 B    1.6%
+Top 10 artists' combined share: 25.3%; top 1% of artists (6): 18.5%
+
+Top 10 labels by streams:
+  Warner Records                       3.83 B    6.3%
+  Columbia                             3.79 B    6.2%
+  Atlantic Records                     2.43 B    4.0%
+  Island Records                       1.95 B    3.2%
+  Rimas Entertainment LLC.             1.95 B    3.2%
+  Big Loud Records / Mercury Records / Republic Records   1.93 B    3.2%
+  K-Pop Demon Hunters                  1.45 B    2.4%
+  Taylor Swift                         1.41 B    2.3%
+  RCA Records Label                    1.39 B    2.3%
+  SAWGOD/Columbia                      1.20 B    2.0%
+
+Top 10 songs' share of all streams: 6.6%; top 100 songs (of 2,651): 40.6%
+Top 10 songs:
+  luther (with sza)                  Kendrick Lamar, SZA         0.46 B  556 days
+  DtMF                               Bad Bunny                   0.45 B  603 days
+  Golden                             HUNTR/X, EJAE, AUDREY NUNA  0.45 B  436 days
+  Ordinary                           Alex Warren                 0.44 B  525 days
+  BIRDS OF A FEATHER                 Billie Eilish               0.41 B  606 days
+  Mr. Brightside                     The Killers                 0.37 B  608 days
+  Man I Need                         Olivia Dean                 0.36 B  377 days
+  Iris                               The Goo Goo Dolls           0.35 B  607 days
+  No One Noticed                     The Marías                  0.35 B  584 days
+  Pink Pony Club                     Chappell Roan               0.35 B  583 days
+
+Songs that reached #1: 54. Most days at #1:
+  Choosin' Texas                     Ella Langley               94 days
+  Golden                             HUNTR/X, EJAE, AUDREY NUNA 71 days
+  The Fate of Ophelia                Taylor Swift               56 days
+  luther (with sza)                  Kendrick Lamar, SZA        49 days
+  DtMF                               Bad Bunny                  43 days
+
+======================================================================
+2. STAYING POWER
+======================================================================
+Days charted per song: median 7, mean 45.9; 24.6% charted exactly 1 day; 3.1% charted 365+ days
+Songs on the chart every one of the 608 days: 4
+
+Debuts in the window: 1,627. Days charted by debut rank (debuts only):
+  debut rank 1-10     n=184   median 27 days, mean 52.1
+  debut rank 11-50    n=419   median 7 days, mean 20.1
+  debut rank 51-100   n=345   median 2 days, mean 11.3
+  debut rank 101-200  n=679   median 1 days, mean 30.6
+
+======================================================================
+3. SOLO vs COLLABORATION
+======================================================================
+  solo    songs  2017 (76.1%)  rows 80.1%  streams 79.4%  avg streams/row 493,639  median days charted 7  median best rank 65
+  collab  songs   634 (23.9%)  rows 19.9%  streams 20.6%  avg streams/row 516,753  median days charted 6  median best rank 67
+
+======================================================================
+4. WEEKDAY AND SEASONAL PATTERNS
+======================================================================
+Average total Top-200 streams per day, and total debuts, by weekday:
+  Monday        97.6 M   debuts   72 (4%)
+  Tuesday       99.0 M   debuts   70 (4%)
+  Wednesday     99.4 M   debuts   82 (5%)
+  Thursday     100.2 M   debuts   51 (3%)
+  Friday       109.4 M   debuts 1178 (72%)
+  Saturday     100.9 M   debuts  110 (7%)
+  Sunday        90.9 M   debuts   64 (4%)
+
+Average daily Top-200 streams by month (M):
+  2025-01:107  2025-02:119  2025-03:109  2025-04:98  2025-05:100  2025-06:93  2025-07:100  2025-08:94  2025-09:93  2025-10:108  2025-11:90  2025-12:114  2026-01:88  2026-02:102  2026-03:99  2026-04:100  2026-05:106  2026-06:99  2026-07:89  2026-08:85
+
+Songs charting ONLY in Nov-Jan (holiday songs) and their December share of Top-200 streams:
+  Dec 2025: holiday songs = 50.0% of streams; peak day share 95.6%
+  most-streamed holiday songs: Rockin' Around The Christmas Tree; All I Want for Christmas Is You; Jingle Bell Rock; Last Christmas; It's the Most Wonderful Time of the Year
+
+======================================================================
+5. HOW NEW SONGS RISE AND FADE (debuts with a full 30 days of data)
+======================================================================
+Debuts used: 1567. Streams relative to debut day (day 1 = 100%; off-chart days count as 0):
+  median: d1:100%  d2:61%  d3:0%  d7:0%  d14:0%  d21:0%  d30:0%
+  mean:   d1:100%  d2:50%  d3:35%  d7:31%  d14:21%  d21:17%  d30:15%
+  total streams of these debuts, day 30 vs day 1: 11%
+Share of these debuts still on the chart on day 30: 16.1%
+Day of peak streams (whole window): 79.1% peak on debut day; median peak day 1
+
+======================================================================
+6. CATALOG vs CURRENT (catalog = on chart > 365 days on that date)
+======================================================================
+Catalog share of rows 34.6%, of streams 30.4%
+Catalog share of streams by month:
+  2025-01:24%  2025-02:21%  2025-03:22%  2025-04:27%  2025-05:28%  2025-06:32%  2025-07:28%  2025-08:31%  2025-09:31%  2025-10:28%  2025-11:35%  2025-12:29%  2026-01:36%  2026-02:37%  2026-03:35%  2026-04:35%  2026-05:30%  2026-06:33%  2026-07:35%  2026-08:39%
+Avg streams per row: catalog 438,432 vs current 529,845
+Avg rank: catalog 109 vs current 96
