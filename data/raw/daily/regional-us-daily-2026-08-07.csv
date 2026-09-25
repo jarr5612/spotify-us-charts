@@ -1,0 +1,201 @@
+rank,uri,artist_names,track_name,source,peak_rank,previous_rank,days_on_chart,streams
+1,spotify:track:7scFxt9VhL4FJwuPSfRlfN,Ella Langley,Choosin' Texas,SAWGOD/Columbia,1,1,295,1583502
+2,spotify:track:0eAuGrXyGFYwur9ARUe7LJ,Malcolm Todd,Earrings,Columbia,1,3,216,1187920
+3,spotify:track:3iy2QuCtCzpWnR6tia39AB,Ariana Grande,hate that i made you love me,Republic Records,1,2,71,1104284
+4,spotify:track:70pVCVMGjmIWPbWXDwf11e,Ariana Grande,petal,Republic Records,1,4,8,1060365
+5,spotify:track:49j6SvuvWfbEKZKzsHCdLJ,Olivia Rodrigo,stupid song,Olivia Rodrigo PS,1,5,57,976062
+6,spotify:track:3xwMjQriBVW0OGEvNKo9c0,Morgan Wallen,Been By Now,Big Loud Records / Mercury Records,1,7,15,931829
+7,spotify:track:7bxaFZ1O3cHkgLKMsdC3xR,Tame Impala,Loser,Columbia,6,6,20,917551
+8,spotify:track:22NHkFYbgxB2Zirj29Gbp8,Steve Lacy,oh yeah?,L-M Records/RCA Records,8,8,8,914645
+9,spotify:track:13HD3tYTiz8oSRxWzXEq7g,Ella Langley,Be Her,SAWGOD/Columbia,3,9,176,858711
+10,spotify:track:55pBIZO1cqoldeqpp5WR7H,Olivia Rodrigo,the cure,Olivia Rodrigo PS,1,10,78,833490
+11,spotify:track:7yNf9YjeO5JXUE3JEBgnYc,Dominic Fike,Babydoll,Columbia,1,12,401,807994
+12,spotify:track:2A22iI0x4EYAVXNpKPhNEM,Ella Langley,weren't for the wind,SAWGOD/Columbia,7,14,479,802099
+13,spotify:track:003vvx7Niy0yvhvHt4a68B,The Killers,Mr. Brightside,Island Records,5,11,2153,786792
+14,spotify:track:36idurZmYRjJ56KQ8JD9bN,STELLA LEFTY,Boston,Atlantic Outpost,11,15,122,776264
+15,spotify:track:1qbmS6ep2hbBRaEZFpn7BX,Olivia Dean,Man I Need,PLG - Capitol,1,13,353,745029
+16,spotify:track:53qkszfgztIvkFyF31GfdQ,Fleetwood Mac,Dreams - 2004 Remaster,Rhino/Warner Records,6,20,2037,716892
+17,spotify:track:2lpygKqzPFtItQ4ss3cgfb,"Mac Miller, Ty Dolla $ign",Cinderella (feat. Ty Dolla $ign),Warner Records,6,16,114,708634
+18,spotify:track:1VOSSXuWRcBj2rpfxNdX9v,Whiskey Myers,Broken Window Serenade,Whiskey Myers,17,19,373,702123
+19,spotify:track:514joG57v4yKTsfQmz7stz,Drake,Janice STFU,OVO/Republic,1,17,85,695069
+20,spotify:track:7J1uxwnxfQLu4APicE5Rnj,Michael Jackson,Billie Jean,Epic,2,23,222,661087
+21,spotify:track:3fRCAPMMZ8l8P9YKI6OCzD,Olivia Rodrigo,drop dead,Olivia Rodrigo PS,1,22,113,630113
+22,spotify:track:61rwYQu9An4QWrcCUyFUyq,"Ella Langley, Morgan Wallen",I Can't Love You Anymore,SAWGOD/Columbia,13,25,106,629799
+23,spotify:track:4qW3BbQAwZsrnu8a3ZRdyT,Temper City,Self Aware,Temper City under exclusive license to Thirty Knots,18,27,116,617458
+24,spotify:track:3d1oTMjtfVySbAYQp3v4MU,Ariana Grande,like i do,Republic Records,5,18,8,613319
+25,spotify:track:3ouNEk0tv5TTi8VWMe1xbX,KATSEYE,Animal,HYBE/Geffen,4,21,15,605458
+26,spotify:track:6Qyc6fS4DsZjB2mRW9DsQs,The Goo Goo Dolls,Iris,Warner Records,9,32,883,604292
+27,spotify:track:1dj1bE6SpLu8jLotrzWsJF,"KAROL G, Bruno Mars",Still,Bichota/Interscope Records,27,-1,1,600560
+28,spotify:track:0VV38e61NaGvYAko5HoHm0,"Koe Wetzel, Ella Langley",Jaded (feat. Ella Langley),Columbia,28,-1,1,588829
+29,spotify:track:0cQVqPuHQP4KEwc7ZUQmj6,The Neighbourhood,Sweater Weather,Columbia,7,38,2175,578121
+30,spotify:track:2RkZ5LkEzeHGRsmDqKwmaJ,Alex Warren,Ordinary,Atlantic Records,1,50,547,577644
+31,spotify:track:5BKKy9fIJL5uM9fz1SnqyP,Michael Jackson,Chicago,Epic/MJJ,8,36,104,571151
+32,spotify:track:4gfrYDtaRmp6HPvN80V2ob,Morgan Wallen,I Got Better,Big Loud Records / Mercury Records / Republic Records,4,31,449,564219
+33,spotify:track:6sGIMrtIzQjdzNndVxe397,Olivia Dean,So Easy (To Fall In Love),PLG - Capitol,4,28,315,563317
+34,spotify:track:58ge6dfP91o9oXMzq3XkIS,Arctic Monkeys,505,Domino/Warner Records,13,41,1970,555685
+35,spotify:track:5ZAMlvo6ZUjVRZOGu2bJib,Lil Baby,Dead Fresh,Quality Control Music/Motown Records,17,29,22,555547
+36,spotify:track:3qhlB30KknSejmIvZZLjOD,Djo,End of Beginning,Djo,1,42,788,551045
+37,spotify:track:77fL8ATR0dpUDLI0XLmDBV,Noah Kahan,Orbiter,Mercury Records,21,37,105,550824
+38,spotify:track:6De8sirPzVyAoBDlQpcutY,pupsies,misery.,Norgates,15,33,42,546475
+39,spotify:track:4Jsus7N4d8hFB2G9gcRdBv,F3miii,NOBLE,Robots & Humans,17,47,103,543383
+40,spotify:track:3B4cjvGlPvyBLNG3AzEgkZ,Don Toliver,E85,CactusJack/Donnway/ATL,4,40,190,542663
+41,spotify:track:7qjZnBKE73H4Oxkopwulqe,sombr,back to friends,Warner Records,1,44,507,538105
+42,spotify:track:6J5kc12BW5HuP3d7C3vvx8,Bad Bunny,EoO,Rimas Entertainment LLC.,4,49,503,536520
+43,spotify:track:0QltPqkR4dnhbINyBOU5SY,Ariana Grande,stay,Republic Records,5,24,8,532971
+44,spotify:track:6QFCMUUq1T2Vf5sFUXcuQ7,"Justin Bieber, Nicki Minaj",Beauty And A Beat,RBMG/Def Jam,2,34,122,532867
+45,spotify:track:1DwscornXpj8fmOmYVlqZt,"PinkPantheress, Zara Larsson",Stateside + Zara Larsson,Warner Records,1,55,217,520085
+46,spotify:track:2SaWT781xr3hHLdbVt5DB7,Dexter and The Moonrocks,Freakin’ Out,Who's Dexter Enterprises / Severance Records / Big Loud Rock,13,46,137,518708
+47,spotify:track:04d5HlcQX6zH5MMqffXOon,KAROL G,MATADORA,Bichota/Interscope Records,47,-1,4,518675
+48,spotify:track:2oWFJJW9d1bIra3zHjR6GO,Alyssa Grace,bloodstream,Artist House,33,45,47,513985
+49,spotify:track:0lok0VDJn0zRvHLBCITSSw,Ariana Grande,kiss me,Republic Records,3,30,8,511336
+50,spotify:track:0MUXBhPUDF8or0kfQ0EHwV,"Sam Fender, Olivia Dean",Rein Me In (with Olivia Dean),Polydor Records,50,53,142,508404
+51,spotify:track:5DZOKNtaoVEssXu9ltcMjx,Ariana Grande,oh well,Republic Records,4,26,8,506326
+52,spotify:track:5qqabIl2vWzo9ApSC317sa,Oasis,Wonderwall - Remastered,Big Brother Recordings Ltd,6,48,36,502626
+53,spotify:track:55srcWA7TioKV0LZVNXltY,Ariana Grande,never get over me,Republic Records,10,35,8,501337
+54,spotify:track:2KUgQWhPsYgB829i9n6IhP,Stray Kids,This & That,Republic Records - Stray Kids,54,-1,1,498411
+55,spotify:track:2uXlHCUbq9OMUwx3hrk06o,Vance Joy,Riptide,Atlantic Records,39,65,954,495142
+56,spotify:track:2PyJAiQjp1OPkow2FJZKHR,"Ella Langley, Riley Green",you look like you love me (feat. Riley Green),SAWGOD/Columbia,22,75,242,494653
+57,spotify:track:6MFSqc8pzXlwfzXqWZEKd4,Ariana Grande,big feelings,Republic Records,6,39,8,494549
+58,spotify:track:2009X8GyWTqyxIdzAEYW6N,Katy Perry,The One That Got Away,Capitol Records,33,43,132,493504
+59,spotify:track:6DoUDG1GJrJf6eGQLUBBnm,"KAROL G, Drake",Ahí,Bichota/Interscope Records,59,-1,1,492208
+60,spotify:track:70LcF31zb1H0PyJoS1Sx1r,Radiohead,Creep,XL Recordings,9,59,799,485492
+61,spotify:track:5BZsQlgw21vDOAjoqkNgKb,Justin Bieber,DAISIES,"JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",1,60,389,480514
+62,spotify:track:3sK8wGT43QFpWrvNQsrQya,Bad Bunny,DtMF,Rimas Entertainment LLC.,1,63,579,480286
+63,spotify:track:6pk6E0SZxILzfaAGFngxEs,Noah Kahan,Willing and Able,Mercury Records,11,56,105,476855
+64,spotify:track:21IYMdzTrzSe191Cy5eMap,Gigi Perez,Sailor Song,"Outtahere, LLC / Island Records",3,52,738,476692
+65,spotify:track:5UWwZ5lm5PKu6eKsHAGxOk,Foo Fighters,Everlong,RCA Records Label,36,67,1115,470615
+66,spotify:track:5IZXB5IKAD2qlvTPJYDCFB,"Post Malone, Morgan Wallen",I Had Some Help (Feat. Morgan Wallen),Mercury Records / Republic Records,1,57,818,467853
+67,spotify:track:4WFgvKVfEhb3IUAFGrutTR,Ravyn Lenae,Love Me Not,Atlantic Records,5,76,516,465047
+68,spotify:track:3pAVk6Ydn0dcGpG8gDyxSJ,"BigXthaPlug, Ella Langley",Hell At Night (feat. Ella Langley),BigXthaPlug under exclusive license to UnitedMasters LLC,19,79,355,464713
+69,spotify:track:3BovdzfaX4jb5KFQwoPfAw,Michael Jackson,Beat It,Epic,8,70,107,460719
+70,spotify:track:4bkClAuofJULiaIZsuL3gT,Olivia Rodrigo,expectations,Olivia Rodrigo PS,8,64,57,460329
+71,spotify:track:4kX7xkopoXZCfE1D6fNwl2,Olivia Rodrigo,honeybee,Olivia Rodrigo PS,2,66,57,448125
+72,spotify:track:02HyFYmpzt02VJ8k0CqxKj,ADÉLA,Ain't In LA,Capitol Records,43,58,10,446582
+73,spotify:track:6ZAuQOgLrNQb9s7BXheuTy,Audrey Hobert,Sue me,Audrey Hobert/RCA Records,73,83,36,445677
+74,spotify:track:0mflMxspEfB0VbI1kyLiAv,Noah Kahan,Stick Season,Mercury Records/Republic Records,1,61,1357,443595
+75,spotify:track:4zmXWmILSBkn7gTvIyCiNi,Ariana Grande,bad thing (bunny hop),Republic Records,12,54,8,442905
+76,spotify:track:5fZJQrFKWQLb7FpJXZ1g7K,Shaboozey,A Bar Song (Tipsy),American Dogwood / EMPIRE,1,91,842,442445
+77,spotify:track:3iEUDvanZwQhLCIqUmCR7N,"Mac Miller, Empire Of The Sun",The Spins,Rostrum Records,37,85,1561,441716
+78,spotify:track:2M38X60UJnupGPbFTkVPNQ,Brooks & Dunn,Neon Moon,Arista Nashville,39,112,327,440380
+79,spotify:track:1qRV1dKLOfH1s00b9J2LUQ,Zara Larsson,Midnight Sun,Sommer House/Epic,60,88,200,440179
+80,spotify:track:0RiRZpuVRbi7oqRdSMwhQY,"Post Malone, Swae Lee",Sunflower - Spider-Man: Into the Spider-Verse,Republic Records,1,68,2313,436628
+81,spotify:track:5uPaqMMt59KGrdKIitDRqa,Taylor Swift,"I Knew It, I Knew You - From ""Toy Story 5""",Walt Disney Records / Pixar,1,72,64,436428
+82,spotify:track:3xkHsmpQCBMytMJNiDf3Ii,Benson Boone,Beautiful Things,"Night Street Records, Inc./Warner Records Inc.",1,86,931,436107
+83,spotify:track:6jfiwkcwt8iYCdkbLukxeI,Olivia Rodrigo,maggots for brains,Olivia Rodrigo PS,3,78,57,433130
+84,spotify:track:4k6Uh1HXdhtusDW5y8Gbvy,Steve Lacy,Bad Habit,L-M Records/RCA Records,1,94,1044,432726
+85,spotify:track:4KULAymBBJcPRpk1yO4dOG,"Zach Bryan, Kacey Musgraves",I Remember Everything (feat. Kacey Musgraves),Warner Records,1,90,1077,431558
+86,spotify:track:5JbnupagBhD0AanbkCELdH,Ariana Grande,"nowhere, nobody",Republic Records,13,62,8,431344
+87,spotify:track:7tICCrK3CcyRFKza7yrR0z,sombr,Homewrecker,Warner Records,11,95,183,431200
+88,spotify:track:7ujApz6iFP3PmKIDGcaGbe,SIENNA SPIRO,Great Expectation,Capitol Records,52,69,31,430723
+89,spotify:track:0kosUz0jePvjiz4ctmR6wL,"Shakira, Burna Boy",Dai Dai,Sony Music Latin,13,82,45,425960
+90,spotify:track:6dOtVTDdiauQNBQEDOtlAB,Billie Eilish,BIRDS OF A FEATHER,Darkroom/Interscope Records,2,81,811,425751
+91,spotify:track:1rIKgCH4H52lrvDcz50hS8,Zara Larsson,Lush Life,Epic/Record Company TEN,14,110,230,424534
+92,spotify:track:7KA4W4McWYRpgf0fWsJZWB,"Tyler, The Creator, Kali Uchis",See You Again (feat. Kali Uchis),Columbia,3,92,1881,423520
+93,spotify:track:5RKQ5NdjSh2QzD4MaunT91,Journey,Don't Stop Believin' (2022 Remaster),Columbia/Legacy,16,108,1003,422856
+94,spotify:track:4ek0oGBCJal4Gxz8zEnMjn,Bella Kay,iloveitiloveitiloveit,2026 Bella Kay,4,89,178,421149
+95,spotify:track:6ybZUqlfk938oS6WeBmDab,Treaty Oak Revival,Missed Call,TOR Records,49,120,465,420771
+96,spotify:track:6QhsCYcFdfyMbPWCiViI8K,Ariana Grande,freak,Republic Records,8,51,8,419700
+97,spotify:track:53iuhJlwXhSER5J2IYYv1W,Taylor Swift,The Fate of Ophelia,Taylor Swift,1,71,309,419659
+98,spotify:track:05P0CPgq8EH9yXOYWql17I,KAROL G,Te llevas To,Bichota/Interscope Records,98,-1,1,415220
+99,spotify:track:7AeM1BGYM7emrqmQn1PuWv,Morgan Wallen,I'm The Problem,Big Loud Records / Mercury Records / Republic Records,1,73,553,412441
+100,spotify:track:3WMj8moIAXJhHsyLaqIIHI,Zach Bryan,Something in the Orange,Warner Records,4,100,1564,411272
+101,spotify:track:2ZCe5vjgNDAmoWe73C46nc,Miguel,damned,ByStorm Entertainment/RCA Records,87,115,60,408296
+102,spotify:track:5Ohxk2dO5COHF1krpoPigN,Harry Styles,Sign of the Times,Columbia,17,114,264,407147
+103,spotify:track:1Jo0Zg7XlrA6z0mFTZVdkn,Rihanna,Don't Stop The Music,Def Jam Recordings,26,77,293,406958
+104,spotify:track:1zi7xx7UVEFkmKfv06H8x0,"Drake, Wizkid, Kyla",One Dance,Cash Money Records/Young Money Ent./Universal Rec.,7,80,1031,404758
+105,spotify:track:60a0Rd6pjrkxjPbaKzXjfq,Linkin Park,In the End,Warner Records,8,107,454,404750
+106,spotify:track:0WoFs3EdGOx58yX5BtXvOa,The Outfield,Your Love,Columbia/Legacy,92,156,63,404359
+107,spotify:track:583dMdiUquLMenarTp7PQm,Morgan Wallen,Last Night,Morgan Wallen,1,123,1241,400949
+108,spotify:track:6K4t31amVTZDgR3sKmwUJJ,Tame Impala,The Less I Know The Better,Universal Music Australia Pty. Ltd.,46,74,1360,398206
+109,spotify:track:3fqwjXwUGN6vbzIwvyFMhx,Chris Stapleton,Tennessee Whiskey,Mercury Nashville,54,99,1792,392528
+110,spotify:track:2e3YJ6Hm8tR5L5Zy8HzOtv,"Olivia Rodrigo, Robert Smith",what’s wrong with me,Olivia Rodrigo PS,6,102,57,391227
+111,spotify:track:0eaVIYo2zeOaGJeqZ5TwYz,Don Toliver,No Pole,Cactus Jack / Atlantic,18,119,659,389715
+112,spotify:track:5y2ijHECwFYWqcAHKTZgzD,Bruno Mars,Risk It All,Atlantic Records,1,106,162,388781
+113,spotify:track:1CPZ5BxNNd0n0nF4Orb9JS,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",Golden,K-Pop Demon Hunters,1,101,412,388649
+114,spotify:track:0ntQJM78wzOLVeCUAW7Y45,Kings of Leon,Sex on Fire,RCA/Legacy,114,145,71,385592
+115,spotify:track:2Ui2JtVjnbHZuExldryCOA,Julia Wolf,In My Room,girls in purgatory,37,105,168,384634
+116,spotify:track:3FZoov0ORtnr8TznSNI1y2,Slayyyter,brand new chanel$,Records/Columbia,75,125,7,384125
+117,spotify:track:5TFD2bmFKGhoCRbX61nXY5,Bad Bunny,NUEVAYoL,Rimas Entertainment LLC.,3,126,556,382995
+118,spotify:track:03tqyYWC9Um2ZqU0ZN849H,"Waka Flocka Flame, Roscoe Dash, Wale",No Hands (feat. Roscoe Dash & Wale),Asylum/Warner Records,27,140,505,381922
+119,spotify:track:6g8cuDwreIt5rLEBlkukQa,BabyChiefDoit,Ghetto Love Story,Artist Partner Group,59,111,36,381114
+120,spotify:track:5ViLKrbyL3HD6wsq3AB9eI,Dominic Fike,White Keys,Columbia,12,130,178,378446
+121,spotify:track:32sx78QsGg6pKXn42XvF9L,Red Hot Chili Peppers,Scar Tissue,Warner Records,53,139,476,378004
+122,spotify:track:7ghKr0pCYyPPyp7t1FH8k4,Childish Gambino,Les,Glassnote - VMG,58,129,475,377402
+123,spotify:track:0LWIiBYFmOnkqysugp0VKo,Yung Miami,Spend Dat,Yung Miami LLC,53,122,50,377198
+124,spotify:track:42et6fnHCw1HIPSrdPprMl,Third Eye Blind,Semi-Charmed Life,Rhino/Elektra,111,179,155,376942
+125,spotify:track:6f68Ac5tt5BQOpwr0BV9oN,Bruno Mars,I Just Might,Atlantic Records,1,133,211,375822
+126,spotify:track:3iU2qsthCTo5EeTE03l3Si,Noah Kahan,Doors,Mercury Records,1,103,106,375214
+127,spotify:track:19XpFsce28aByvCC4g89tJ,Hozier,Too Sweet,Columbia,1,182,790,373985
+128,spotify:track:0COqiPhxzoWICwFCS4eZcp,Evanescence,Bring Me To Life,The Bicycle Music Company,72,98,322,372889
+129,spotify:track:5g7sDjBhZ4I3gcFIpkrLuI,Bruno Mars,Locked out of Heaven,Atlantic Records,14,152,549,371740
+130,spotify:track:0gucTLf7trAf37Ua1uAyAu,Nirvana,Smells Like Teen Spirit,Geffen,65,104,822,371621
+131,spotify:track:17phhZDn6oGtzMe56NuWvj,Teddy Swims,Lose Control,Warner Records,5,153,1000,371604
+132,spotify:track:7so0lgd0zP2Sbgs2d7a1SZ,"Lady Gaga, Bruno Mars",Die With A Smile,Interscope Records,1,127,719,371191
+133,spotify:track:6LxSe8YmdPxy095Ux6znaQ,Drake,Headlines,Cash Money Records/Young Money Ent./Universal Rec.,22,117,510,369998
+134,spotify:track:1osfLqL6L2iQsirRf83ded,Riley Green,Worst Way,Nashville Harbor,34,87,575,368879
+135,spotify:track:68Dni7IE4VyPkTOH9mRWHr,J. Cole,No Role Modelz,Roc Nation Records LLC,7,97,3080,367304
+136,spotify:track:04emojnbYkrRmv5qtJcgVP,"Morgan Wallen, Tate McRae",What I Want (feat. Tate McRae),Big Loud Records / Mercury Records / Republic Records,1,93,446,366942
+137,spotify:track:58FbmtiyAlFBqFr8EorsSr,Morgan Wallen,7 Summers,Morgan Wallen,3,141,754,365771
+138,spotify:track:1OWBh1eVxUdA1Z6UA8r4nh,Steve Lacy,the feeling,L-M Records/RCA Records,17,124,28,362904
+139,spotify:track:2LawezPeJhN4AWuSB0GtAU,Creedence Clearwater Revival,Have You Ever Seen The Rain,Craft Recordings,64,96,449,361758
+140,spotify:track:4ck9vo0gEmjVHWUb5q2rYe,Noah Kahan,The Great Divide,Mercury Records,1,121,184,361755
+141,spotify:track:4Ilw2lD6z4WBqh65vUUZUf,Olivia Rodrigo,my way,Olivia Rodrigo PS,6,132,57,359541
+142,spotify:track:6ZOBP3NvffbU4SZcrnt1k6,3 Doors Down,Kryptonite,Universal Records,43,109,97,359184
+143,spotify:track:5TRPicyLGbAF2LGBFbHGvO,"Kanye West, Dwele",Flashing Lights,Roc-A-Fella,48,116,1181,358583
+144,spotify:track:5mCPDVBb16L4XQwDdbRUpz,Drake,Passionfruit,Cash Money Records/Young Money Ent./Universal Rec.,1,131,1328,358285
+145,spotify:track:2TktkzfozZifbQhXjT6I33,Omar Apollo,Evergreen (You Didn’t Deserve Me At All),Warner Records,8,143,234,357994
+146,spotify:track:1KGi9sZVMeszgZOWivFpxs,TLC,No Scrubs,Arista/LaFace Records,123,161,156,357974
+147,spotify:track:0gmbgwZ8iqyMPmXefof8Yf,Nickelback,How You Remind Me,Roadrunner Records,120,159,128,356992
+148,spotify:track:0d28khcov6AiegSCpG5TuT,"Gorillaz, De La Soul",Feel Good Inc.,Parlophone UK,38,154,588,356839
+149,spotify:track:2hnMS47jN0etwvFPzYk11f,Sublime,Santeria,Gasoline Alley,52,128,448,356376
+150,spotify:track:2xt2piJx6jlFkjS77YiqpL,Audioslave,Like a Stone,Epic/Interscope,67,-1,17,355757
+151,spotify:track:2tgQaL85WoRfgEa4hFQgrE,Tyler Childers,Feathered Indians,Hickman Holler Records,94,191,474,355699
+152,spotify:track:2gam98EZKrF9XuOkU13ApN,"Nelly Furtado, Timbaland",Promiscuous,Mosley / Geffen,28,118,513,355279
+153,spotify:track:2lTm559tuIvatlT1u0JYG2,Bad Bunny,BAILE INoLVIDABLE,Rimas Entertainment LLC.,2,151,570,354940
+154,spotify:track:59c2xv2kMzYM6HR9oY6BIa,Malcolm Todd,Sweet Boy,Columbia,51,138,216,354088
+155,spotify:track:16xRAbH0vI3iKvDEhWQ4ZO,Olivia Rodrigo,less,Olivia Rodrigo PS,12,135,57,354055
+156,spotify:track:2d8JP84HNLKhmd6IYOoupQ,Fetty Wap,Trap Queen,300 Entertainment/RGF Productions,12,183,297,353840
+157,spotify:track:05od2qm2MTSKCHxy1GBp5W,sombr,12 to 12,Warner Records,11,167,367,353755
+158,spotify:track:1mea3bSkSGXuIRvnydlB5b,Coldplay,Viva La Vida,Parlophone UK,71,174,460,353417
+159,spotify:track:6Hdc3IQeyCxG5d14uAcwQW,Olivia Rodrigo,u + me = <3,Olivia Rodrigo PS,5,136,57,351584
+160,spotify:track:2nLtzopw4rPReszdYBJU6h,Linkin Park,Numb,Warner Records,13,150,175,350310
+161,spotify:track:3U5JVgI2x4rDyHGObzJfNf,Natasha Bedingfield,Unwritten,Sony Music CG,69,-1,442,350267
+162,spotify:track:0KKkJNfGyhkQ5aFogxQAPU,Bruno Mars,That's What I Like,Atlantic Records,3,177,906,349484
+163,spotify:track:2CGNAOSuO1MEFCbBRgUzjd,"Kendrick Lamar, SZA",luther (with sza),"pgLang, under exclusive license to Interscope Records",1,157,574,349468
+164,spotify:track:1NXbNEAcPvY5G1xvfN57aA,Tame Impala,Dracula,Columbia,9,146,312,348614
+165,spotify:track:5UJbgR4XF4y1DvbkxEqe8S,Tate McRae,Sports car,RCA Records Label,5,169,459,348322
+166,spotify:track:5vPUv0xziXbV4lnWeVNXNq,Malcolm Todd,Roommates,Columbia,76,147,173,348278
+167,spotify:track:2MRjYBbIbH1VTToIrO1mdi,Fleetwood Mac,The Chain - 2004 Remaster,Rhino/Warner Records,55,-1,358,347788
+168,spotify:track:2YiCMmONQcoMPX2bV1LxE0,Tears For Fears,Everybody Wants To Rule The World,UMC (Universal Music Catalogue),25,184,1117,347760
+169,spotify:track:4cgjA7B4fJBHyB9Ya2bu0t,Michael Jackson,Human Nature,Epic,7,149,104,347507
+170,spotify:track:1AWQoqb9bSvzTjaLralEkT,Justin Timberlake,Rock Your Body,Jive,170,-1,18,347332
+171,spotify:track:25CMmGsl22APKhfuj4Tp7j,Staind,It's Been Awhile,Atlantic Records/ATG,133,186,31,346446
+172,spotify:track:0cJRr7kw5FkV5e8ejEB2j6,Ariana Grande,warning signs (interlude),Republic Records,11,84,8,346010
+173,spotify:track:4mtmmBBEgdJLYWnLy5zvWE,"Morgan Wallen, ERNEST",Cowgirls,Morgan Wallen,17,-1,1066,345917
+174,spotify:track:0JXXNGljqupsJaZsgSbMZV,Miguel,Sure Thing,Jive,8,196,1031,344350
+175,spotify:track:5eFxwmqKrHpSQDOEIFYlgY,Three Days Grace,Animal I Have Become,Jive/Legacy,129,185,114,344012
+176,spotify:track:57TEkZN3f84tFJFHFrD4pO,Morgan Wallen,Whiskey Glasses,Morgan Wallen,33,178,2262,343805
+177,spotify:track:1WYrTfvKjQYaYfVziGG1ET,The Cranberries,Linger - Remastered 2026,Island Records,41,-1,332,343136
+178,spotify:track:6r6IPuFvUX72kQGc9b46rk,Emmanuel Cortes,Amor,RC Music,154,198,16,342972
+179,spotify:track:7BKLCZ1jbUBVqRi2FVlTVw,"The Chainsmokers, Halsey",Closer,Disruptor Records/Columbia,4,-1,555,342451
+180,spotify:track:0WiyWiJDkNCyGNqkv7NByy,Morgan Wallen,Chasin' You,Morgan Wallen,47,-1,1278,342398
+181,spotify:track:0uxSUdBrJy9Un0EYoBowng,Lil Uzi Vert,20 Min,Generation Now/Atlantic,45,194,1374,341496
+182,spotify:track:3AJwUDP919kvQ9QcozQPxg,Coldplay,Yellow,Parlophone UK,50,173,600,341405
+183,spotify:track:1HbzxLqpNVPdiBXvpC7Ovb,The Red Clay Strays,Wondering Why,Red Clay Strays,70,190,766,340684
+184,spotify:track:7gkZNvBHfI30qG7hA0eopT,SIENNA SPIRO,Die On This Hill,Capitol Records,12,134,166,340481
+185,spotify:track:2vsEAGuk1vvzDKmEqrK8jS,KAROL G,Bebiendo Lágrimas,Bichota/Interscope Records,185,-1,1,338808
+186,spotify:track:4s5b6Z6k3joYpkM5EnFfCp,Stray Kids,After You,Republic Records - Stray Kids,186,-1,1,338595
+187,spotify:track:2UikqkwBv7aIvlixeVXHWt,Chris Stapleton,You Should Probably Leave,Mercury Nashville,44,113,1101,338563
+188,spotify:track:0fcVxJZyhe3VRK4Ng9Otku,Stray Kids,FARMING,Republic Records - Stray Kids,188,-1,1,338255
+189,spotify:track:3Ly42p2mL3JFP3rXaOqJrT,KAROL G,Maybe,Bichota/Interscope Records,189,-1,1,338178
+190,spotify:track:51ZQ1vr10ffzbwIjDCwqm4,Ariana Grande,we can't be friends (wait for your love),Republic Records,1,142,596,337834
+191,spotify:track:46eu3SBuFCXWsPT39Yg3tJ,Michael Jackson,Don't Stop 'Til You Get Enough,Epic,12,172,105,337255
+192,spotify:track:45f6FcdWcuBGB4GvFuwr9f,LOS DOS DE TAMAULIPAS,Ayúdame,Afinarte Music,140,164,19,336418
+193,spotify:track:1mMLMZYXkMueg65jRRWG1l,Luke Combs,When It Rains It Pours,River House Artists/Columbia Nashville,43,-1,1288,335885
+194,spotify:track:7eYzn1CuiJK6VvUhf8zA6k,RAYE,WHERE IS MY HUSBAND!,Human Re Sources,8,200,316,335613
+195,spotify:track:3siwsiaEoU4Kuuc9WKMUy5,The Marías,No One Noticed,Nice Life/Atlantic,4,163,700,334076
+196,spotify:track:6fl4Gu0lJm5hc8FM5JzCZD,"LE SSERAFIM, ILLIT, KATSEYE",ICONIC BY MISTAKE,BELIFT LAB,26,144,57,333862
+197,spotify:track:0M955bMOoilikPXwKLYpoi,Three Days Grace,I Hate Everything About You,Jive,103,-1,227,333295
+198,spotify:track:1IHWl5LamUGEuP4ozKQSXZ,Bad Bunny,Tití Me Preguntó,Rimas Entertainment LLC.,2,-1,621,331727
+199,spotify:track:1yjY7rpaAQvKwpdUliHx0d,Paramore,Still into You,Fueled By Ramen,113,-1,25,331254
+200,spotify:track:3azJifCSqg9fRij2yKIbWz,Tory Lanez,The Color Violet,One Umbrella Records,23,-1,1141,330783

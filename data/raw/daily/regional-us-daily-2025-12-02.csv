@@ -1,0 +1,201 @@
+rank,uri,artist_names,track_name,source,peak_rank,previous_rank,days_on_chart,streams
+1,spotify:track:2EjXfH91m7f8HiJN1yQg97,Brenda Lee,Rockin' Around The Christmas Tree,MCA Nashville,1,1,441,1768698
+2,spotify:track:0bYg9bo50gSsH3LtXe2SQn,Mariah Carey,All I Want for Christmas Is You,Columbia,1,2,484,1488451
+3,spotify:track:7vQbuQcyTflfCIOu3Uzzya,Bobby Helms,Jingle Bell Rock,Geffen,2,3,436,1477451
+4,spotify:track:2FRnf9qhLbvw8fu4IBXx78,Wham!,Last Christmas,Epic,3,4,427,1394689
+5,spotify:track:2uFaJJtFpPDc5Pa95XzTvg,Dean Martin,Let It Snow! Let It Snow! Let It Snow!,Capitol Records,5,6,307,1177962
+6,spotify:track:5humEOJehpAwMJEJmb0JJ2,Nat King Cole,The Christmas Song (Merry Christmas To You),Capitol Records,5,5,337,1163205
+7,spotify:track:1IcR6RlgvDczfvoWJSSY2A,Andy Williams,It's the Most Wonderful Time of the Year,Columbia,3,7,400,1137800
+8,spotify:track:0lizgQ7Qw35od7CYaoMBZb,Ariana Grande,Santa Tell Me,Universal Records,5,10,393,1111379
+9,spotify:track:53iuhJlwXhSER5J2IYYv1W,Taylor Swift,The Fate of Ophelia,Taylor Swift,1,8,61,1098349
+10,spotify:track:1qbmS6ep2hbBRaEZFpn7BX,Olivia Dean,Man I Need,PLG - Capitol,1,9,105,1073842
+11,spotify:track:1CPZ5BxNNd0n0nF4Orb9JS,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",Golden,K-Pop Demon Hunters,1,11,164,1072518
+12,spotify:track:3nAp4IvdMPPWEH9uuXFFV5,Kelly Clarkson,Underneath the Tree,RCA Records Label,8,12,316,1050268
+13,spotify:track:1rv46mRwDqMEhOBZ7vODg3,Michael Bublé,It's Beginning to Look a Lot like Christmas,143/Reprise,7,13,391,1024731
+14,spotify:track:7fUYUcWy853HS8YJn0b3Sr,The Ronettes,Sleigh Ride,Legacy Recordings,9,14,276,1012693
+15,spotify:track:47ohYW8e7dxCYn9qbUMBCI,Darlene Love,Christmas (Baby Please Come Home),Legacy Recordings,13,15,219,933021
+16,spotify:track:67mgz7S5y7hnCE63YBjfO6,Michael Bublé,Holly Jolly Christmas,143/Reprise,12,16,301,892788
+17,spotify:track:3XsaSIPWvM61RIFfeb0BBR,"Bing Crosby, Ken Darby Singers, John Scott Trotter & His Orchestra",White Christmas - 1947 Version,Geffen,1,19,322,837514
+18,spotify:track:6sGIMrtIzQjdzNndVxe397,Olivia Dean,So Easy (To Fall In Love),PLG - Capitol,4,17,67,835246
+19,spotify:track:3qCeq0rWK67SoBDgFd2sId,José Feliciano,Feliz Navidad,RCA/BMG Heritage,6,21,311,803854
+20,spotify:track:7qjZnBKE73H4Oxkopwulqe,sombr,back to friends,Warner Records,1,20,259,797250
+21,spotify:track:2RkZ5LkEzeHGRsmDqKwmaJ,Alex Warren,Ordinary,Atlantic Records,1,18,299,783441
+22,spotify:track:7xapw9Oy21WpfEcib2ErSA,Justin Bieber,Mistletoe,RBMG/Def Jam,13,23,320,778155
+23,spotify:track:7uoFMmxln0GPXQ0AcCBXRq,Sia,Snowman,Monkey Puzzle/Atlantic,22,24,195,767842
+24,spotify:track:77khP2fIVhSW23NwxrRluh,Burl Ives,A Holly Jolly Christmas,Geffen,5,22,297,760433
+25,spotify:track:2pnPe4pJtq7689i5ydzvJJ,Chuck Berry,Run Rudolph Run,Geffen*,15,26,273,752331
+26,spotify:track:65DbTqJKhbwqYbZ1Okr0rc,Ella Langley,Choosin' Texas,SAWGOD/Columbia,10,25,47,742588
+27,spotify:track:3qhlB30KknSejmIvZZLjOD,Djo,End of Beginning,Djo,3,38,540,717453
+28,spotify:track:3yWuTOYDztXjZxdE2cIRUa,Taylor Swift,Opalite,Taylor Swift,2,30,61,717186
+29,spotify:track:6IeK3Ap5m3HabwJxgI6eSE,"Perry Como, The Fontane Sisters, Mitchell Ayres & His Orchestra",It's Beginning to Look a Lot Like Christmas (with Mitchell Ayres & His Orchestra),RCA Records Label,9,27,279,716225
+30,spotify:track:3QIoEi8Enr9uHffwInGIsC,Eagles,Please Come Home for Christmas - 2013 Remaster,Rhino/Elektra,24,28,131,713531
+31,spotify:track:0cQVqPuHQP4KEwc7ZUQmj6,The Neighbourhood,Sweater Weather,Columbia,7,31,1927,705689
+32,spotify:track:70LcF31zb1H0PyJoS1Sx1r,Radiohead,Creep,XL Recordings,9,29,551,677097
+33,spotify:track:1SV1fxF65n9NhRHp3KlBuu,Paul McCartney,Wonderful Christmastime - Edited Version / Remastered 2011,Paul McCartney Catalog,12,33,273,669926
+34,spotify:track:3QiAAp20rPC3dcAtKtMaqQ,Elvis Presley,Blue Christmas,RCA Victor,14,34,278,652631
+35,spotify:track:58ge6dfP91o9oXMzq3XkIS,Arctic Monkeys,505,Domino/Warner Records,13,49,1722,649285
+36,spotify:track:04vLj9QUXoKdRlsp3gkURo,"Bing Crosby, The Andrews Sisters",Mele Kalikimaka (Merry Christmas),Geffen,21,36,191,645258
+37,spotify:track:3bMfUUpzUzqWp9II00yRhE,Vince Guaraldi Trio,Christmas Time Is Here,Craft Recordings,6,37,208,641656
+38,spotify:track:4gfrYDtaRmp6HPvN80V2ob,Morgan Wallen,I Got Better,Big Loud Records / Mercury Records / Republic Records,4,32,201,633677
+39,spotify:track:1dByUyyoRKL99fJJ6VCQzb,Tate McRae,TIT FOR TAT,RCA Records Label,1,48,68,631818
+40,spotify:track:55lijDD6OAjLFFUHU9tcDm,RAYE,WHERE IS MY HUSBAND!,Human Re Sources,15,35,73,617938
+41,spotify:track:4HEOgBHRCExyYVeTyrXsnL,Frank Sinatra,Jingle Bells - Remastered 1999,Capitol Records,17,39,137,614975
+42,spotify:track:1foCxQtxBweJtZmdxhEHVO,"Eartha Kitt, Henri René and His Orchestra",Santa Baby (with Henri René & His Orchestra),RCA Bluebird,18,43,266,612370
+43,spotify:track:2FPfeYlrbSBR8PwCU0zaqq,Frank Sinatra,Have Yourself A Merry Little Christmas - Remastered 1999,Capitol Records,29,42,113,608565
+44,spotify:track:0InIeZW4P6VO7dUGRM4AKH,The Marías,Sienna,Nice Life/Atlantic,12,50,159,594790
+45,spotify:track:47otoIkhx3fkdivEXL5OB6,Burl Ives,Rudolph The Red-Nosed Reindeer,Geffen,20,45,203,591919
+46,spotify:track:6Qyc6fS4DsZjB2mRW9DsQs,The Goo Goo Dolls,Iris,Warner Records,9,41,635,588073
+47,spotify:track:5xlS0QkVrSH7ssEbBgBzbM,The Beach Boys,Little Saint Nick - 1991 Remix,Capitol Records,16,46,210,584269
+48,spotify:track:6dOtVTDdiauQNBQEDOtlAB,Billie Eilish,BIRDS OF A FEATHER,Darkroom/Interscope Records,2,44,565,582816
+49,spotify:track:0ofHAoxe9vBkTCp2UQIavz,Fleetwood Mac,Dreams - 2004 Remaster,Rhino/Warner Records,6,40,1791,581302
+50,spotify:track:003vvx7Niy0yvhvHt4a68B,The Killers,Mr. Brightside,Island Records,18,47,1905,549797
+51,spotify:track:2A22iI0x4EYAVXNpKPhNEM,Ella Langley,weren't for the wind,SAWGOD/Columbia,39,51,231,547645
+52,spotify:track:4tHqQMWSqmL6YjXwsqthDI,John Williams,"Carol of the Bells (From ""Home Alone"" Soundtrack)",Masterworks,16,52,252,546048
+53,spotify:track:27RYrbL6S02LNVhDWVl38b,"John Lennon, Yoko Ono",Happy Xmas (War Is Over) - Remastered 2010,EMI Catalogue,15,56,257,539098
+54,spotify:track:25leEEaz1gIpp7o21Fqyjo,Gene Autry,Here Comes Santa Claus (Right Down Santa Claus Lane) - 1947 Version,Columbia/Legacy,27,54,207,536381
+55,spotify:track:7D0RhFcb3CrfPuTJ0obrod,Coldplay,Sparks,Parlophone UK,20,53,515,535383
+56,spotify:track:6eODMWDVi22dpEZJoqg5h7,Laufey,Winter Wonderland,Vingolf Recordings,21,55,68,531021
+57,spotify:track:0rHToGels2lt8Y0mCYoF90,Nat King Cole,Deck The Hall,CAPITOL CATALOG MKT (C92),17,62,126,516982
+58,spotify:track:1NXbNEAcPvY5G1xvfN57aA,Tame Impala,Dracula,Columbia,9,60,68,512576
+59,spotify:track:3siwsiaEoU4Kuuc9WKMUy5,The Marías,No One Noticed,Nice Life/Atlantic,4,58,473,508755
+60,spotify:track:0eaVIYo2zeOaGJeqZ5TwYz,Don Toliver,No Pole,Cactus Jack / Atlantic,21,59,411,505082
+61,spotify:track:7MSYSOobsombc1mbDWFxtD,Donny Hathaway,This Christmas,Rhino Atlantic,30,65,156,491676
+62,spotify:track:2O3MQ6H3gjrIWDcpeTrikT,"Kelly Clarkson, Ariana Grande","Santa, Can’t You Hear Me",Atlantic Records,42,63,83,491225
+63,spotify:track:4kKdvXD0ez7jp1296JmAts,"Frank Sinatra, B. Swanson Quartet",Let It Snow! Let It Snow! Let It Snow! (with The B. Swanson Quartet),Columbia/Legacy,8,61,298,490319
+64,spotify:track:1I37Zz2g3hk9eWxaNkj031,"Saja Boys, Andrew Choi, Neckwav, Danny Chung, KEVIN WOO, samUIL Lee, KPop Demon Hunters Cast",Your Idol,K-Pop Demon Hunters,1,57,164,489572
+65,spotify:track:312z6PZ8wwREck8613PkJk,Olivia Dean,A Couple Minutes,PLG - Capitol,46,64,32,479217
+66,spotify:track:02sy7FAs8dkDNYsHp4Ul3f,"Saja Boys, Andrew Choi, Neckwav, Danny Chung, KEVIN WOO, samUIL Lee, KPop Demon Hunters Cast",Soda Pop,K-Pop Demon Hunters,3,69,163,468405
+67,spotify:track:0FIDCNYYjNvPVimz5icugS,"The Weeknd, Playboi Carti",Timeless (feat Playboi Carti),XO / Republic Records,1,70,432,466157
+68,spotify:track:4EZUcj7c8n9pWIwHqN0DoH,Bing Crosby,Do You Hear What I Hear? - Remastered 2006,Capitol Records,27,66,209,463661
+69,spotify:track:3B2ZpJeewPvhAkjXtTkdtJ,Tate McRae,NOBODY'S GIRL,RCA Records Label,2,67,12,463527
+70,spotify:track:7yogx3TwxGwSxO2QITsT2q,Sabrina Carpenter,A Nonsense Christmas,Island Records,26,71,50,461085
+71,spotify:track:2OQ6a4CfUeYskpTTgyawyJ,"Gwen Stefani, Blake Shelton",You Make It Feel Like Christmas (feat. Blake Shelton),UMGRI Interscope,44,74,132,460879
+72,spotify:track:4KULAymBBJcPRpk1yO4dOG,"Zach Bryan, Kacey Musgraves",I Remember Everything (feat. Kacey Musgraves),Warner Records,1,68,830,447271
+73,spotify:track:7so0lgd0zP2Sbgs2d7a1SZ,"Lady Gaga, Bruno Mars",Die With A Smile,Interscope Records,1,78,474,446317
+74,spotify:track:05od2qm2MTSKCHxy1GBp5W,sombr,12 to 12,Warner Records,11,92,128,440121
+75,spotify:track:3RXUgPNIbUgFxsDWuBQEt6,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",How It’s Done,K-Pop Demon Hunters,4,76,163,439651
+76,spotify:track:6K4t31amVTZDgR3sKmwUJJ,Tame Impala,The Less I Know The Better,Universal Music Australia Pty. Ltd.,64,75,1115,439477
+77,spotify:track:1PtQJZVZIdWIYdARpZRDFO,Kate Bush,Running Up That Hill (A Deal With God),Fish People,1,73,193,436689
+78,spotify:track:3Vd4fHzwS6pBS3muymjiDi,Olivia Dean,Let Alone The One You Love,PLG - Capitol,52,80,46,435820
+79,spotify:track:3WMj8moIAXJhHsyLaqIIHI,Zach Bryan,Something in the Orange,Warner Records,4,77,1320,435364
+80,spotify:track:0TFTAtCYhp2tQ9KcJIZb55,sombr,undressed,Warner Records,2,87,252,435356
+81,spotify:track:66tlRqExpkn4kRyuxelzs5,Tate McRae,ANYTHING BUT LOVE,RCA Records Label,5,72,12,433448
+82,spotify:track:5sBDrrtLGbV64QJnEqfjer,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",What It Sounds Like,K-Pop Demon Hunters,5,81,163,430708
+83,spotify:track:7gKxCvTDWwV9wBhdeBbr3l,Olivia Dean,Nice To Each Other,PLG - Capitol,24,83,95,430449
+84,spotify:track:2CGNAOSuO1MEFCbBRgUzjd,"Kendrick Lamar, SZA",luther (with sza),"pgLang, under exclusive license to Interscope Records",1,88,376,430072
+85,spotify:track:3QaPy1KgI7nu9FJEQUgn6h,Billie Eilish,WILDFLOWER,Darkroom/Interscope Records,10,93,565,428306
+86,spotify:track:3lkYS3iMpWMVpaJ0yJAFrJ,The Jackson 5,I Saw Mommy Kissing Santa Claus,UNI/MOTOWN,26,95,162,426250
+87,spotify:track:5UJbgR4XF4y1DvbkxEqe8S,Tate McRae,Sports car,RCA Records Label,5,84,313,425015
+88,spotify:track:7AeM1BGYM7emrqmQn1PuWv,Morgan Wallen,I'm The Problem,Big Loud Records / Mercury Records / Republic Records,1,96,306,424003
+89,spotify:track:6LxSe8YmdPxy095Ux6znaQ,Drake,Headlines,Cash Money Records/Young Money Ent./Universal Rec.,28,91,263,423981
+90,spotify:track:554qQSs9lpRVq6TlaaiIKT,EsDeeKid,4 Raws,Lizzy Records,66,89,14,422436
+91,spotify:track:17phhZDn6oGtzMe56NuWvj,Teddy Swims,Lose Control,Warner Records,5,85,756,422191
+92,spotify:track:1osfLqL6L2iQsirRf83ded,Riley Green,Worst Way,Nashville Harbor,34,90,329,421357
+93,spotify:track:04emojnbYkrRmv5qtJcgVP,"Morgan Wallen, Tate McRae",What I Want (feat. Tate McRae),Big Loud Records / Mercury Records / Republic Records,1,82,201,419608
+94,spotify:track:57Z6TJCTMACXxdrcwZ3Zvf,"EsDeeKid, Rico Ace",Phantom,Lizzy Records,86,86,15,418617
+95,spotify:track:2BwO5K8Q7EPAJSGze3AAh9,Sabrina Carpenter,Manchild,Island Records,1,98,180,416701
+96,spotify:track:4WFgvKVfEhb3IUAFGrutTR,Ravyn Lenae,Love Me Not,Atlantic Records,5,79,269,416183
+97,spotify:track:3cZajhyr8LmtPfHZ9296tj,"Disco Lines, Tinashe",No Broke Boys,Nice Life/Atlantic,14,94,170,413509
+98,spotify:track:1JSTJqkT5qHq8MDJnJbRE1,The Police,Every Breath You Take,Polydor Records,87,99,99,412058
+99,spotify:track:1xOqGUkyxGQRdCvGpvWKmL,KATSEYE,Gabriela,HYBE/Geffen,26,105,166,410678
+100,spotify:track:550rQQCGkrTzvp4SfpOPzx,Pentatonix,Hallelujah,RCA Records Label,48,101,138,409277
+101,spotify:track:03bTIHJElXZ0O0jqOQvAbY,Taylor Swift,Father Figure,Taylor Swift,4,102,61,406628
+102,spotify:track:5NUXAUIItJAxBIUOdm0gUf,Jonas Brothers,Like It's Christmas,Hollywood Records,43,107,124,405810
+103,spotify:track:21IYMdzTrzSe191Cy5eMap,Gigi Perez,Sailor Song,"Outtahere, LLC / Island Records",3,100,490,405804
+104,spotify:track:3xkHsmpQCBMytMJNiDf3Ii,Benson Boone,Beautiful Things,"Night Street Records, Inc./Warner Records Inc.",1,108,684,401979
+105,spotify:track:1jgTiNob5cVyXeJ3WgX5bL,Taylor Swift,Elizabeth Taylor,Taylor Swift,3,106,61,399599
+106,spotify:track:7ghKr0pCYyPPyp7t1FH8k4,Childish Gambino,Les,Glassnote - VMG,58,109,230,399036
+107,spotify:track:2fuYa3Lx06QQJAm0MjztKr,Radiohead,Let Down,XL Recordings,42,104,199,398403
+108,spotify:track:2UikqkwBv7aIvlixeVXHWt,Chris Stapleton,You Should Probably Leave,Mercury Nashville,46,115,856,393844
+109,spotify:track:2mvabkN1i2gLnGAPUVdwek,Taylor Swift,Christmas Tree Farm,Taylor Swift,40,113,125,390243
+110,spotify:track:0myRViRgmQ3J8izICXEAVO,She & Him,I Thought I Saw Your Face Today,Merge Records,97,97,4,390206
+111,spotify:track:6393yGahSJ9slVdOwSxOVR,Chappell Roan,Pink Pony Club,Chappell Roan PS/ Island,4,112,546,388889
+112,spotify:track:1oAwsWBovWRIp7qLMGPIet,Cigarettes After Sex,Apocalypse,Partisan Records,42,123,949,388801
+113,spotify:track:4Yg2w0P29BBBMixyeNjDtj,Band Aid,Do They Know It's Christmas? - 1984 Version,EMI,7,117,253,387009
+114,spotify:track:5P8Xvy5tzhmfyfA6GplQ8h,Gayla Peevey,I Want a Hippopotamus for Christmas (Hippo the Hero),Sony Music Entertainment,44,126,67,384701
+115,spotify:track:3PIDciSFdrQxSQSihim3hN,Mariah Carey,Christmas (Baby Please Come Home),Columbia,31,132,211,384222
+116,spotify:track:1VOSSXuWRcBj2rpfxNdX9v,Whiskey Myers,Broken Window Serenade,Whiskey Myers,69,103,126,384190
+117,spotify:track:2cEnKRR4dYBB2VA1mjlb1z,YoungBoy Never Broke Again,Nevada,"Never Broke Again, LLC",63,116,90,382193
+118,spotify:track:5BZsQlgw21vDOAjoqkNgKb,Justin Bieber,DAISIES,"JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",1,119,145,379794
+119,spotify:track:5DxDLsW6PsLz5gkwC7Mk5S,"Rumi, Jinu, KPop Demon Hunters Cast, EJAE, Andrew Choi",Free,K-Pop Demon Hunters,7,118,163,379045
+120,spotify:track:6s2wpWPFPAgKg2LXxi1Oee,Bruce Springsteen,"Santa Claus Is Comin' to Town - Live at C.W. Post College, Greenvale, NY - December 1975",NITRON concepts,23,120,165,378337
+121,spotify:track:0je57Uq5eTk1wrPzn9sWbl,Sabrina Carpenter,When Did You Get Hot?,Island Records,5,121,96,376244
+122,spotify:track:0d28khcov6AiegSCpG5TuT,"Gorillaz, De La Soul",Feel Good Inc.,Parlophone UK,38,122,344,374770
+123,spotify:track:42VUCXerQ5qTr4Qp6PhKo4,Sabrina Carpenter,Tears,Island Records,1,128,96,373899
+124,spotify:track:68Dni7IE4VyPkTOH9mRWHr,J. Cole,No Role Modelz,Roc Nation Records LLC,7,130,2833,373346
+125,spotify:track:0bxPRWprUVpQK0UFcddkrA,Kehlani,Folded,TSNMI / Atlantic,59,129,125,371628
+126,spotify:track:43iIQbw5hx986dUEZbr3eN,Laufey,From The Start,Laufey,30,125,610,370219
+127,spotify:track:0WbMK4wrZ1wFSty9F7FCgu,Chappell Roan,"Good Luck, Babe!",Chappell Roan PS/ Island,1,131,607,370052
+128,spotify:track:1Wf14bTyb6UeKojy8ykPYm,Andy Williams,Happy Holiday / The Holiday Season,Columbia,35,133,131,369918
+129,spotify:track:736PP5LTtREkDgktNmX3Gu,Daniel Caesar,Superpowers,Republic Records,73,143,99,368073
+130,spotify:track:1VuAamHM7P3VQQEXYGG3Uu,Nat King Cole,Joy To The World,CAPITOL CATALOG MKT (C92),28,137,221,366464
+131,spotify:track:6ybZUqlfk938oS6WeBmDab,Treaty Oak Revival,Missed Call,TOR Records,60,110,219,366227
+132,spotify:track:5e9TFTbltYBg2xThimr0rU,Fleetwood Mac,The Chain - 2004 Remaster,Rhino/Warner Records,55,139,176,366104
+133,spotify:track:5IZXB5IKAD2qlvTPJYDCFB,"Post Malone, Morgan Wallen",I Had Some Help (Feat. Morgan Wallen),Mercury Records / Republic Records,1,127,572,363270
+134,spotify:track:7AxXJXqJOMRqkgZxvG3r6E,Tate McRae,TRYING ON SHOES,RCA Records Label,9,111,12,362970
+135,spotify:track:6DH13QYXK7lKkYHSU88N48,Daniel Caesar,Who Knows,Republic Records,81,124,33,360646
+136,spotify:track:0hvN2v6fAcB6xWyW7UaooA,Perry Como,(There's No Place Like) Home for the Holidays - 1959 Version,RCA Records Label,44,148,117,360095
+137,spotify:track:11P4sSu6BH2lAbWk1sL6cK,Elton John,Step Into Christmas - Remastered 1995,EMI,37,140,96,359766
+138,spotify:track:2mNGL7mZILSqZHxGboJaO9,Yeat,COMË N GO,Lyfestyle Corporation/Field Trip Recordings/Capitol Records,70,144,43,357777
+139,spotify:track:5SruEBX3KpgpDvEcIuN53P,Olivia Dean,Baby Steps,PLG - Capitol,79,142,53,356765
+140,spotify:track:0MHStU0muAIEMbwdnebYu2,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",Takedown,K-Pop Demon Hunters,6,141,162,356542
+141,spotify:track:3GCdLUSnKSMJhs4Tj6CV3s,"Kendrick Lamar, SZA","All The Stars (with SZA) - From ""Black Panther: The Album""",Black Panther (TDE/DMG) PS,2,145,1178,354365
+142,spotify:track:5TRPicyLGbAF2LGBFbHGvO,"Kanye West, Dwele",Flashing Lights,Roc-A-Fella,48,149,935,352778
+143,spotify:track:6r1lboTadi5swMquaAWDzh,"BigXthaPlug, Ella Langley",Hell At Night (feat. Ella Langley),BigXthaPlug under exclusive license to UnitedMasters LLC,19,134,108,352263
+144,spotify:track:7KA4W4McWYRpgf0fWsJZWB,"Tyler, The Creator, Kali Uchis",See You Again (feat. Kali Uchis),Columbia,3,138,1635,351009
+145,spotify:track:7tI8dRuH2Yc6RuoTjxo4dU,Jimin,Who,BIGHIT MUSIC,1,159,478,349883
+146,spotify:track:03tqyYWC9Um2ZqU0ZN849H,"Waka Flocka Flame, Roscoe Dash, Wale",No Hands (feat. Roscoe Dash & Wale),Asylum/Warner Records,30,169,260,346351
+147,spotify:track:4ThbwJaIWVxXZ1qJaHQBCz,Cody Johnson,Travelin' Soldier,CoJo Music/Warner Records Nashville,5,135,26,345165
+148,spotify:track:3fqwjXwUGN6vbzIwvyFMhx,Chris Stapleton,Tennessee Whiskey,Mercury Nashville,55,156,1549,345004
+149,spotify:track:0hz5PNF2wejwUKCMpesQWt,"Ed Sheeran, Elton John",Merry Christmas,Atlantic Records UK,52,152,46,344191
+150,spotify:track:4z8sz6E4YyFuEkv5o7IJni,Pentatonix,"Mary, Did You Know?",RCA Records Label,81,153,92,343196
+151,spotify:track:5o0hD6Bs6RdyZxfYBoEEc8,Cynthia Erivo,No Good Deed,Wicked Soundtrack,20,114,12,341756
+152,spotify:track:5z0LSDpPpGwc2ZyJHpsE3J,Morgan Wallen,Just In Case,Big Loud Records / Mercury Records / Republic Records,2,147,257,341255
+153,spotify:track:1FHIZknONrV2c20w0x5AVG,"Riley Green, Ella Langley",Don't Mind If I Do,Nashville Harbor,82,146,107,340340
+154,spotify:track:6dBUzqjtbnIa1TwYbyw5CM,TV Girl,Lovers Rock,TV Girl,35,151,1102,339782
+155,spotify:track:6tHVEMyRfxGgQuXRzl2yOF,Olivia Dean,I've Seen It,PLG - Capitol,100,154,10,337564
+156,spotify:track:6pheMGrfMwwnypqafU7d4k,Mark Ambor,Run Rudolph Run - Spotify Singles Holiday,"Hundred Days Records, LLC",35,155,33,336971
+157,spotify:track:51ZQ1vr10ffzbwIjDCwqm4,Ariana Grande,we can't be friends (wait for your love),Republic Records,1,167,527,336491
+158,spotify:track:3hpm0fTeSqlhJbnqAgaLZs,Fuerza Regida,Marlboro Rojo,Rancho Humilde/Street Mob Records/Sony Music Latin,48,150,201,335394
+159,spotify:track:0YWUHZPJVg4iujddsJDwhM,Britney Spears,My Only Wish (This Year),Jive,48,162,90,335379
+160,spotify:track:1LzNfuep1bnAUR9skqdHCK,Mazzy Star,Fade Into You,Capitol Records,74,171,163,332105
+161,spotify:track:3sK8wGT43QFpWrvNQsrQya,Bad Bunny,DtMF,Rimas Entertainment LLC.,1,157,332,331993
+162,spotify:track:5ihS6UUlyQAfmp48eSkxuQ,Fleetwood Mac,Landslide,Warner Records,85,165,137,331186
+163,spotify:track:5UWwZ5lm5PKu6eKsHAGxOk,Foo Fighters,Everlong,RCA Records Label,36,168,875,331018
+164,spotify:track:7CyPwkp0oE8Ro9Dd5CUDjW,"The Weeknd, JENNIE, Lily-Rose Depp","One Of The Girls (with JENNIE, Lily Rose Depp)",XO / Republic Records,15,173,656,330220
+165,spotify:track:5VEuraNSVxMTzDTtrmL3lQ,Bing Crosby,Winter Wonderland - Remastered 2006,Capitol Records,13,166,222,328436
+166,spotify:track:7fEoXCZTZFosUFvFQg1BmW,King Von,Took Her To The O,"Forever and a Day, LLC / EMPIRE",25,-1,184,328352
+167,spotify:track:4YhY2qHdBmSX33uj8ms0oq,Vince Guaraldi Trio,O Tannenbaum,Craft Recordings,26,181,133,328138
+168,spotify:track:1zM8S2pnIclcdTmrfFnWtX,Hudson Westbrook,House Again,River House Artists/Warner Records Nashville,53,136,245,327922
+169,spotify:track:3AJwUDP919kvQ9QcozQPxg,Coldplay,Yellow,Parlophone UK,50,174,471,327141
+170,spotify:track:5AEOqLsRJFAoSS4ay4Jzao,Nirvana,Come As You Are,Geffen,119,161,196,326958
+171,spotify:track:3azJifCSqg9fRij2yKIbWz,Tory Lanez,The Color Violet,One Umbrella Records,23,178,1005,326923
+172,spotify:track:6xV7Be6XEvkSnighmh2Tzj,"Tyler, The Creator",Sugar On My Tongue,Columbia,2,163,135,326762
+173,spotify:track:0mflMxspEfB0VbI1kyLiAv,Noah Kahan,Stick Season,Mercury Records/Republic Records,1,170,1120,326391
+174,spotify:track:6rY5FAWxCdAGllYEOZMbjW,Joji,SLOW DANCING IN THE DARK,88rising Music,26,172,1583,325482
+175,spotify:track:0JXXNGljqupsJaZsgSbMZV,Miguel,Sure Thing,Jive,8,180,892,325431
+176,spotify:track:1zi7xx7UVEFkmKfv06H8x0,"Drake, Wizkid, Kyla",One Dance,Cash Money Records/Young Money Ent./Universal Rec.,7,175,787,325409
+177,spotify:track:2ipIPsgrgd0j2beDf4Ki70,Benson Boone,Mystical Magical,"Night Street Records, Inc./Warner Records Inc.",5,189,221,323820
+178,spotify:track:4RvWPyQ5RL0ao9LPZeSouE,Tears For Fears,Everybody Wants To Rule The World,UMC (Universal Music Catalogue),44,190,905,321765
+179,spotify:track:3Q4gttWQ6hxqWOa3tHoTNi,"Drake, Chris Brown",Not You Too (feat. Chris Brown),OVO,8,-1,31,321242
+180,spotify:track:5eXgqtg3T8Av0m1FUaGHex,"Taylor Swift, Sabrina Carpenter",The Life of a Showgirl (feat. Sabrina Carpenter),Taylor Swift,7,179,61,320985
+181,spotify:track:5EcG8eMMlwkHRVa4aTR1qd,Rihanna,Breakin' Dishes,Def Jam Recordings,41,177,187,320642
+182,spotify:track:5fZJQrFKWQLb7FpJXZ1g7K,Shaboozey,A Bar Song (Tipsy),American Dogwood / EMPIRE,1,160,600,320149
+183,spotify:track:5mCPDVBb16L4XQwDdbRUpz,Drake,Passionfruit,Cash Money Records/Young Money Ent./Universal Rec.,1,176,1082,320107
+184,spotify:track:4MrfQL4TYQXJBlZYpAHTuE,Dean Martin,"Baby, It's Cold Outside",Capitol Records,27,185,204,319253
+185,spotify:track:1HbzxLqpNVPdiBXvpC7Ovb,The Red Clay Strays,Wondering Why,Red Clay Strays,70,164,622,319062
+186,spotify:track:4EWCNWgDS8707fNSZ1oaA5,Kanye West,Heartless,Roc-A-Fella,34,-1,1198,318653
+187,spotify:track:0hta2Lb2zKJ7kEnAEZEE3G,"wifiskeleton, i wanna be a jack-o-lantern",Nope your too late i already died,9th St. / Hallwood,24,192,207,317663
+188,spotify:track:2JiJRwhGRg20GhFGXd6JZX,Laufey,Santa Baby,Vingolf Recordings,50,187,27,317183
+189,spotify:track:15coTBAzEN1bOeipoNDZAR,*NSYNC,"Merry Christmas, Happy Holidays",RCA Records Label,30,199,167,316468
+190,spotify:track:7u3BVQ9DG1KA9c3Q8W3BLr,"Hazbin Hotel, Keith David, Lilli Cooper, Kimiko Glenn, Krystina Alabado, Sam Haft, Andrew Underberg",Love In A Bottle,Atlantic Records,49,158,20,316003
+191,spotify:track:0aB0v4027ukVziUGwVGYpG,"Kendrick Lamar, Lefty Gunplay",tv off (feat. lefty gunplay),"pgLang, under exclusive license to Interscope Records",1,188,375,315487
+192,spotify:track:19XpFsce28aByvCC4g89tJ,Hozier,Too Sweet,Columbia,1,184,618,315003
+193,spotify:track:2XHzzp1j4IfTNp1FTn7YFg,"Lil Wayne, Drake, Future",Love Me,CM/Republic,68,191,581,314930
+194,spotify:track:5XeFesFbtLpXzIVDNQP22n,Arctic Monkeys,I Wanna Be Yours,Domino Recording Co,53,200,939,313794
+195,spotify:track:2gam98EZKrF9XuOkU13ApN,"Nelly Furtado, Timbaland",Promiscuous,Mosley / Geffen,72,193,272,313679
+196,spotify:track:6AI3ezQ4o3HUoP6Dhudph3,Kendrick Lamar,Not Like Us,"Kendrick Lamar, under exclusive license to Interscope Records",1,-1,576,313605
+197,spotify:track:4SRShYMtFIGgnOU7iBicMH,Sabrina Carpenter,Nobody’s Son,Island Records,3,196,93,312433
+198,spotify:track:4VxTzYm00mg82MuoT35Ja7,Tyla,CHANEL,Epic,198,-1,1,311815
+199,spotify:track:59c2xv2kMzYM6HR9oY6BIa,Malcolm Todd,Sweet Boy,Columbia,181,-1,4,311773
+200,spotify:track:2TEQvxxQabwLQMqWMg1qGu,Taylor Swift,Wi$h Li$t,Taylor Swift,6,195,59,311021
