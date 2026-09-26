@@ -105,38 +105,57 @@ function v1(R, box) {
 
   const wrap = document.createElement("div"); wrap.className = "v1-wrap"; box.appendChild(wrap);
   const left = document.createElement("div"); wrap.appendChild(left);
-  const svg = svgIn(left, 360, 360, "A 10 by 10 grid of records; each record is 1 percent of all streams, grouped by artist");
+  const svg = svgIn(left, 360, 360, "A 10 by 10 grid of records; each record is 1 percent of all streams. Every artist with at least 1 percent has their own records, in order.");
+  // grid: every artist with >= 1% (tier top10 / one_pct) in order, then "Everyone else" (tier rest)
   const owner = []; grid.forEach((g, gi) => { for (let k = 0; k < g.cells; k++) owner.push(gi); });
-  const acc = css("--accent"), brass = css("--brass"), rest = "#b9ab94";
+  const acc = css("--accent"), brass = css("--brass"), second = "#9c8466", rest = "#b9ab94";
+  const tierOf = gi => grid[gi].tier;
+  const baseLab = gi => tierOf(gi) === "top10" ? acc : tierOf(gi) === "one_pct" ? second : rest;
   const recs = owner.map((gi, k) => {
-    const cx = 18 + (k % 10) * 36, cy = 18 + Math.floor(k / 10) * 36, isRest = gi === grid.length - 1;
-    const g = el("g", { class: "v1-rec", "data-g": gi }, svg);
+    const cx = 18 + (k % 10) * 36, cy = 18 + Math.floor(k / 10) * 36, isRest = tierOf(gi) === "rest";
+    const g = el("g", { class: "v1-rec", "data-g": gi, style: isRest ? "cursor:default" : "" }, svg);
     el("circle", { cx, cy, r: 16, fill: isRest ? "#8d8373" : "#151210", "fill-opacity": isRest ? .35 : 1 }, g);
     for (const r of [13.5, 11.5, 9.5]) el("circle", { cx, cy, r, fill: "none", stroke: isRest ? "#fff" : "#3a3531", "stroke-opacity": isRest ? .25 : .8, "stroke-width": .6 }, g);
-    const lab = el("circle", { cx, cy, r: 5.6, class: "lab", fill: isRest ? rest : acc }, g);
+    const lab = el("circle", { cx, cy, r: 5.6, class: "lab", fill: baseLab(gi) }, g);
     el("circle", { cx, cy, r: 1.1, fill: css("--surface") }, g);
-    return { g, lab, gi, isRest };
+    return { g, lab, gi, tier: tierOf(gi) };
   });
+  // the list keeps the top 10 plus one "Everyone else" line (artists #11 on, including those with 1%+)
+  const top10 = grid.filter(g => g.tier === "top10");
+  const topCells = top10.reduce((a, g) => a + g.cells, 0), topShare = A.top10_share_pct;   // exact top-10 share, so the two lines add to 100%
+  const nOne = grid.filter(g => g.tier === "one_pct").length;
+  const legendRows = top10.map((g, gi) => ({ label: g.artist, cells: g.cells, share: g.share_pct, key: gi }))
+    .concat([{ label: "Everyone else", cells: 100 - topCells, share: 100 - topShare, key: "rest" }]);
   const list = document.createElement("ol"); list.className = "v1-legend"; wrap.appendChild(list);
-  list.innerHTML = grid.map((g, gi) => `<li data-g="${gi}" class="${gi === grid.length - 1 ? "rest" : ""}"><span class="dot"></span>
-      <span>${esc(g.artist)}</span><span class="pct"><span class="n">${g.cells}</span> record${g.cells > 1 ? "s" : ""} · ${pct(g.share_pct)}</span></li>`).join("");
+  list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : ""}"><span class="dot"></span>
+      <span>${esc(r.label)}${r.key === "rest" ? `<br><span class="hint">${nOne} more artists with 1%+ each, then ${fmt(A.rest_artists)} artists under 1%</span>` : ""}</span>
+      <span class="pct"><span class="n">${r.cells}</span> record${r.cells > 1 ? "s" : ""} · ${pct(r.share)}</span></li>`).join("");
   const items = [...list.children];
-  function focus(gi) {
-    recs.forEach(r => { const on = gi === null || r.gi === gi;
-      r.g.style.opacity = on ? 1 : .18; r.lab.setAttribute("fill", gi !== null && r.gi === gi ? brass : (r.isRest ? rest : acc)); });
-    items.forEach((li, k) => li.classList.toggle("on", k === gi));
+  // focus: an artist index (0..), "rest" = everything outside the top 10, or null = no focus
+  function focus(k) {
+    recs.forEach(r => {
+      const on = k === null || (k === "rest" ? r.tier !== "top10" : r.gi === k);
+      r.g.style.opacity = on ? 1 : .18;
+      r.lab.setAttribute("fill", k !== null && k !== "rest" && r.gi === k ? brass : baseLab(r.gi));
+    });
+    items.forEach(li => li.classList.toggle("on", String(k) === li.dataset.k || (k !== null && k !== "rest" && grid[k].tier !== "top10" && li.dataset.k === "rest")));
   }
-  const topSong = gi => gi < A.top10.length ? A.top10[gi].top_song : null;
-  const tipFor = gi => { const g = grid[gi], ts = topSong(gi); return `<b>${esc(g.artist)}</b><br><span class="v">${pct(g.share_pct, 2)}</span> of all Top-200 streams<br><span class="m">${g.cells} of 100 records (each = 1%, rounded)</span>` +
-    (ts ? `<br><span class="m">▶ click to play their top song, “${esc(ts.track)}”</span>` : ""); };
+  const tipFor = gi => { const g = grid[gi], rank = gi + 1;
+    return `<span class="m">#${rank} artist${g.tier === "one_pct" ? " · in “Everyone else” in the list" : ""}</span><br><b>${esc(g.artist)}</b><br>` +
+      `<span class="v">${pct(g.share_pct, 2)}</span> of all Top-200 streams<br><span class="m">${g.cells} of 100 records (each = 1%, rounded)</span>` +
+      (g.top_song ? `<br><span class="m">▶ click to play their top song, “${esc(g.top_song.track)}”</span>` : ""); };
   recs.forEach(r => {
+    if (r.tier === "rest") return;                       // artists under 1% have no records of their own
     r.g.addEventListener("pointerenter", e => { focus(r.gi); showTip(tipFor(r.gi), e); });
     r.g.addEventListener("pointermove", e => showTip(tipFor(r.gi), e));
     r.g.addEventListener("pointerleave", () => { focus(null); hideTip(); });
-    r.g.addEventListener("click", () => play(topSong(r.gi)));
+    r.g.addEventListener("click", () => play(grid[r.gi].top_song));
   });
-  items.forEach((li, gi) => { li.addEventListener("pointerenter", () => focus(gi)); li.addEventListener("pointerleave", () => focus(null));
-    const ts = topSong(gi); if (ts) { li.title = `Play “${ts.track}”`; li.addEventListener("click", () => play(ts)); } });
+  items.forEach(li => {
+    const k = li.dataset.k === "rest" ? "rest" : +li.dataset.k;
+    li.addEventListener("pointerenter", () => focus(k)); li.addEventListener("pointerleave", () => focus(null));
+    if (k !== "rest") { const ts = grid[k].top_song; li.title = `Play “${ts.track}”`; li.addEventListener("click", () => play(ts)); }
+  });
 }
 
 // ---- 2. Songs: drag along the concentration curve ---------------------------

@@ -98,5 +98,13 @@ check("songs tied for the longest run (text: luther and Rockin' Around)", sorted
       ["luther (with sza)", "rockin' around the christmas tree"])
 check("share lasting a month or more % (text: 27.3%)", round(sum(x >= 30 for x in d) / len(d) * 100, 1), 27.3)
 
+lead_streams = collections.defaultdict(int)
+for r in rows:
+    lead_streams[lead(r["artist_names"])] += int(r["streams"])
+ranked = sorted(lead_streams.items(), key=lambda x: -x[1])
+check("artists with at least 1% of streams (text: 25 = top 10 + fifteen more)", sum(v / total >= .01 for _, v in ranked), 25)
+check("#11 artist (text: Tyler, The Creator 1.56%)", (ranked[10][0], round(ranked[10][1] / total * 100, 2)), ("Tyler, The Creator", 1.56))
+check("artists under 1% (text: 583)", sum(v / total < .01 for _, v in ranked), 583)
+
 print("\nall numbers match" if not bad else f"\n{bad} number(s) differ")
 sys.exit(1 if bad else 0)

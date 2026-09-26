@@ -124,59 +124,287 @@
    {
     "artist": "Morgan Wallen",
     "cells": 5,
-    "share_pct": 4.72
+    "share_pct": 4.72,
+    "tier": "top10",
+    "top_song": {
+     "track": "I'm The Problem",
+     "artists": "Morgan Wallen",
+     "track_id": "7AeM1BGYM7emrqmQn1PuWv"
+    }
    },
    {
     "artist": "Bad Bunny",
     "cells": 3,
-    "share_pct": 3.22
+    "share_pct": 3.22,
+    "tier": "top10",
+    "top_song": {
+     "track": "DtMF",
+     "artists": "Bad Bunny",
+     "track_id": "3sK8wGT43QFpWrvNQsrQya"
+    }
    },
    {
     "artist": "Kendrick Lamar",
     "cells": 3,
-    "share_pct": 3.11
+    "share_pct": 3.11,
+    "tier": "top10",
+    "top_song": {
+     "track": "luther (with sza)",
+     "artists": "Kendrick Lamar, SZA",
+     "track_id": "2CGNAOSuO1MEFCbBRgUzjd"
+    }
    },
    {
     "artist": "Sabrina Carpenter",
-    "cells": 2,
-    "share_pct": 2.53
+    "cells": 3,
+    "share_pct": 2.53,
+    "tier": "top10",
+    "top_song": {
+     "track": "Manchild",
+     "artists": "Sabrina Carpenter",
+     "track_id": "2BwO5K8Q7EPAJSGze3AAh9"
+    }
    },
    {
     "artist": "Drake",
     "cells": 2,
-    "share_pct": 2.49
+    "share_pct": 2.49,
+    "tier": "top10",
+    "top_song": {
+     "track": "NOKIA",
+     "artists": "Drake",
+     "track_id": "2u9S9JJ6hTZS3Vf22HOZKg"
+    }
    },
    {
     "artist": "Taylor Swift",
     "cells": 2,
-    "share_pct": 2.43
+    "share_pct": 2.43,
+    "tier": "top10",
+    "top_song": {
+     "track": "The Fate of Ophelia",
+     "artists": "Taylor Swift",
+     "track_id": "53iuhJlwXhSER5J2IYYv1W"
+    }
    },
    {
     "artist": "Ella Langley",
     "cells": 2,
-    "share_pct": 1.99
+    "share_pct": 1.99,
+    "tier": "top10",
+    "top_song": {
+     "track": "Choosin' Texas",
+     "artists": "Ella Langley",
+     "track_id": "7scFxt9VhL4FJwuPSfRlfN"
+    }
    },
    {
     "artist": "sombr",
     "cells": 2,
-    "share_pct": 1.67
+    "share_pct": 1.67,
+    "tier": "top10",
+    "top_song": {
+     "track": "back to friends",
+     "artists": "sombr",
+     "track_id": "7qjZnBKE73H4Oxkopwulqe"
+    }
    },
    {
     "artist": "Noah Kahan",
     "cells": 2,
-    "share_pct": 1.63
+    "share_pct": 1.63,
+    "tier": "top10",
+    "top_song": {
+     "track": "Stick Season",
+     "artists": "Noah Kahan",
+     "track_id": "0mflMxspEfB0VbI1kyLiAv"
+    }
    },
    {
     "artist": "Olivia Dean",
     "cells": 2,
-    "share_pct": 1.58
+    "share_pct": 1.58,
+    "tier": "top10",
+    "top_song": {
+     "track": "Man I Need",
+     "artists": "Olivia Dean",
+     "track_id": "1qbmS6ep2hbBRaEZFpn7BX"
+    }
+   },
+   {
+    "artist": "Tyler, The Creator",
+    "cells": 2,
+    "share_pct": 1.56,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "See You Again (feat. Kali Uchis)",
+     "artists": "Tyler, The Creator, Kali Uchis",
+     "track_id": "7KA4W4McWYRpgf0fWsJZWB"
+    }
+   },
+   {
+    "artist": "Chappell Roan",
+    "cells": 2,
+    "share_pct": 1.55,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Pink Pony Club",
+     "artists": "Chappell Roan",
+     "track_id": "6393yGahSJ9slVdOwSxOVR"
+    }
+   },
+   {
+    "artist": "Zach Bryan",
+    "cells": 2,
+    "share_pct": 1.52,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "I Remember Everything (feat. Kacey Musgraves)",
+     "artists": "Zach Bryan, Kacey Musgraves",
+     "track_id": "4KULAymBBJcPRpk1yO4dOG"
+    }
+   },
+   {
+    "artist": "HUNTR/X",
+    "cells": 1,
+    "share_pct": 1.5,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Golden",
+     "artists": "HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",
+     "track_id": "1CPZ5BxNNd0n0nF4Orb9JS"
+    }
+   },
+   {
+    "artist": "Tate McRae",
+    "cells": 1,
+    "share_pct": 1.48,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Sports car",
+     "artists": "Tate McRae",
+     "track_id": "5UJbgR4XF4y1DvbkxEqe8S"
+    }
+   },
+   {
+    "artist": "Don Toliver",
+    "cells": 1,
+    "share_pct": 1.32,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "No Pole",
+     "artists": "Don Toliver",
+     "track_id": "0eaVIYo2zeOaGJeqZ5TwYz"
+    }
+   },
+   {
+    "artist": "Olivia Rodrigo",
+    "cells": 1,
+    "share_pct": 1.26,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "drop dead",
+     "artists": "Olivia Rodrigo",
+     "track_id": "3fRCAPMMZ8l8P9YKI6OCzD"
+    }
+   },
+   {
+    "artist": "Bruno Mars",
+    "cells": 1,
+    "share_pct": 1.18,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "I Just Might",
+     "artists": "Bruno Mars",
+     "track_id": "6f68Ac5tt5BQOpwr0BV9oN"
+    }
+   },
+   {
+    "artist": "Billie Eilish",
+    "cells": 1,
+    "share_pct": 1.17,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "BIRDS OF A FEATHER",
+     "artists": "Billie Eilish",
+     "track_id": "6dOtVTDdiauQNBQEDOtlAB"
+    }
+   },
+   {
+    "artist": "Justin Bieber",
+    "cells": 1,
+    "share_pct": 1.14,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "DAISIES",
+     "artists": "Justin Bieber",
+     "track_id": "5BZsQlgw21vDOAjoqkNgKb"
+    }
+   },
+   {
+    "artist": "Fleetwood Mac",
+    "cells": 1,
+    "share_pct": 1.1,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Dreams - 2004 Remaster",
+     "artists": "Fleetwood Mac",
+     "track_id": "0ofHAoxe9vBkTCp2UQIavz"
+    }
+   },
+   {
+    "artist": "Michael Jackson",
+    "cells": 1,
+    "share_pct": 1.06,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Billie Jean",
+     "artists": "Michael Jackson",
+     "track_id": "7J1uxwnxfQLu4APicE5Rnj"
+    }
+   },
+   {
+    "artist": "Alex Warren",
+    "cells": 1,
+    "share_pct": 1.05,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Ordinary",
+     "artists": "Alex Warren",
+     "track_id": "2RkZ5LkEzeHGRsmDqKwmaJ"
+    }
+   },
+   {
+    "artist": "Benson Boone",
+    "cells": 1,
+    "share_pct": 1.04,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Beautiful Things",
+     "artists": "Benson Boone",
+     "track_id": "3xkHsmpQCBMytMJNiDf3Ii"
+    }
+   },
+   {
+    "artist": "The Weeknd",
+    "cells": 1,
+    "share_pct": 1.04,
+    "tier": "one_pct",
+    "top_song": {
+     "track": "Timeless (feat Playboi Carti)",
+     "artists": "The Weeknd, Playboi Carti",
+     "track_id": "0FIDCNYYjNvPVimz5icugS"
+    }
    },
    {
     "artist": "Everyone else",
-    "cells": 75,
-    "share_pct": 74.65
+    "cells": 56,
+    "share_pct": 55.67,
+    "tier": "rest"
    }
-  ]
+  ],
+  "n_one_pct": 25,
+  "rest_artists": 583
  },
  "s2_songs": {
   "n_songs": 2389,

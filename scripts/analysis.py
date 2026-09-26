@@ -152,19 +152,29 @@ R["s8_catalog"] = {
 # Extra data for the interactive visuals (same data, finer detail)
 # ============================================================================
 
-# 1 — record grid: 100 records, each 1% of streams (largest-remainder rounding so they sum to 100)
-shares = [(n, s / TOTAL * 100) for n, s in a.head(10).items()]
-shares.append(("Everyone else", 100 - sum(v for _, v in shares)))
-floors = [int(v) for _, v in shares]
-left = 100 - sum(floors)
-for k in sorted(range(len(shares)), key=lambda k: shares[k][1] - floors[k], reverse=True)[:left]:
-    floors[k] += 1
+# 1 — record grid: 100 records, each 1% of streams. Every artist with at least 1% gets their own
+#     records (in order); the rest of the artists share the remaining records. Largest-remainder
+#     rounding so the records add up to exactly 100.
 best_song = (df.groupby(["lead_artist", "song_id"]).streams.sum().reset_index()
                .sort_values("streams", ascending=False).drop_duplicates("lead_artist").set_index("lead_artist").song_id)
+def top_song(artist):
+    sid = best_song[artist]
+    return {"track": songs.loc[sid].track, "artists": songs.loc[sid].artists, "track_id": songs.loc[sid].track_id}
 for g in R["s1_artists"]["top10"]:
-    sid = best_song[g["artist"]]
-    g["top_song"] = {"track": songs.loc[sid].track, "artists": songs.loc[sid].artists, "track_id": songs.loc[sid].track_id}
-R["s1_artists"]["grid"] = [{"artist": n, "cells": c, "share_pct": round(v, 2)} for (n, v), c in zip(shares, floors)]
+    g["top_song"] = top_song(g["artist"])
+share_all = a / TOTAL * 100
+big = share_all[share_all >= 1]
+groups = [(n, float(v)) for n, v in big.items()] + [("Everyone else", 100 - float(big.sum()))]
+floors = [int(v) for _, v in groups]
+left = 100 - sum(floors)
+for k in sorted(range(len(groups)), key=lambda k: groups[k][1] - floors[k], reverse=True)[:left]:
+    floors[k] += 1
+R["s1_artists"]["grid"] = [{"artist": n, "cells": c, "share_pct": round(v, 2),
+                            "tier": "rest" if n == "Everyone else" else ("top10" if i < 10 else "one_pct"),
+                            **({"top_song": top_song(n)} if n != "Everyone else" else {})}
+                           for i, ((n, v), c) in enumerate(zip(groups, floors))]
+R["s1_artists"]["n_one_pct"] = int(len(big))
+R["s1_artists"]["rest_artists"] = int(len(a) - len(big))
 
 # 2 — full concentration curve: cumulative share after the top k songs, k = 1..all
 R["s2_songs"]["cum_pct"] = [round(float(x) * 100, 2) for x in cum.values]
