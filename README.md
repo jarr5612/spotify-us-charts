@@ -42,6 +42,13 @@ Live site: https://jarr5612.github.io/spotify-us-charts/
   2026-07-18**, which have 199: Spotify's own chart skips one position on each of
   those days (e.g. #22 on 2026-07-13). The rows were kept as published.
 
+## Photo credit
+
+Report header photo: Victor disc phonograph, c. 1907, by Norman Bruderhofer, from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:VictorVPhonograph.jpg),
+licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+The image is loaded from Wikimedia, not stored in this repository.
+
 ## Files
 
 To rebuild everything from the raw data:
