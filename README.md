@@ -52,6 +52,7 @@ To rebuild everything from the raw data:
 python3 scripts/build_data.py
 python3 scripts/analysis.py
 python3 scripts/build_dashboard_data.py
+python3 scripts/check_numbers.py   # confirms the numbers
 ```
 
 
@@ -72,6 +73,7 @@ python3 scripts/build_dashboard_data.py
 | `assets/turntable.js` | the record player beside the report: each finding is a track on the record, the tonearm follows your place as you scroll, and clicking a groove or a track jumps to that finding |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
 | `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, song ID (versions of the same song merged), number of versions, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
+| `scripts/check_numbers.py` | independent check: recomputes the key numbers from the raw file with separate code and compares them with the site's data |
 | `scripts/explore.py` | first exploratory pass used to choose the findings; writes `results/explore.txt` |
 | `results/explore.txt` | output of `explore.py` (candidate findings, not shown on the site) |
 | `.gitignore` | keeps Mac system files and local notes out of the repository |
