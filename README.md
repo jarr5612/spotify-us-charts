@@ -1,7 +1,7 @@
 # Spotify US Daily Top 200 — Data Website Project
 
 Financial Data Analytics — Data Website Project.
-Author: _[your name]_
+Author: Jewlya Arrington
 
 A two-page website built on Spotify's **Daily Top Songs USA** chart from
 **January 1, 2025 to August 31, 2026** (608 days):
