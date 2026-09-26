@@ -174,6 +174,9 @@ for k in range(1, len(top) + 1):
                      "versions": int(top.track_id[start:k].nunique()),
                      "start": str(top.date[start].date()), "end": str(top.date[k - 1].date()), "days": k - start})
         start = k
+at1_versions = df[df["rank"] == 1].groupby("song_id").track_id.nunique()
+for r in runs:
+    r["versions_at_1"] = int(at1_versions[r["song_id"]])   # versions of the song that were #1 (any run)
 R["s3_no1"]["runs"] = runs
 R["s3_no1"]["top_ids"] = [t for t in no1.head(10).index]
 R["s3_no1"]["days_total"] = int(len(top))

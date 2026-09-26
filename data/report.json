@@ -3010,7 +3010,8 @@
     "versions": 1,
     "start": "2025-01-01",
     "end": "2025-01-09",
-    "days": 9
+    "days": 9,
+    "versions_at_1": 1
    },
    {
     "song_id": "7fce96803d",
@@ -3019,7 +3020,8 @@
     "versions": 1,
     "start": "2025-01-10",
     "end": "2025-01-30",
-    "days": 21
+    "days": 21,
+    "versions_at_1": 1
    },
    {
     "song_id": "9723181b6c",
@@ -3028,7 +3030,8 @@
     "versions": 1,
     "start": "2025-01-31",
     "end": "2025-01-31",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "4d307eb0a9",
@@ -3037,7 +3040,8 @@
     "versions": 1,
     "start": "2025-02-01",
     "end": "2025-02-05",
-    "days": 5
+    "days": 5,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3046,7 +3050,8 @@
     "versions": 1,
     "start": "2025-02-06",
     "end": "2025-02-06",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "f62b81bf9c",
@@ -3055,7 +3060,8 @@
     "versions": 1,
     "start": "2025-02-07",
     "end": "2025-02-07",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3064,7 +3070,8 @@
     "versions": 1,
     "start": "2025-02-08",
     "end": "2025-02-09",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "fdc177935b",
@@ -3073,7 +3080,8 @@
     "versions": 1,
     "start": "2025-02-10",
     "end": "2025-02-11",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3082,7 +3090,8 @@
     "versions": 1,
     "start": "2025-02-12",
     "end": "2025-03-13",
-    "days": 30
+    "days": 30,
+    "versions_at_1": 1
    },
    {
     "song_id": "6d165f76da",
@@ -3091,7 +3100,8 @@
     "versions": 1,
     "start": "2025-03-14",
     "end": "2025-03-20",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3100,7 +3110,8 @@
     "versions": 1,
     "start": "2025-03-21",
     "end": "2025-03-27",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 1
    },
    {
     "song_id": "379f7dff65",
@@ -3109,7 +3120,8 @@
     "versions": 1,
     "start": "2025-03-28",
     "end": "2025-03-28",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3118,7 +3130,8 @@
     "versions": 1,
     "start": "2025-03-29",
     "end": "2025-04-03",
-    "days": 6
+    "days": 6,
+    "versions_at_1": 1
    },
    {
     "song_id": "8c0c484b74",
@@ -3127,7 +3140,8 @@
     "versions": 1,
     "start": "2025-04-04",
     "end": "2025-04-17",
-    "days": 14
+    "days": 14,
+    "versions_at_1": 1
    },
    {
     "song_id": "f4510d8bb2",
@@ -3136,7 +3150,8 @@
     "versions": 1,
     "start": "2025-04-18",
     "end": "2025-04-18",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8c0c484b74",
@@ -3145,7 +3160,8 @@
     "versions": 1,
     "start": "2025-04-19",
     "end": "2025-04-21",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "0a5752af36",
@@ -3154,7 +3170,8 @@
     "versions": 1,
     "start": "2025-04-22",
     "end": "2025-04-24",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "c6f4a93279",
@@ -3163,7 +3180,8 @@
     "versions": 1,
     "start": "2025-04-25",
     "end": "2025-04-25",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8c0c484b74",
@@ -3172,7 +3190,8 @@
     "versions": 1,
     "start": "2025-04-26",
     "end": "2025-04-30",
-    "days": 5
+    "days": 5,
+    "versions_at_1": 1
    },
    {
     "song_id": "8a5ff08070",
@@ -3181,7 +3200,8 @@
     "versions": 1,
     "start": "2025-05-01",
     "end": "2025-05-01",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8c0c484b74",
@@ -3190,7 +3210,8 @@
     "versions": 1,
     "start": "2025-05-02",
     "end": "2025-05-02",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8a5ff08070",
@@ -3199,7 +3220,8 @@
     "versions": 1,
     "start": "2025-05-03",
     "end": "2025-05-03",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8c0c484b74",
@@ -3208,7 +3230,8 @@
     "versions": 1,
     "start": "2025-05-04",
     "end": "2025-05-04",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "8a5ff08070",
@@ -3217,7 +3240,8 @@
     "versions": 1,
     "start": "2025-05-05",
     "end": "2025-05-15",
-    "days": 11
+    "days": 11,
+    "versions_at_1": 1
    },
    {
     "song_id": "57de955477",
@@ -3226,7 +3250,8 @@
     "versions": 1,
     "start": "2025-05-16",
     "end": "2025-06-05",
-    "days": 21
+    "days": 21,
+    "versions_at_1": 1
    },
    {
     "song_id": "95377d44e2",
@@ -3235,7 +3260,8 @@
     "versions": 1,
     "start": "2025-06-06",
     "end": "2025-06-30",
-    "days": 25
+    "days": 25,
+    "versions_at_1": 1
    },
    {
     "song_id": "a52df10043",
@@ -3244,7 +3270,8 @@
     "versions": 1,
     "start": "2025-07-01",
     "end": "2025-07-02",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "717b699b4c",
@@ -3253,7 +3280,8 @@
     "versions": 1,
     "start": "2025-07-03",
     "end": "2025-07-03",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "0f7f748970",
@@ -3262,7 +3290,8 @@
     "versions": 1,
     "start": "2025-07-04",
     "end": "2025-07-04",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "f7f762b7a7",
@@ -3271,7 +3300,8 @@
     "versions": 1,
     "start": "2025-07-05",
     "end": "2025-07-06",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "717b699b4c",
@@ -3280,7 +3310,8 @@
     "versions": 1,
     "start": "2025-07-07",
     "end": "2025-07-07",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3289,7 +3320,8 @@
     "versions": 1,
     "start": "2025-07-08",
     "end": "2025-07-10",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "4c11ad8edf",
@@ -3298,7 +3330,8 @@
     "versions": 1,
     "start": "2025-07-11",
     "end": "2025-07-19",
-    "days": 9
+    "days": 9,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3307,7 +3340,8 @@
     "versions": 1,
     "start": "2025-07-20",
     "end": "2025-07-20",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "a39e3e2ba9",
@@ -3316,7 +3350,8 @@
     "versions": 1,
     "start": "2025-07-21",
     "end": "2025-07-22",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3325,7 +3360,8 @@
     "versions": 1,
     "start": "2025-07-23",
     "end": "2025-07-31",
-    "days": 9
+    "days": 9,
+    "versions_at_1": 1
    },
    {
     "song_id": "55ae4c8685",
@@ -3334,7 +3370,8 @@
     "versions": 1,
     "start": "2025-08-01",
     "end": "2025-08-04",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3343,7 +3380,8 @@
     "versions": 1,
     "start": "2025-08-05",
     "end": "2025-08-28",
-    "days": 24
+    "days": 24,
+    "versions_at_1": 1
    },
    {
     "song_id": "084d6e1d88",
@@ -3352,7 +3390,8 @@
     "versions": 1,
     "start": "2025-08-29",
     "end": "2025-08-29",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3361,7 +3400,8 @@
     "versions": 1,
     "start": "2025-08-30",
     "end": "2025-09-01",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "084d6e1d88",
@@ -3370,7 +3410,8 @@
     "versions": 1,
     "start": "2025-09-02",
     "end": "2025-09-02",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3379,7 +3420,8 @@
     "versions": 1,
     "start": "2025-09-03",
     "end": "2025-09-29",
-    "days": 27
+    "days": 27,
+    "versions_at_1": 1
    },
    {
     "song_id": "5f634621ba",
@@ -3388,7 +3430,8 @@
     "versions": 1,
     "start": "2025-09-30",
     "end": "2025-09-30",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3397,7 +3440,8 @@
     "versions": 1,
     "start": "2025-10-01",
     "end": "2025-10-02",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "230ad2e94e",
@@ -3406,7 +3450,8 @@
     "versions": 1,
     "start": "2025-10-03",
     "end": "2025-10-30",
-    "days": 28
+    "days": 28,
+    "versions_at_1": 1
    },
    {
     "song_id": "f95b6e8e05",
@@ -3415,7 +3460,8 @@
     "versions": 1,
     "start": "2025-10-31",
     "end": "2025-10-31",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3424,7 +3470,8 @@
     "versions": 1,
     "start": "2025-11-01",
     "end": "2025-11-01",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "230ad2e94e",
@@ -3433,7 +3480,8 @@
     "versions": 1,
     "start": "2025-11-02",
     "end": "2025-11-22",
-    "days": 21
+    "days": 21,
+    "versions_at_1": 1
    },
    {
     "song_id": "093fb0e7a1",
@@ -3442,7 +3490,8 @@
     "versions": 1,
     "start": "2025-11-23",
     "end": "2025-11-23",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "230ad2e94e",
@@ -3451,7 +3500,8 @@
     "versions": 1,
     "start": "2025-11-24",
     "end": "2025-11-26",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "c3f20b32a6",
@@ -3460,7 +3510,8 @@
     "versions": 1,
     "start": "2025-11-27",
     "end": "2025-12-26",
-    "days": 30
+    "days": 30,
+    "versions_at_1": 1
    },
    {
     "song_id": "230ad2e94e",
@@ -3469,7 +3520,8 @@
     "versions": 1,
     "start": "2025-12-27",
     "end": "2025-12-30",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 1
    },
    {
     "song_id": "093fb0e7a1",
@@ -3478,7 +3530,8 @@
     "versions": 1,
     "start": "2025-12-31",
     "end": "2025-12-31",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "d57a0fe9e8",
@@ -3487,7 +3540,8 @@
     "versions": 1,
     "start": "2026-01-01",
     "end": "2026-01-01",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "32679448af",
@@ -3496,7 +3550,8 @@
     "versions": 1,
     "start": "2026-01-02",
     "end": "2026-01-08",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 1
    },
    {
     "song_id": "3673bcdfb9",
@@ -3505,7 +3560,8 @@
     "versions": 1,
     "start": "2026-01-09",
     "end": "2026-01-09",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "32679448af",
@@ -3514,7 +3570,8 @@
     "versions": 1,
     "start": "2026-01-10",
     "end": "2026-01-13",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 1
    },
    {
     "song_id": "3673bcdfb9",
@@ -3523,7 +3580,8 @@
     "versions": 1,
     "start": "2026-01-14",
     "end": "2026-01-21",
-    "days": 8
+    "days": 8,
+    "versions_at_1": 1
    },
    {
     "song_id": "32679448af",
@@ -3532,7 +3590,8 @@
     "versions": 1,
     "start": "2026-01-22",
     "end": "2026-01-22",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "f1b148f102",
@@ -3541,7 +3600,8 @@
     "versions": 1,
     "start": "2026-01-23",
     "end": "2026-01-24",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "32679448af",
@@ -3550,7 +3610,8 @@
     "versions": 1,
     "start": "2026-01-25",
     "end": "2026-01-25",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "f1b148f102",
@@ -3559,7 +3620,8 @@
     "versions": 1,
     "start": "2026-01-26",
     "end": "2026-01-28",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3568,7 +3630,8 @@
     "versions": 1,
     "start": "2026-01-29",
     "end": "2026-01-29",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 2
    },
    {
     "song_id": "dc0b30f46b",
@@ -3577,7 +3640,8 @@
     "versions": 1,
     "start": "2026-01-30",
     "end": "2026-02-02",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 1
    },
    {
     "song_id": "7fce96803d",
@@ -3586,7 +3650,8 @@
     "versions": 1,
     "start": "2026-02-03",
     "end": "2026-02-24",
-    "days": 22
+    "days": 22,
+    "versions_at_1": 1
    },
    {
     "song_id": "543afbc822",
@@ -3595,7 +3660,8 @@
     "versions": 1,
     "start": "2026-02-25",
     "end": "2026-02-26",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "0c9c279564",
@@ -3604,7 +3670,8 @@
     "versions": 1,
     "start": "2026-02-27",
     "end": "2026-03-05",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 1
    },
    {
     "song_id": "18130751e6",
@@ -3613,7 +3680,8 @@
     "versions": 1,
     "start": "2026-03-06",
     "end": "2026-03-07",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "543afbc822",
@@ -3622,7 +3690,8 @@
     "versions": 1,
     "start": "2026-03-08",
     "end": "2026-03-08",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "18130751e6",
@@ -3631,7 +3700,8 @@
     "versions": 1,
     "start": "2026-03-09",
     "end": "2026-03-12",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 1
    },
    {
     "song_id": "24d6f624a5",
@@ -3640,7 +3710,8 @@
     "versions": 1,
     "start": "2026-03-13",
     "end": "2026-03-13",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "543afbc822",
@@ -3649,7 +3720,8 @@
     "versions": 1,
     "start": "2026-03-14",
     "end": "2026-03-19",
-    "days": 6
+    "days": 6,
+    "versions_at_1": 1
    },
    {
     "song_id": "7c1fcc9da0",
@@ -3658,7 +3730,8 @@
     "versions": 1,
     "start": "2026-03-20",
     "end": "2026-03-20",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3667,7 +3740,8 @@
     "versions": 1,
     "start": "2026-03-21",
     "end": "2026-03-21",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 2
    },
    {
     "song_id": "35ea9564ec",
@@ -3676,7 +3750,8 @@
     "versions": 1,
     "start": "2026-03-22",
     "end": "2026-04-01",
-    "days": 11
+    "days": 11,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3685,7 +3760,8 @@
     "versions": 2,
     "start": "2026-04-02",
     "end": "2026-04-16",
-    "days": 15
+    "days": 15,
+    "versions_at_1": 2
    },
    {
     "song_id": "6721c025d5",
@@ -3694,7 +3770,8 @@
     "versions": 1,
     "start": "2026-04-17",
     "end": "2026-04-23",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 2
    },
    {
     "song_id": "e6582f66ef",
@@ -3703,7 +3780,8 @@
     "versions": 1,
     "start": "2026-04-24",
     "end": "2026-04-24",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3712,7 +3790,8 @@
     "versions": 1,
     "start": "2026-04-25",
     "end": "2026-05-03",
-    "days": 9
+    "days": 9,
+    "versions_at_1": 2
    },
    {
     "song_id": "6721c025d5",
@@ -3721,7 +3800,8 @@
     "versions": 1,
     "start": "2026-05-04",
     "end": "2026-05-07",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 2
    },
    {
     "song_id": "e3ea5f6819",
@@ -3730,7 +3810,8 @@
     "versions": 1,
     "start": "2026-05-08",
     "end": "2026-05-14",
-    "days": 7
+    "days": 7,
+    "versions_at_1": 2
    },
    {
     "song_id": "f99cac22b8",
@@ -3739,7 +3820,8 @@
     "versions": 1,
     "start": "2026-05-15",
     "end": "2026-05-15",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "66f473381f",
@@ -3748,7 +3830,8 @@
     "versions": 1,
     "start": "2026-05-16",
     "end": "2026-05-16",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "b47835fe87",
@@ -3757,7 +3840,8 @@
     "versions": 1,
     "start": "2026-05-17",
     "end": "2026-05-21",
-    "days": 5
+    "days": 5,
+    "versions_at_1": 1
    },
    {
     "song_id": "4881538b93",
@@ -3766,7 +3850,8 @@
     "versions": 1,
     "start": "2026-05-22",
     "end": "2026-05-22",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "b47835fe87",
@@ -3775,7 +3860,8 @@
     "versions": 1,
     "start": "2026-05-23",
     "end": "2026-05-24",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3784,7 +3870,8 @@
     "versions": 1,
     "start": "2026-05-25",
     "end": "2026-05-25",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 2
    },
    {
     "song_id": "b47835fe87",
@@ -3793,7 +3880,8 @@
     "versions": 1,
     "start": "2026-05-26",
     "end": "2026-05-28",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 1
    },
    {
     "song_id": "1d26b50a11",
@@ -3802,7 +3890,8 @@
     "versions": 1,
     "start": "2026-05-29",
     "end": "2026-05-29",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3811,7 +3900,8 @@
     "versions": 1,
     "start": "2026-05-30",
     "end": "2026-06-01",
-    "days": 3
+    "days": 3,
+    "versions_at_1": 2
    },
    {
     "song_id": "1d26b50a11",
@@ -3820,7 +3910,8 @@
     "versions": 1,
     "start": "2026-06-02",
     "end": "2026-06-02",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3829,7 +3920,8 @@
     "versions": 1,
     "start": "2026-06-03",
     "end": "2026-06-03",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 2
    },
    {
     "song_id": "1d26b50a11",
@@ -3838,7 +3930,8 @@
     "versions": 1,
     "start": "2026-06-04",
     "end": "2026-06-04",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "4ecc752db5",
@@ -3847,7 +3940,8 @@
     "versions": 1,
     "start": "2026-06-05",
     "end": "2026-06-06",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3856,7 +3950,8 @@
     "versions": 1,
     "start": "2026-06-07",
     "end": "2026-06-08",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 2
    },
    {
     "song_id": "1d26b50a11",
@@ -3865,7 +3960,8 @@
     "versions": 1,
     "start": "2026-06-09",
     "end": "2026-06-09",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3874,7 +3970,8 @@
     "versions": 1,
     "start": "2026-06-10",
     "end": "2026-06-11",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 2
    },
    {
     "song_id": "a5b81acfd2",
@@ -3883,7 +3980,8 @@
     "versions": 1,
     "start": "2026-06-12",
     "end": "2026-06-22",
-    "days": 11
+    "days": 11,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3892,7 +3990,8 @@
     "versions": 1,
     "start": "2026-06-23",
     "end": "2026-06-23",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 2
    },
    {
     "song_id": "a5b81acfd2",
@@ -3901,7 +4000,8 @@
     "versions": 1,
     "start": "2026-06-24",
     "end": "2026-06-24",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3910,7 +4010,8 @@
     "versions": 1,
     "start": "2026-06-25",
     "end": "2026-06-28",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 2
    },
    {
     "song_id": "04bdc691dc",
@@ -3919,7 +4020,8 @@
     "versions": 1,
     "start": "2026-06-29",
     "end": "2026-06-29",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3928,7 +4030,8 @@
     "versions": 1,
     "start": "2026-06-30",
     "end": "2026-07-03",
-    "days": 4
+    "days": 4,
+    "versions_at_1": 2
    },
    {
     "song_id": "0f7f748970",
@@ -3937,7 +4040,8 @@
     "versions": 1,
     "start": "2026-07-04",
     "end": "2026-07-05",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3946,7 +4050,8 @@
     "versions": 1,
     "start": "2026-07-06",
     "end": "2026-07-23",
-    "days": 18
+    "days": 18,
+    "versions_at_1": 2
    },
    {
     "song_id": "489ed1f85e",
@@ -3955,7 +4060,8 @@
     "versions": 1,
     "start": "2026-07-24",
     "end": "2026-07-24",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3964,7 +4070,8 @@
     "versions": 1,
     "start": "2026-07-25",
     "end": "2026-07-30",
-    "days": 6
+    "days": 6,
+    "versions_at_1": 2
    },
    {
     "song_id": "213930f977",
@@ -3973,7 +4080,8 @@
     "versions": 1,
     "start": "2026-07-31",
     "end": "2026-08-01",
-    "days": 2
+    "days": 2,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -3982,7 +4090,8 @@
     "versions": 1,
     "start": "2026-08-02",
     "end": "2026-08-25",
-    "days": 24
+    "days": 24,
+    "versions_at_1": 2
    },
    {
     "song_id": "a38107bd69",
@@ -3991,7 +4100,8 @@
     "versions": 1,
     "start": "2026-08-26",
     "end": "2026-08-26",
-    "days": 1
+    "days": 1,
+    "versions_at_1": 1
    },
    {
     "song_id": "e3ea5f6819",
@@ -4000,7 +4110,8 @@
     "versions": 1,
     "start": "2026-08-27",
     "end": "2026-08-31",
-    "days": 5
+    "days": 5,
+    "versions_at_1": 2
    }
   ],
   "top_ids": [
