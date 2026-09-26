@@ -192,6 +192,8 @@
   // ---- state + animation ----
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let spin = 0, vel = 0, armA = REST, armTarget = REST, onRecord = false, active = -1, last = 0, raf = 0;
+  let musicOn = false, musicSong = null;          // a song playing in the listening booth
+  const trunc = (t, n) => t.length > n ? t.slice(0, n - 1) + "…" : t;
 
   function readPosition() {
     const y = window.scrollY + window.innerHeight * 0.4;
@@ -205,9 +207,9 @@
   }
   function update() {
     const pos = readPosition();
-    onRecord = pos.i >= 0;
+    onRecord = pos.i >= 0 || musicOn;
     let r;
-    if (pos.i < 0) armTarget = REST;
+    if (pos.i < 0) armTarget = musicOn ? angleFor(R_LEADIN - 3) : REST;
     else if (pos.i >= N) { r = (R_RUNOUT + R_LABEL) / 2 + 2; armTarget = angleFor(r); }
     else { r = bandOuter(pos.i) - pos.f * (bandOuter(pos.i) - bandInner(pos.i)); armTarget = angleFor(r); }
     const i = pos.i >= 0 && pos.i < N ? pos.i : -1;
@@ -227,6 +229,8 @@
         now.innerHTML = `<span class="k">Side A</span><span class="t">Needle up. Scroll or pick a track.</span>`;
       }
     }
+    if (musicOn && musicSong) { labTrack.textContent = "NOW SPINNING"; labName.textContent = trunc(musicSong.track || "", 14); }
+    if (musicOn && pos.i < 0) now.innerHTML = `<span class="k">Side A · needle down</span><span class="t">Playing from the listening booth</span>`;
     kick();
   }
   function frame(t) {
@@ -253,5 +257,10 @@
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", onScroll);
   addEventListener("load", update);
+  document.addEventListener("music:state", e => {
+    musicOn = !!e.detail.playing; musicSong = e.detail.song;
+    active = -99;                       // redraw the label
+    update();
+  });
   update();
 })();

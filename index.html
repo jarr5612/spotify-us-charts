@@ -135,6 +135,11 @@
       <svg class="deck" id="deck" viewBox="0 0 320 334" role="img"
            aria-label="Record player. Each finding is a track on the record; the tonearm shows where you are in the report."></svg>
       <p class="player-now" id="player-now"><span class="k">Side A</span><span class="t">Needle up. Scroll or pick a track.</span></p>
+      <div class="booth">
+        <p class="booth-now" id="booth-now"><span class="k">Listening booth</span><span class="t">Click any ▶ or song in the report to play it here.</span></p>
+        <div id="spotify-embed" data-height="80"></div>
+        <p class="booth-note">Spotify plays a 30-second preview, or the full song if you're logged in to Spotify in this browser.</p>
+      </div>
       <ol class="tracklist" id="tracklist"></ol>
     </div>
   </aside>
@@ -144,5 +149,6 @@
 
   <script src="assets/report.js"></script>
   <script src="assets/turntable.js"></script>
+  <script src="assets/music.js"></script>
 </body>
 </html>

@@ -71,6 +71,7 @@ python3 scripts/check_numbers.py   # confirms the numbers
 | `assets/style.css` | shared fonts, colors and navigation for both pages |
 | `assets/report.js` | draws the report charts from `data/report.json` |
 | `assets/turntable.js` | the record player beside the report: each finding is a track on the record, the tonearm follows your place as you scroll, and clicking a groove or a track jumps to that finding |
+| `assets/music.js` | plays songs with Spotify's official embed player (30-second previews, or full songs for visitors logged in to Spotify); any ▶ button or clickable song on the site plays in the listening booth, and the turntable spins while music plays |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
 | `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, song ID (versions of the same song merged), number of versions, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
 | `scripts/check_numbers.py` | independent check: recomputes the key numbers from the raw file with separate code and compares them with the site's data |

@@ -243,3 +243,30 @@ td.n, th.n { text-align: right; }
   .viz > svg { min-width: 660px; }
   #v7 > svg { min-width: 760px; }
 }
+
+/* ---------- music: listening booth, play buttons, dock ---------- */
+.rail { max-height: calc(100vh - 90px); overflow-y: auto; scrollbar-width: thin; }
+@media (max-width: 1060px) { .rail { max-height: none; overflow: visible; } }
+.booth { margin: .2rem 0 .9rem; }
+.booth-now { margin: 0 0 .45rem; }
+.booth-now .k { display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .16em;
+                font-size: .68rem; font-weight: 700; color: var(--brass); }
+.booth-now .t { font-family: var(--font-display); font-style: italic; font-weight: 700; color: var(--ink); }
+.booth-now .a { display: block; font-size: .85rem; color: var(--ink-3); }
+.booth-note { font-size: .74rem; color: var(--ink-3); font-style: italic; margin: .35rem 0 0; line-height: 1.35; }
+#spotify-embed, .booth iframe { border-radius: 12px; display: block; }
+.play-btn { display: inline-grid; place-items: center; width: 1.55em; height: 1.55em; margin-right: .45em; vertical-align: -.2em;
+  border-radius: 50%; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer;
+  font-size: .8rem; line-height: 1; padding: 0 0 0 .12em; }
+.play-btn::before { content: "▶"; font-size: .7em; }
+.play-btn:hover, .play-btn.is-playing { background: var(--accent); color: #fff8ee; }
+.play-btn.is-playing::before { content: "♪"; font-size: .85em; }
+.song-link { background: none; border: 0; padding: 0; font: inherit; color: var(--ink); font-style: italic; cursor: pointer;
+  text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 3px; }
+.song-link:hover, .song-link.is-playing { color: var(--accent); }
+.music-dock { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: min(340px, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--brass); border-radius: 8px;
+  padding: .5rem .6rem .6rem; box-shadow: 0 12px 30px -10px rgba(40,20,8,.5); }
+.music-dock-k { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; font-weight: 700; color: var(--brass); margin-bottom: .35rem; }
+.music-dock-x { background: none; border: 0; font-size: 1.2rem; color: var(--ink-3); cursor: pointer; line-height: 1; }

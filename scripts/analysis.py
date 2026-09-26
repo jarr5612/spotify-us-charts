@@ -36,6 +36,7 @@ songs = df.groupby("song_id").agg(streams=("streams", "sum"), days=("date", "nun
 songs["track"] = main.map(info.track_name)
 songs["artists"] = main.map(info.artist_names)
 songs["collab"] = main.map(info.is_collab)
+songs["track_id"] = main          # Spotify ID of the most-streamed version (used by the play buttons)
 
 
 def pct(x):
@@ -74,7 +75,7 @@ R["s2_songs"] = {
     "top10_share_pct": pct(cum.iloc[9]), "top100_share_pct": pct(cum.iloc[99]),
     "top10": [{"track": songs.loc[t].track, "artists": songs.loc[t].artists,
                "streams": int(songs.loc[t].streams), "days": int(songs.loc[t].days),
-               "versions": int(songs.loc[t].versions)} for t in ss.head(10).index],
+               "versions": int(songs.loc[t].versions), "track_id": songs.loc[t].track_id} for t in ss.head(10).index],
 }
 
 # ---- 3. runs at #1 ----------------------------------------------------------
@@ -82,7 +83,8 @@ no1 = df[df["rank"] == 1].groupby("song_id").size().sort_values(ascending=False)
 R["s3_no1"] = {
     "n_songs": len(no1),
     "top10": [{"track": songs.loc[t].track, "artists": songs.loc[t].artists, "days_at_1": int(n),
-               "versions": int(df[(df.song_id == t) & (df["rank"] == 1)].track_id.nunique())} for t, n in no1.head(10).items()],
+               "versions": int(df[(df.song_id == t) & (df["rank"] == 1)].track_id.nunique()),
+               "track_id": songs.loc[t].track_id} for t, n in no1.head(10).items()],
     "median_days_at_1": float(no1.median()),
     "one_day_only": int((no1 == 1).sum()),
 }
@@ -157,11 +159,17 @@ floors = [int(v) for _, v in shares]
 left = 100 - sum(floors)
 for k in sorted(range(len(shares)), key=lambda k: shares[k][1] - floors[k], reverse=True)[:left]:
     floors[k] += 1
+best_song = (df.groupby(["lead_artist", "song_id"]).streams.sum().reset_index()
+               .sort_values("streams", ascending=False).drop_duplicates("lead_artist").set_index("lead_artist").song_id)
+for g in R["s1_artists"]["top10"]:
+    sid = best_song[g["artist"]]
+    g["top_song"] = {"track": songs.loc[sid].track, "artists": songs.loc[sid].artists, "track_id": songs.loc[sid].track_id}
 R["s1_artists"]["grid"] = [{"artist": n, "cells": c, "share_pct": round(v, 2)} for (n, v), c in zip(shares, floors)]
 
 # 2 — full concentration curve: cumulative share after the top k songs, k = 1..all
 R["s2_songs"]["cum_pct"] = [round(float(x) * 100, 2) for x in cum.values]
 R["s2_songs"]["ranked"] = [{"track": songs.loc[t].track, "artists": songs.loc[t].artists, "versions": int(songs.loc[t].versions),
+                            "track_id": songs.loc[t].track_id,
                             "share_pct": round(float(songs.loc[t].streams) / TOTAL * 100, 3)} for t in ss.head(50).index]
 
 # 3 — #1 reigns: every unbroken run at #1, in date order
@@ -171,7 +179,7 @@ for k in range(1, len(top) + 1):
     if k == len(top) or top.song_id[k] != top.song_id[start] or (top.date[k] - top.date[k - 1]).days != 1:
         t = top.song_id[start]
         runs.append({"song_id": t, "track": songs.loc[t].track, "artists": songs.loc[t].artists,
-                     "versions": int(top.track_id[start:k].nunique()),
+                     "versions": int(top.track_id[start:k].nunique()), "track_id": songs.loc[t].track_id,
                      "start": str(top.date[start].date()), "end": str(top.date[k - 1].date()), "days": k - start})
         start = k
 at1_versions = df[df["rank"] == 1].groupby("song_id").track_id.nunique()
@@ -198,7 +206,7 @@ for r in deb50.itertuples():
     days = pd.date_range(r.date, periods=H)
     ranks = [int(rank_of.get((r.song_id, d), 0)) for d in days]
     paths.append({"track": songs.loc[r.song_id].track, "artists": songs.loc[r.song_id].artists,
-                  "versions": int(songs.loc[r.song_id].versions),
+                  "versions": int(songs.loc[r.song_id].versions), "track_id": songs.loc[r.song_id].track_id,
                   "debut": str(r.date.date()), "debut_rank": int(r.rank), "ranks": ranks})
 R["s5_debut"]["paths"] = paths
 R["s5_debut"]["paths_note"] = f"debuts ranked 1-50 on or before {last_ok.date()}, so each has 60 days of data"
@@ -209,7 +217,10 @@ for row in R["s6_collab"]:
     row["rows_share_pct"] = pct((df.is_collab == c).mean())
 
 # 7 — calendar: every day's total Top-200 streams and debuts
-R["s7_weekday"]["daily"] = [{"date": str(d.date()), "streams": int(r.streams), "debuts": int(r.debuts)}
+no1_day = df[df["rank"] == 1].set_index("date").song_id
+R["s7_weekday"]["daily"] = [{"date": str(d.date()), "streams": int(r.streams), "debuts": int(r.debuts),
+                             "no1": {"track": songs.loc[no1_day[d]].track, "artists": songs.loc[no1_day[d]].artists,
+                                     "track_id": songs.loc[no1_day[d]].track_id}}
                             for d, r in daily.iterrows()]
 
 # 8 — catalog vs current: average daily streams per month for each group

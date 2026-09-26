@@ -15,6 +15,8 @@ const MEASURES = {
 const DIMS = { artist: "Lead artist", label: "Label", song: "Song", type: "Song type", status: "Entry status" };
 
 let D, months, rowMonth, rowWeekday, charts = {};
+const songOf = new Map();   // song breakdown: group label -> song index (for the play buttons)
+const escA = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const state = { measure: "streams", dim: "artist" };
 
 const newGroup = () => ({ s: 0, n: 0, songs: new Set() });
@@ -37,6 +39,7 @@ function readFilters() {
 
 function compute(F) {
   const T = { s: 0, n: 0, songs: new Set(), artists: new Set(), debuts: 0 };
+  songOf.clear();
   const byMonth = new Map(), byGroup = new Map(), byWd = new Map(), byBand = new Map();
   const tr = D.tracks, N = D.s.length;
   for (let i = 0; i < N; i++) {
@@ -56,6 +59,7 @@ function compute(F) {
               : state.dim === "song" ? `${k[0]} — ${k[1]}${k[4] > 1 ? ` (across ${k[4]} versions)` : ""}` : state.dim === "type" ? (k[3] ? "Collaboration" : "Solo")
               : STATUS[D.e[i]];
     add(byGroup, key, s, t);
+    if (state.dim === "song") songOf.set(key, t);
   }
   return { T, byMonth, byGroup, byWd, byBand };
 }
@@ -111,9 +115,11 @@ function render() {
   draw("ch4", "bar", BANDS, BANDS.map((_, i) => byBand.has(i) ? M.f(byBand.get(i)) : 0));
 
   $("tbl-title").textContent = `Numbers behind the current view — by ${DIMS[state.dim].toLowerCase()} (${fmt(groups.length)} groups)`;
-  const rows = groups.slice(0, 50).map((x, i) => `<tr><td class="n">${i + 1}</td><td>${x.k}</td>
+  const rows = groups.slice(0, 50).map((x, i) => { const si = songOf.get(x.k), tr = si !== undefined ? D.tracks[si] : null;
+      const btn = tr ? `<button type="button" class="play-btn" data-play-id="${tr[5]}" data-play-t="${escA(tr[0])}" data-play-a="${escA(tr[1])}" aria-label="Play ${escA(tr[0])}" title="Play"></button>` : "";
+      return `<tr><td class="n">${i + 1}</td><td>${btn}${escA(x.k)}</td>
       <td class="n">${fmt(x.g.s)}</td><td class="n">${T.s ? (100 * x.g.s / T.s).toFixed(1) + "%" : "–"}</td>
-      <td class="n">${fmt(x.g.n)}</td><td class="n">${fmt(x.g.s / x.g.n)}</td><td class="n">${fmt(x.g.songs.size)}</td></tr>`).join("");
+      <td class="n">${fmt(x.g.n)}</td><td class="n">${fmt(x.g.s / x.g.n)}</td><td class="n">${fmt(x.g.songs.size)}</td></tr>`; }).join("");
   $("tbl").innerHTML = `<table><thead><tr><th class="n">#</th><th>${DIMS[state.dim]}</th><th class="n">Total streams</th>
       <th class="n">Share of streams</th><th class="n">Chart spots</th><th class="n">Avg streams per spot</th>
       <th class="n">Different songs</th></tr></thead><tbody>${rows ||

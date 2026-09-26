@@ -10,6 +10,12 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
 const vers = v => v > 1 ? ` <span class="versions">(across ${v} versions)</span>` : "";
 const versTxt = v => v > 1 ? ` (across ${v} versions)` : "";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// music (assets/music.js): a ▶ button or data-play-id anywhere plays that song in the listening booth
+const playAttr = s => `data-play-id="${s.track_id}" data-play-t="${esc(s.track)}" data-play-a="${esc(s.artists || "")}"`;
+const playBtn = s => s && s.track_id ? `<button type="button" class="play-btn" ${playAttr(s)} aria-label="Play ${esc(s.track)}" title="Play"></button>` : "";
+const songLink = s => `<button type="button" class="song-link" ${playAttr(s)} title="Play">${esc(s.track)}</button>`;
+const play = s => { if (s && s.track_id && window.playSong) window.playSong(s); };
+const CLICK = `<br><span class="m">▶ click to play</span>`;
 const NS = "http://www.w3.org/2000/svg";
 const $ = id => document.getElementById(id);
 
@@ -94,8 +100,8 @@ function v1(R, box) {
   const A = R.s1_artists, grid = A.grid;
   keynums("k1", [`#1 artist: ${A.top10[0].artist}, ${pct(A.top10[0].share_pct)} of streams`,
                  `Top 10 artists: ${pct(A.top10_share_pct)}`, `Top 1% of artists (${A.top1pct_n} of ${fmt(A.n_artists)}): ${pct(A.top1pct_share_pct)}`]);
-  table("t1", [{ key: "artist", label: "Lead artist" }, { key: "streams", label: "Streams", n: 1, f: fmt },
-               { key: "share_pct", label: "Share", n: 1, f: v => pct(v) }], A.top10);
+  table("t1", [{ key: "artist", label: "Lead artist" }, { key: "top_song", label: "Most-streamed song", f: v => playBtn(v) + esc(v.track) },
+               { key: "streams", label: "Streams", n: 1, f: fmt }, { key: "share_pct", label: "Share", n: 1, f: v => pct(v) }], A.top10);
 
   const wrap = document.createElement("div"); wrap.className = "v1-wrap"; box.appendChild(wrap);
   const left = document.createElement("div"); wrap.appendChild(left);
@@ -120,13 +126,17 @@ function v1(R, box) {
       r.g.style.opacity = on ? 1 : .18; r.lab.setAttribute("fill", gi !== null && r.gi === gi ? brass : (r.isRest ? rest : acc)); });
     items.forEach((li, k) => li.classList.toggle("on", k === gi));
   }
-  const tipFor = gi => { const g = grid[gi]; return `<b>${esc(g.artist)}</b><br><span class="v">${pct(g.share_pct, 2)}</span> of all Top-200 streams<br><span class="m">${g.cells} of 100 records (each = 1%, rounded)</span>`; };
+  const topSong = gi => gi < A.top10.length ? A.top10[gi].top_song : null;
+  const tipFor = gi => { const g = grid[gi], ts = topSong(gi); return `<b>${esc(g.artist)}</b><br><span class="v">${pct(g.share_pct, 2)}</span> of all Top-200 streams<br><span class="m">${g.cells} of 100 records (each = 1%, rounded)</span>` +
+    (ts ? `<br><span class="m">▶ click to play their top song, “${esc(ts.track)}”</span>` : ""); };
   recs.forEach(r => {
     r.g.addEventListener("pointerenter", e => { focus(r.gi); showTip(tipFor(r.gi), e); });
     r.g.addEventListener("pointermove", e => showTip(tipFor(r.gi), e));
     r.g.addEventListener("pointerleave", () => { focus(null); hideTip(); });
+    r.g.addEventListener("click", () => play(topSong(r.gi)));
   });
-  items.forEach((li, gi) => { li.addEventListener("pointerenter", () => focus(gi)); li.addEventListener("pointerleave", () => focus(null)); });
+  items.forEach((li, gi) => { li.addEventListener("pointerenter", () => focus(gi)); li.addEventListener("pointerleave", () => focus(null));
+    const ts = topSong(gi); if (ts) { li.title = `Play “${ts.track}”`; li.addEventListener("click", () => play(ts)); } });
 }
 
 // ---- 2. Songs: drag along the concentration curve ---------------------------
@@ -134,8 +144,8 @@ function v2(R, box) {
   const S = R.s2_songs, cum = S.cum_pct, N = S.n_songs;
   const t0 = S.top10[0];
   keynums("k2", [`Top 10 songs: ${pct(S.top10_share_pct)} of streams`, `Top 100 of ${fmt(N)}: ${pct(S.top100_share_pct)}`,
-                 `#1 song: ${esc(t0.track)} (${big(t0.streams)})${vers(t0.versions)}`]);
-  table("t2", [{ key: "track", label: "Song", f: (v, r) => esc(v) + vers(r.versions) }, { key: "artists", label: "Artists" },
+                 `${playBtn(t0)}#1 song: ${esc(t0.track)} (${big(t0.streams)})${vers(t0.versions)}`]);
+  table("t2", [{ key: "track", label: "Song", f: (v, r) => playBtn(r) + esc(v) + vers(r.versions) }, { key: "artists", label: "Artists" },
                { key: "streams", label: "Streams", n: 1, f: fmt }, { key: "days", label: "Days charted", n: 1 }], S.top10);
 
   const read = document.createElement("p"); read.className = "viz-readout"; box.appendChild(read);
@@ -169,7 +179,7 @@ function v2(R, box) {
     vline.setAttribute("x1", px); vline.setAttribute("x2", px); vline.setAttribute("y1", py); vline.setAttribute("y2", Ht - m.b);
     hline.setAttribute("x1", m.l); hline.setAttribute("x2", px); hline.setAttribute("y1", py); hline.setAttribute("y2", py);
     rng.value = Math.round(Math.log(k) / Math.log(N) * 1000);
-    const names = S.ranked.slice(0, Math.min(k, 3)).map(s => `<i>${esc(s.track)}</i>${vers(s.versions)}`).join(", ");
+    const names = S.ranked.slice(0, Math.min(k, 3)).map(s => `${songLink(s)}${vers(s.versions)}`).join(", ");
     read.innerHTML = `The top <b>${fmt(k)}</b> song${k > 1 ? "s" : ""} (${pct(k / N * 100)} of all ${fmt(N)}) earned <b>${pct(cum[k - 1])}</b> of all streams` +
       (k <= 50 ? `<br><span class="hint">led by ${names}${k > 3 ? " …" : ""}</span>` : "");
   }
@@ -188,8 +198,8 @@ function v3(R, box) {
   const Nn = R.s3_no1, runs = Nn.runs, days = R.meta.days;
   const t0 = Nn.top10[0];
   keynums("k3", [`${Nn.n_songs} songs reached #1`, `Median time at #1: ${Nn.median_days_at_1} days`,
-                 `${Nn.one_day_only} held it only 1 day`, `Longest: ${esc(t0.track)}, ${t0.days_at_1} days${vers(t0.versions)}`]);
-  table("t3", [{ key: "track", label: "Song", f: (v, r) => esc(v) + vers(r.versions) }, { key: "artists", label: "Artists" },
+                 `${Nn.one_day_only} held it only 1 day`, `${playBtn(t0)}Longest: ${esc(t0.track)}, ${t0.days_at_1} days${vers(t0.versions)}`]);
+  table("t3", [{ key: "track", label: "Song", f: (v, r) => playBtn(r) + esc(v) + vers(r.versions) }, { key: "artists", label: "Artists" },
                { key: "days_at_1", label: "Days at #1", n: 1 }], Nn.top10);
 
   const start = new Date(R.meta.first_date + "T00:00:00Z");
@@ -230,7 +240,9 @@ function v3(R, box) {
     return { b, r, k, s };
   });
   const cross = el("line", { y1: m.t, y2: Ht - m.b, stroke: css("--ink"), "stroke-width": 1, "stroke-opacity": 0, "pointer-events": "none" }, svg);
-  const hit = el("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: rowsN * rh, fill: "transparent" }, svg);
+  const hit = el("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: rowsN * rh, fill: "transparent", style: "cursor:pointer" }, svg);
+  let last3 = null;
+  hit.addEventListener("click", () => last3 && play(last3));
   hit.addEventListener("pointermove", e => {
     const p = svgPoint(svg, e), i = Math.max(0, Math.min(days - 1, Math.floor(x.inv(p.x))));
     const cur = blocks.find(q => i >= q.s && i < q.s + q.r.days); if (!cur) return;
@@ -239,7 +251,8 @@ function v3(R, box) {
     const r = cur.r;
     const html = `<span class="m">${nice(dateOf(i))} · #1 was</span><br><b>${esc(r.track)}</b><br>${esc(r.artists)}<br>` +
       `<span class="v">This run: ${r.days} day${r.days > 1 ? "s" : ""}</span> (${nice(r.start)} – ${nice(r.end)})<br>` +
-      `<span class="m">Total at #1: ${totals[r.song_id]} days${versTxt(r.versions_at_1)}</span>`;
+      `<span class="m">Total at #1: ${totals[r.song_id]} days${versTxt(r.versions_at_1)}</span>` + CLICK;
+    last3 = r;
     showTip(html, e);
     read.innerHTML = `${nice(dateOf(i))}: <i>${esc(r.track)}</i> — ${esc(r.artists)} · run of <b>${r.days}</b> day${r.days > 1 ? "s" : ""}`;
   });
@@ -306,7 +319,9 @@ function v5(R, box) {
   const lines = el("g", {}, svg), top = el("g", {}, svg);
   const med = el("path", { fill: "none", stroke: css("--accent"), "stroke-width": 3, "stroke-linejoin": "round" }, top);
   const hl = el("path", { fill: "none", stroke: css("--brass"), "stroke-width": 2.5 }, top);
-  const hit = el("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: Ht - m.t - m.b, fill: "transparent" }, svg);
+  const hit = el("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: Ht - m.t - m.b, fill: "transparent", style: "cursor:pointer" }, svg);
+  let last5 = null;
+  hit.addEventListener("click", () => last5 && play(last5));
   const pathD = ranks => { let d = "", pen = false;
     ranks.forEach((r, i) => { if (r) { d += `${pen ? "L" : "M"}${x(i + 1).toFixed(1)} ${y(r).toFixed(1)} `; pen = true; } else pen = false; }); return d; };
   let set = [];
@@ -327,12 +342,13 @@ function v5(R, box) {
     const p = svgPoint(svg, e), i = Math.max(0, Math.min(HZ - 1, Math.round(x.inv(p.x)) - 1));
     let best = null, bd = 1e9;
     for (const s of set) { const r = s.ranks[i]; const py = r ? y(r) : offY; const dd = Math.abs(py - p.y); if (dd < bd) { bd = dd; best = s; } }
-    if (!best || bd > 18) { hl.setAttribute("d", ""); hideTip(); return; }
+    if (!best || bd > 18) { hl.setAttribute("d", ""); hideTip(); last5 = null; return; }
+    last5 = best;
     hl.setAttribute("d", pathD(best.ranks));
     const r = best.ranks[i], last = best.ranks.reduce((a, v, k) => v ? k + 1 : a, 0);
     showTip(`<b>${esc(best.track)}</b><br>${esc(best.artists)}${best.versions > 1 ? `<br><span class="m">(across ${best.versions} versions)</span>` : ""}<br>` +
       `<span class="m">Debuted ${best.debut} at #${best.debut_rank}</span><br>` +
-      `<span class="v">Day ${i + 1}: ${r ? "#" + r : "off the chart"}</span>${last < HZ ? `<br><span class="m">last day in the Top 200 in this window: day ${last}</span>` : ""}`, e);
+      `<span class="v">Day ${i + 1}: ${r ? "#" + r : "off the chart"}</span>${last < HZ ? `<br><span class="m">last day in the Top 200 in this window: day ${last}</span>` : ""}` + CLICK, e);
   });
   hit.addEventListener("pointerleave", () => { hl.setAttribute("d", ""); hideTip(); });
   draw("top10");
@@ -438,8 +454,11 @@ function v7(R, box) {
   }
   const nice = s => new Date(s + "T12:00:00Z").toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" });
   rects.forEach(o => {
+    o.r.style.cursor = "pointer";
+    o.r.addEventListener("click", () => play(o.d.no1));
     o.r.addEventListener("pointerenter", e => { o.r.setAttribute("stroke", css("--ink")); showTip(`<b>${nice(o.d.date)}</b><br>` +
-      `<span class="v">${big(o.d.streams)}</span> Top-200 streams<br><span class="v">${o.d.debuts}</span> debut${o.d.debuts === 1 ? "" : "s"}`, e); });
+      `<span class="v">${big(o.d.streams)}</span> Top-200 streams<br><span class="v">${o.d.debuts}</span> debut${o.d.debuts === 1 ? "" : "s"}` +
+      `<br><span class="m">#1 that day: ${esc(o.d.no1.track)} — ${esc(o.d.no1.artists)}</span>` + CLICK, e); });
     o.r.addEventListener("pointerleave", () => { o.r.removeAttribute("stroke"); hideTip(); });
   });
   toggle(ctl, [["streams", "Streams per day"], ["debuts", "Debuts per day"]], "streams", paint);
