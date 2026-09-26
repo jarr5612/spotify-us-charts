@@ -81,7 +81,7 @@ fetch("data/report.json").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
-  $("h1").textContent = big(H.total_streams).replace(/\.(\d)\dB$/, ".$1B");
+  $("h1").textContent = (H.total_streams / 1e9).toFixed(1) + "B";
   $("h2").textContent = fmt(H.unique_songs);
   $("h3").textContent = fmt(H.unique_lead_artists);
   $("h4").textContent = fmt(H.songs_reaching_no1);

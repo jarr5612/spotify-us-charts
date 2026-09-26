@@ -5,7 +5,7 @@ results/explore.txt. Every number in the report should trace back to
 this script or to a later analysis script.
 
 Definitions used here:
-  * "song" = one track_id.
+  * "song" = one song_id (versions of the same song merged, see build_data.py).
   * days charted = number of dates a song appears in this data (2025-01-01..2026-08-31).
   * "catalog" row = a song that has been on the chart more than 365 days
     (days_on_chart > 365) on that date; everything else is "current".
@@ -21,7 +21,7 @@ def p(*a): out.append(" ".join(str(x) for x in a))
 def h(t): out.append("\n" + "=" * 70 + "\n" + t + "\n" + "=" * 70)
 
 total = df.streams.sum()
-songs = df.groupby("track_id").agg(
+songs = df.groupby("song_id").agg(
     track=("track_name", "first"), artist=("artist_names", "first"),
     lead=("lead_artist", "first"), label=("label", "first"),
     collab=("is_collab", "first"), streams=("streams", "sum"),
@@ -44,7 +44,7 @@ p(f"\nTop 10 songs' share of all streams: {s_sorted.head(10).sum()/total:.1%}; "
 p("Top 10 songs:")
 for tid in s_sorted.head(10).index:
     r = songs.loc[tid]; p(f"  {r.track[:34]:<34} {r.artist[:26]:<26} {r.streams/1e9:5.2f} B  {r.days} days")
-ones = df[df["rank"] == 1].groupby("track_id").size().sort_values(ascending=False)
+ones = df[df["rank"] == 1].groupby("song_id").size().sort_values(ascending=False)
 p(f"\nSongs that reached #1: {len(ones)}. Most days at #1:")
 for tid, n in ones.head(5).items(): p(f"  {songs.loc[tid].track[:34]:<34} {songs.loc[tid].artist[:26]:<26} {n} days")
 
@@ -53,8 +53,8 @@ h("2. STAYING POWER")
 p(f"Days charted per song: median {songs.days.median():.0f}, mean {songs.days.mean():.1f}; "
   f"{(songs.days==1).mean():.1%} charted exactly 1 day; {(songs.days>=365).mean():.1%} charted 365+ days")
 p(f"Songs on the chart every one of the {df.date.nunique()} days: {(songs.days==df.date.nunique()).sum()}")
-deb = df[df.entry_status == "debut"].copy()
-deb = deb.merge(songs[["days"]], left_on="track_id", right_index=True)
+deb = df[df.entry_status == "debut"].sort_values("rank").drop_duplicates("song_id").copy()
+deb = deb.merge(songs[["days"]], left_on="song_id", right_index=True)
 deb["debut_band"] = pd.cut(deb["rank"], [0, 10, 50, 100, 200], labels=["1-10", "11-50", "51-100", "101-200"])
 p(f"\nDebuts in the window: {len(deb):,}. Days charted by debut rank (debuts only):")
 g = deb.groupby("debut_band", observed=True)["days"].agg(["count", "median", "mean"])
@@ -70,7 +70,8 @@ for c, name in [(0, "solo"), (1, "collab")]:
 
 # ---------------------------------------------------------------- 4
 h("4. WEEKDAY AND SEASONAL PATTERNS")
-daily = df.groupby("date").agg(streams=("streams", "sum"), debuts=("entry_status", lambda x: (x == "debut").sum()))
+daily = df.groupby("date").agg(streams=("streams", "sum"))
+daily["debuts"] = deb.groupby("date").size().reindex(daily.index, fill_value=0)
 daily["weekday"] = daily.index.day_name()
 order = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 w = daily.groupby("weekday").agg(avg_streams=("streams", "mean"), debuts=("debuts", "sum")).reindex(order)
@@ -80,35 +81,35 @@ m = df.groupby("month").streams.sum() / df.groupby("month").date.nunique()
 p("\nAverage daily Top-200 streams by month (M):")
 p("  " + "  ".join(f"{k}:{v/1e6:.0f}" for k, v in m.items()))
 dec = df[df.date.dt.month == 12]
-hol = dec.groupby("track_id").size()
+hol = dec.groupby("song_id").size()
 p("\nSongs charting ONLY in Nov-Jan (holiday songs) and their December share of Top-200 streams:")
-season = df.groupby("track_id").date.apply(lambda d: d.dt.month.isin([11, 12, 1]).all())
+season = df.groupby("song_id").date.apply(lambda d: d.dt.month.isin([11, 12, 1]).all())
 hs = season[season].index
 for y in [2025]:
     dm = df[(df.date.dt.year == y) & (df.date.dt.month == 12)]
-    p(f"  Dec {y}: holiday songs = {dm[dm.track_id.isin(hs)].streams.sum()/dm.streams.sum():.1%} of streams; "
-      f"peak day share {dm[dm.track_id.isin(hs)].groupby('date').streams.sum().div(dm.groupby('date').streams.sum()).max():.1%}")
+    p(f"  Dec {y}: holiday songs = {dm[dm.song_id.isin(hs)].streams.sum()/dm.streams.sum():.1%} of streams; "
+      f"peak day share {dm[dm.song_id.isin(hs)].groupby('date').streams.sum().div(dm.groupby('date').streams.sum()).max():.1%}")
 p("  most-streamed holiday songs: " + "; ".join(songs.loc[hs].sort_values('streams', ascending=False).head(5).track))
 
 # ---------------------------------------------------------------- 5
 h("5. HOW NEW SONGS RISE AND FADE (debuts with a full 30 days of data)")
-dd = df[df.track_id.isin(deb.track_id)].copy()
-first = dd.groupby("track_id").date.transform("min")
+dd = df[df.song_id.isin(deb.song_id)].groupby(["song_id", "date"], as_index=False).streams.sum()
+first = dd.groupby("song_id").date.transform("min")
 dd["day_n"] = (dd.date - first).dt.days + 1
-full = deb[deb.date <= df.date.max() - pd.Timedelta(days=29)].track_id
-dd = dd[dd.track_id.isin(full) & (dd.day_n <= 30)]
-d1 = dd[dd.day_n == 1].set_index("track_id").streams
+full = deb[deb.date <= df.date.max() - pd.Timedelta(days=29)].song_id
+dd = dd[dd.song_id.isin(full) & (dd.day_n <= 30)]
+d1 = dd[dd.day_n == 1].set_index("song_id").streams
 # full grid: a song that has dropped off the Top 200 counts as 0 streams that day
-grid = dd.pivot_table(index="track_id", columns="day_n", values="streams", aggfunc="sum").reindex(index=full, columns=range(1, 31)).fillna(0)
+grid = dd.pivot_table(index="song_id", columns="day_n", values="streams", aggfunc="sum").reindex(index=full, columns=range(1, 31)).fillna(0)
 rel = grid.div(grid[1], axis=0)
 p(f"Debuts used: {len(full)}. Streams relative to debut day (day 1 = 100%; off-chart days count as 0):")
 p("  median: " + "  ".join(f"d{k}:{rel[k].median():.0%}" for k in (1, 2, 3, 7, 14, 21, 30)))
 p("  mean:   " + "  ".join(f"d{k}:{rel[k].mean():.0%}" for k in (1, 2, 3, 7, 14, 21, 30)))
 p(f"  total streams of these debuts, day 30 vs day 1: {grid[30].sum()/grid[1].sum():.0%}")
 p(f"Share of these debuts still on the chart on day 30: "
-  f"{dd[dd.day_n==30].track_id.nunique()/len(full):.1%}")
-pk = df[df.track_id.isin(full)].copy(); pk["day_n"] = (pk.date - pk.groupby("track_id").date.transform("min")).dt.days + 1
-peakday = pk.loc[pk.groupby("track_id").streams.idxmax(), "day_n"]
+  f"{dd[dd.day_n==30].song_id.nunique()/len(full):.1%}")
+pk = df[df.song_id.isin(full)].groupby(["song_id", "date"], as_index=False).streams.sum(); pk["day_n"] = (pk.date - pk.groupby("song_id").date.transform("min")).dt.days + 1
+peakday = pk.loc[pk.groupby("song_id").streams.idxmax(), "day_n"]
 p(f"Day of peak streams (whole window): {(peakday==1).mean():.1%} peak on debut day; median peak day {peakday.median():.0f}")
 
 # ---------------------------------------------------------------- 6

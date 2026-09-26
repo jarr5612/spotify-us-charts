@@ -27,21 +27,21 @@ Top 10 labels by streams:
   RCA Records Label                    1.39 B    2.3%
   SAWGOD/Columbia                      1.20 B    2.0%
 
-Top 10 songs' share of all streams: 6.6%; top 100 songs (of 2,651): 40.6%
+Top 10 songs' share of all streams: 7.0%; top 100 songs (of 2,389): 42.8%
 Top 10 songs:
+  Ordinary                           Alex Warren                 0.47 B  571 days
   luther (with sza)                  Kendrick Lamar, SZA         0.46 B  556 days
   DtMF                               Bad Bunny                   0.45 B  603 days
   Golden                             HUNTR/X, EJAE, AUDREY NUNA  0.45 B  436 days
-  Ordinary                           Alex Warren                 0.44 B  525 days
+  back to friends                    sombr                       0.43 B  532 days
+  Die With A Smile                   Lady Gaga, Bruno Mars       0.42 B  605 days
+  Choosin' Texas                     Ella Langley                0.41 B  319 days
   BIRDS OF A FEATHER                 Billie Eilish               0.41 B  606 days
-  Mr. Brightside                     The Killers                 0.37 B  608 days
-  Man I Need                         Olivia Dean                 0.36 B  377 days
-  Iris                               The Goo Goo Dolls           0.35 B  607 days
-  No One Noticed                     The Marías                  0.35 B  584 days
-  Pink Pony Club                     Chappell Roan               0.35 B  583 days
+  Dreams - 2004 Remaster             Fleetwood Mac               0.39 B  606 days
+  Sailor Song                        Gigi Perez                  0.37 B  608 days
 
-Songs that reached #1: 54. Most days at #1:
-  Choosin' Texas                     Ella Langley               94 days
+Songs that reached #1: 52. Most days at #1:
+  Choosin' Texas                     Ella Langley               104 days
   Golden                             HUNTR/X, EJAE, AUDREY NUNA 71 days
   The Fate of Ophelia                Taylor Swift               56 days
   luther (with sza)                  Kendrick Lamar, SZA        49 days
@@ -50,20 +50,20 @@ Songs that reached #1: 54. Most days at #1:
 ======================================================================
 2. STAYING POWER
 ======================================================================
-Days charted per song: median 7, mean 45.9; 24.6% charted exactly 1 day; 3.1% charted 365+ days
-Songs on the chart every one of the 608 days: 4
+Days charted per song: median 7, mean 50.9; 23.2% charted exactly 1 day; 3.7% charted 365+ days
+Songs on the chart every one of the 608 days: 5
 
-Debuts in the window: 1,627. Days charted by debut rank (debuts only):
-  debut rank 1-10     n=184   median 27 days, mean 52.1
-  debut rank 11-50    n=419   median 7 days, mean 20.1
-  debut rank 51-100   n=345   median 2 days, mean 11.3
-  debut rank 101-200  n=679   median 1 days, mean 30.6
+Debuts in the window: 1,626. Days charted by debut rank (debuts only):
+  debut rank 1-10     n=184   median 29 days, mean 66.6
+  debut rank 11-50    n=419   median 8 days, mean 26.0
+  debut rank 51-100   n=345   median 2 days, mean 13.9
+  debut rank 101-200  n=678   median 2 days, mean 34.3
 
 ======================================================================
 3. SOLO vs COLLABORATION
 ======================================================================
-  solo    songs  2017 (76.1%)  rows 80.1%  streams 79.4%  avg streams/row 493,639  median days charted 7  median best rank 65
-  collab  songs   634 (23.9%)  rows 19.9%  streams 20.6%  avg streams/row 516,753  median days charted 6  median best rank 67
+  solo    songs  1804 (75.5%)  rows 80.1%  streams 79.4%  avg streams/row 493,642  median days charted 7  median best rank 64
+  collab  songs   585 (24.5%)  rows 19.9%  streams 20.6%  avg streams/row 516,744  median days charted 6  median best rank 65
 
 ======================================================================
 4. WEEKDAY AND SEASONAL PATTERNS
@@ -74,7 +74,7 @@ Average total Top-200 streams per day, and total debuts, by weekday:
   Wednesday     99.4 M   debuts   82 (5%)
   Thursday     100.2 M   debuts   51 (3%)
   Friday       109.4 M   debuts 1178 (72%)
-  Saturday     100.9 M   debuts  110 (7%)
+  Saturday     100.9 M   debuts  109 (7%)
   Sunday        90.9 M   debuts   64 (4%)
 
 Average daily Top-200 streams by month (M):
@@ -87,12 +87,12 @@ Songs charting ONLY in Nov-Jan (holiday songs) and their December share of Top-2
 ======================================================================
 5. HOW NEW SONGS RISE AND FADE (debuts with a full 30 days of data)
 ======================================================================
-Debuts used: 1567. Streams relative to debut day (day 1 = 100%; off-chart days count as 0):
-  median: d1:100%  d2:61%  d3:0%  d7:0%  d14:0%  d21:0%  d30:0%
-  mean:   d1:100%  d2:50%  d3:35%  d7:31%  d14:21%  d21:17%  d30:15%
-  total streams of these debuts, day 30 vs day 1: 11%
-Share of these debuts still on the chart on day 30: 16.1%
-Day of peak streams (whole window): 79.1% peak on debut day; median peak day 1
+Debuts used: 1566. Streams relative to debut day (day 1 = 100%; off-chart days count as 0):
+  median: d1:100%  d2:61%  d3:26%  d7:0%  d14:0%  d21:0%  d30:0%
+  mean:   d1:100%  d2:52%  d3:37%  d7:32%  d14:23%  d21:19%  d30:17%
+  total streams of these debuts, day 30 vs day 1: 13%
+Share of these debuts still on the chart on day 30: 18.1%
+Day of peak streams (whole window): 77.2% peak on debut day; median peak day 1
 
 ======================================================================
 6. CATALOG vs CURRENT (catalog = on chart > 365 days on that date)

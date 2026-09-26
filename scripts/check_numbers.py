@@ -59,5 +59,44 @@ check("Morgan Wallen share %", round(mw / total * 100, 1), R["s1_artists"]["top1
 check("dashboard: total streams", sum(D["s"]), total)
 check("dashboard: songs", len(set(D["t"])), R["headline"]["unique_songs"])
 check("dashboard: debuts", sum(1 for e in D["e"] if e == 1), R["s5_debut"]["n_debuts"])
+# ---- claims written in the report text ----
+check("share charting a week or less % (text: 51.5%)", round(sum(x <= 7 for x in d) / len(d) * 100, 1), 51.5)
+by_day = collections.defaultdict(int)
+for r in rows:
+    by_day[r["date"]] += int(r["streams"])
+big_day = max(by_day, key=by_day.get)
+check("biggest day (text: Christmas Day 2025)", big_day, "2025-12-25")
+check("biggest day vs average day (text: about 2.4x)", round(by_day[big_day] / (total / len(by_day)), 1), 2.4)
+months_of = collections.defaultdict(set)
+for r in rows:
+    months_of[key(r)].add(int(r["date"][5:7]))
+holiday = {k for k, m in months_of.items() if m <= {11, 12, 1}}
+xmas = [r for r in rows if r["date"] == "2025-12-25"]
+check("holiday songs' share of Christmas Day streams % (text: 95.6%)",
+      round(sum(int(r["streams"]) for r in xmas if key(r) in holiday) / by_day["2025-12-25"] * 100, 1), 95.6)
+check("holiday songs in Christmas Day top 10 (text: all ten)", sum(key(r) in holiday for r in xmas if int(r["rank"]) <= 10), 10)
+song_day = collections.defaultdict(lambda: collections.defaultdict(int))
+for r in rows:
+    song_day[key(r)][r["date"]] += int(r["streams"])
+debut_keys = [key(r) for r in deb]
+peak_first = sum(max(song_day[k], key=song_day[k].get) == min(song_day[k]) for k in debut_keys)
+check("debuts whose biggest day was day one % (text: 77%)", round(peak_first / len(debut_keys) * 100), 77)
+
+runs, prev, cur, n = [], None, None, 0
+for r in sorted((r for r in rows if r["rank"] == "1"), key=lambda r: r["date"]):
+    k = key(r)
+    if k == cur and prev and (dt.date.fromisoformat(r["date"]) - prev).days == 1:
+        n += 1
+    else:
+        if cur: runs.append((n, cur))
+        cur, n = k, 1
+    prev = dt.date.fromisoformat(r["date"])
+runs.append((n, cur))
+longest = max(x for x, _ in runs)
+check("longest unbroken run at #1 in days (text: 30)", longest, 30)
+check("songs tied for the longest run (text: luther and Rockin' Around)", sorted(k.split("|")[0] for x, k in runs if x == longest),
+      ["luther (with sza)", "rockin' around the christmas tree"])
+check("share lasting a month or more % (text: 27.3%)", round(sum(x >= 30 for x in d) / len(d) * 100, 1), 27.3)
+
 print("\nall numbers match" if not bad else f"\n{bad} number(s) differ")
 sys.exit(1 if bad else 0)
