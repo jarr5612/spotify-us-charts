@@ -38,6 +38,8 @@ Live site: https://jarr5612.github.io/spotify-us-charts/
 
 ### Known data notes
 
+- Spotify lists some songs under 2-3 track IDs (re-releases, deluxe or edited versions). Versions with the same title and lead artist are merged into one song: 2,651 track IDs become 2,389 songs. The site notes "across N versions" where that matters.
+
 - 121,594 rows over 608 days. Every day has 200 rows except **2026-07-13 through
   2026-07-18**, which have 199: Spotify's own chart skips one position on each of
   those days (e.g. #22 on 2026-07-13). The rows were kept as published.
@@ -69,7 +71,7 @@ python3 scripts/build_dashboard_data.py
 | `assets/report.js` | draws the report charts from `data/report.json` |
 | `assets/turntable.js` | the record player beside the report: each finding is a track on the record, the tonearm follows your place as you scroll, and clicking a groove or a track jumps to that finding |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
-| `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
+| `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, song ID (versions of the same song merged), number of versions, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
 | `scripts/explore.py` | first exploratory pass used to choose the findings; writes `results/explore.txt` |
 | `results/explore.txt` | output of `explore.py` (candidate findings, not shown on the site) |
 | `.gitignore` | keeps Mac system files and local notes out of the repository |

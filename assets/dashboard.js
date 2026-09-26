@@ -44,16 +44,16 @@ function compute(F) {
     const r = D.r[i]; if (r > F.rankMax) continue;
     const t = D.t[i], k = tr[t];
     if (F.artistTxt && k[2] !== F.artist) continue;
-    if (F.labelTxt && k[3] !== F.label) continue;
-    if (F.type !== "" && k[4] !== +F.type) continue;
+    if (F.labelTxt && D.l[i] !== F.label) continue;
+    if (F.type !== "" && k[3] !== +F.type) continue;
     if (F.cat !== "" && D.c[i] !== +F.cat) continue;
     const s = D.s[i];
     T.s += s; T.n += 1; T.songs.add(t); T.artists.add(k[2]); if (D.e[i] === 1) T.debuts++;
     add(byMonth, m, s, t);
     add(byWd, rowWeekday[i], s, t);
     add(byBand, r <= 10 ? 0 : r <= 50 ? 1 : r <= 100 ? 2 : 3, s, t);
-    const key = state.dim === "artist" ? D.artists[k[2]] : state.dim === "label" ? D.labels[k[3]]
-              : state.dim === "song" ? `${k[0]} — ${k[1]}` : state.dim === "type" ? (k[4] ? "Collaboration" : "Solo")
+    const key = state.dim === "artist" ? D.artists[k[2]] : state.dim === "label" ? D.labels[D.l[i]]
+              : state.dim === "song" ? `${k[0]} — ${k[1]}${k[4] > 1 ? ` (across ${k[4]} versions)` : ""}` : state.dim === "type" ? (k[3] ? "Collaboration" : "Solo")
               : STATUS[D.e[i]];
     add(byGroup, key, s, t);
   }

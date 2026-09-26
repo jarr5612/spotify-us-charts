@@ -117,10 +117,11 @@
         <dt>Rows dropped</dt><dd>None. Every day has 200 rows except 2026-07-13 to 2026-07-18, which have 199 because Spotify’s own chart skips one position on each of those days.</dd>
         <dt>Streams</dt><dd>US streams counted by Spotify for songs on the Top 200 that day. Songs outside the Top 200 are not included, so totals are Top-200 totals, not all US streaming.</dd>
         <dt>Share</dt><dd>A group’s streams divided by all Top-200 streams in the period (or in the month, for monthly shares).</dd>
-        <dt>Days charted</dt><dd>The number of dates a song appears in this data (at most <span data-f="meta.days"></span>). Songs that were already charting before 2025 or still charting after August 2026 are cut off at the edges.</dd>
+        <dt>Days charted</dt><dd>The number of dates a song (any version) appears in this data (at most <span data-f="meta.days"></span>). Songs that were already charting before 2025 or still charting after August 2026 are cut off at the edges.</dd>
         <dt>Lead artist</dt><dd>The first credited artist. “Tyler, The Creator” and “Earth, Wind &amp; Fire” are kept as single names.</dd>
-        <dt>Collaboration</dt><dd>A song with more than one credited artist.</dd>
-        <dt>Debut</dt><dd>A song’s first day ever on the chart (not on the chart the day before, and Spotify’s days-on-chart count is 1).</dd>
+        <dt>Song</dt><dd>Spotify sometimes lists the same song under two or three track IDs (re-releases, deluxe or edited versions). Versions with the same title and the same lead artist are counted as one song, with their streams and chart days combined: <span data-f="headline.unique_track_ids"></span> track IDs become <span data-f="headline.unique_songs"></span> songs (<span data-f="headline.songs_with_versions"></span> songs had more than one version). Where it matters, the report says “across N versions.” A song’s name, artists and solo/collaboration type come from its most-streamed version.</dd>
+        <dt>Collaboration</dt><dd>A song whose most-streamed version credits more than one artist.</dd>
+        <dt>Debut</dt><dd>A song’s first day in the data when it is also its first day ever on the chart (Spotify’s days-on-chart count is 1). A new version of a song that already charted is not a debut.</dd>
         <dt>Catalog</dt><dd>On a given date, a song that has been on the chart for more than 365 days. This measures time on the chart, not release date.</dd>
         <dt>Streams per chart spot</dt><dd>Total streams divided by the number of chart rows (one row = one song on one day).</dd>
         <dt>Average daily streams</dt><dd>For the weekday chart: total Top-200 streams on each date, averaged over all dates that fall on that weekday.</dd>
