@@ -111,14 +111,19 @@ function v1(R, box) {
   const brass = css("--brass"), rest = "#b9ab94";
   // neighbouring artists alternate between two shades (reds for the top 10, browns for #11+),
   // and each label carries the artist's rank so every artist's records can be picked out
-  // each artist gets its own shade: the top 10 step from deep red to light red,
-  // artists #11+ step from dark brown to light tan, in rank order
-  const mix = (a, b, t) => "#" + [0, 2, 4].map(i => Math.round(parseInt(a.substr(i + 1, 2), 16) * (1 - t) + parseInt(b.substr(i + 1, 2), 16) * t).toString(16).padStart(2, "0")).join("");
-  const RANGE = { top10: ["#7a1a10", "#e07a60"], one_pct: ["#4f3522", "#c8a77a"] };
+  // each artist gets its own shade: reds for the top 10, browns for #11+. Neighbouring artists
+  // alternate between the darker and lighter half of the range (and step within each half),
+  // so the change from one artist to the next is easy to see
+  const hex = h => [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16));
+  const ramp = (stops, t) => { const k = Math.min(stops.length - 2, Math.floor(t * (stops.length - 1))), u = t * (stops.length - 1) - k;
+    const a = hex(stops[k]), b = hex(stops[k + 1]); return "#" + a.map((v, i) => Math.round(v + (b[i] - v) * u).toString(16).padStart(2, "0")).join(""); };
+  const STOPS = { top10: ["#5e120c", "#9b2d20", "#cf5a3f", "#f0a086"], one_pct: ["#3a2516", "#6f4e32", "#a88257", "#dcc39a"] };
   const tierOf = gi => grid[gi].tier;
   const idxIn = gi => grid.slice(0, gi).filter(g => g.tier === tierOf(gi)).length;
   const nIn = tier => grid.filter(g => g.tier === tier).length;
-  const baseLab = gi => tierOf(gi) === "rest" ? rest : mix(...RANGE[tierOf(gi)], nIn(tierOf(gi)) > 1 ? idxIn(gi) / (nIn(tierOf(gi)) - 1) : 0);
+  const zig = (i, n) => { const nd = Math.ceil(n / 2), nl = Math.floor(n / 2);          // even i: dark half, odd i: light half
+    return i % 2 === 0 ? (nd > 1 ? (i / 2) / (nd - 1) : 0) * .42 : .58 + (nl > 1 ? ((i - 1) / 2) / (nl - 1) : 0) * .42; };
+  const baseLab = gi => tierOf(gi) === "rest" ? rest : ramp(STOPS[tierOf(gi)], zig(idxIn(gi), nIn(tierOf(gi))));
   const recs = owner.map((gi, k) => {
     const cx = 18 + (k % 10) * 36, cy = 18 + Math.floor(k / 10) * 36, isRest = tierOf(gi) === "rest";
     const g = el("g", { class: "v1-rec", "data-g": gi, style: isRest ? "cursor:default" : "" }, svg);
