@@ -69,4 +69,7 @@ python3 scripts/build_dashboard_data.py
 | `assets/report.js` | draws the report charts from `data/report.json` |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
 | `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
+| `scripts/explore.py` | first exploratory pass used to choose the findings; writes `results/explore.txt` |
+| `results/explore.txt` | output of `explore.py` (candidate findings, not shown on the site) |
+| `.gitignore` | keeps Mac system files and local notes out of the repository |
 | `README.md` | this file |
