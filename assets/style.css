@@ -220,12 +220,14 @@ td.n, th.n { text-align: right; }
 .v1-rec { cursor: pointer; transition: opacity .2s; }
 .v1-rec .lab { transition: fill .2s; }
 .v1-legend { list-style: none; margin: 0; padding: 0; }
-.v1-legend li { display: grid; grid-template-columns: 1.4rem 1fr auto; gap: .5rem; align-items: center; padding: .28rem .4rem;
+.v1-legend li { display: grid; grid-template-columns: 2.6rem 1.4rem 1fr auto; gap: .5rem; align-items: center; padding: .28rem .4rem;
   border-radius: 4px; cursor: pointer; font-size: .92rem; }
 .v1-legend li:hover, .v1-legend li.on { background: var(--accent-soft); }
 .v1-legend .dot { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle, var(--surface) 0 18%, var(--accent) 20% 48%, #151210 50%); }
 .v1-legend li.mid .dot { background: radial-gradient(circle, var(--surface) 0 18%, #9c8466 20% 48%, #151210 50%); }
 .v1-legend li.rest .dot { background: radial-gradient(circle, var(--surface) 0 18%, #b9ab94 20% 48%, #8d8373 50%); }
+.v1-legend .rk { font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--ink-3); text-align: right;
+  font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
 .v1-legend .pct { font-variant-numeric: lining-nums tabular-nums; color: var(--ink-3); font-size: .85rem; }
 .v1-legend .n { font-family: var(--font-display); color: var(--accent); font-weight: 700; }
 

@@ -136,10 +136,11 @@ function v1(R, box) {
   const midCells = mid.reduce((a, g) => a + g.cells, 0);
   const midShare = Math.round((100 - topShare - low.share_pct) * 10) / 10;   // so the three lines add to 100%
   const legendRows = top10.map((g, gi) => ({ label: g.artist, cells: g.cells, share: g.share_pct, key: gi }))
-    .concat([{ label: `${nOne} more artists with 1%+ each`, sub: `#11–${10 + nOne}: ${mid.slice(0, 3).map(g => g.artist).join(", ")} …`, cells: midCells, share: midShare, key: "mid" },
+    .concat([{ label: `${nOne} more artists with 1%+ each`, sub: `${mid.slice(0, 3).map(g => g.artist).join(", ")} …`, cells: midCells, share: midShare, key: "mid" },
              { label: "Everyone else", sub: `${fmt(A.rest_artists)} artists, each under 1%`, cells: low.cells, share: low.share_pct, key: "rest" }]);
   const list = document.createElement("ol"); list.className = "v1-legend"; wrap.appendChild(list);
   list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : r.key === "mid" ? "mid" : ""}">` +
+      `<span class="rk">${typeof r.key === "number" ? r.key + 1 : r.key === "mid" ? `11–${10 + nOne}` : ""}</span>` +
       (typeof r.key === "number" ? `<span class="dot" style="background: radial-gradient(circle, var(--surface) 0 12%, ${baseLab(r.key)} 14% 52%, #151210 54%)"></span>` : `<span class="dot"></span>`) + `
       <span>${esc(r.label)}${r.sub ? `<br><span class="hint">${esc(r.sub)}</span>` : ""}</span>
       <span class="pct"><span class="n">${r.cells}</span> record${r.cells > 1 ? "s" : ""} · ${pct(r.share)}</span></li>`).join("");
