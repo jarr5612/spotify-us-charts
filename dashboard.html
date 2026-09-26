@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>US Spotify Top 200 — Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html">US Top 200 <span>Charts</span></a>
+    <a class="brand" href="index.html"><span class="vinyl" aria-hidden="true"></span>US Top 200 <span>Charts</span></a>
     <div class="nav-links">
       <a href="index.html">Report</a>
       <a href="dashboard.html" class="active">Dashboard</a>
@@ -18,7 +18,7 @@
   </div></nav>
 
   <main>
-    <h1>Explore the chart</h1>
+    <div class="dash-head"><span class="vinyl" aria-hidden="true"></span><h1>Explore the chart</h1></div>
     <p class="status" id="status">Loading 121,594 chart rows…</p>
 
     <section class="filters" aria-label="Filters">

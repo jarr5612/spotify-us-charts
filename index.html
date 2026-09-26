@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>US Spotify Top 200 — Report</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html">US Top 200 <span>Charts</span></a>
+    <a class="brand" href="index.html"><span class="vinyl" aria-hidden="true"></span>US Top 200 <span>Charts</span></a>
     <div class="nav-links">
       <a href="index.html" class="active">Report</a>
       <a href="dashboard.html">Dashboard</a>
@@ -19,9 +19,13 @@
 
   <main>
     <header class="hero">
+      <div>
+      <div class="eyebrow">Spotify · Daily Top Songs USA</div>
       <h1 class="placeholder">Report title</h1>
       <p class="byline"><span class="placeholder">Your name</span> · Financial Data Analytics · Data: Spotify Daily Top Songs USA, <span id="range"></span></p>
       <p class="placeholder">One-paragraph summary: what the data covers (every song on Spotify’s US daily Top 200 for <span data-f="meta.days"></span> days) and what you found.</p>
+      </div>
+      <div class="turntable" aria-hidden="true"><div class="record"></div><div class="arm"></div></div>
     </header>
 
     <section class="headline" aria-label="Headline numbers">
@@ -32,7 +36,7 @@
     </section>
 
     <section class="finding" id="s1">
-      <div class="num">Finding 1 · Artists</div>
+      <div class="num">Track 01 · Artists</div>
       <h2 class="placeholder">Heading that states the finding (idea: “A few artists take a large share of streams”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k1"></ul>
@@ -41,7 +45,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t1"></div></details>
     </section>
     <section class="finding" id="s2">
-      <div class="num">Finding 2 · Songs</div>
+      <div class="num">Track 02 · Songs</div>
       <h2 class="placeholder">Heading that states the finding (idea: “A small set of songs carries the chart”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k2"></ul>
@@ -50,7 +54,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t2"></div></details>
     </section>
     <section class="finding" id="s3">
-      <div class="num">Finding 3 · #1 spot</div>
+      <div class="num">Track 03 · #1 spot</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Most #1 songs hold the top spot only briefly — a few hold it for months”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k3"></ul>
@@ -59,7 +63,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t3"></div></details>
     </section>
     <section class="finding" id="s4">
-      <div class="num">Finding 4 · Lifespan</div>
+      <div class="num">Track 04 · Lifespan</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Most songs leave the chart within a week”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k4"></ul>
@@ -68,7 +72,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t4"></div></details>
     </section>
     <section class="finding" id="s5">
-      <div class="num">Finding 5 · Debuts</div>
+      <div class="num">Track 05 · Debuts</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Higher debuts stay on the chart longer”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k5"></ul>
@@ -77,7 +81,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t5"></div></details>
     </section>
     <section class="finding" id="s6">
-      <div class="num">Finding 6 · Collaborations</div>
+      <div class="num">Track 06 · Collaborations</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Collaborations perform about the same as solo songs”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k6"></ul>
@@ -86,7 +90,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t6"></div></details>
     </section>
     <section class="finding" id="s7">
-      <div class="num">Finding 7 · Release day</div>
+      <div class="num">Track 07 · Release day</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Friday is release day”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k7"></ul>
@@ -97,7 +101,7 @@
       <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t7"></div></details>
     </section>
     <section class="finding" id="s8">
-      <div class="num">Finding 8 · Catalog</div>
+      <div class="num">Track 08 · Catalog</div>
       <h2 class="placeholder">Heading that states the finding (idea: “Older hits are taking a growing share of streams”)</h2>
       <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
       <ul class="keynums" id="k8"></ul>
@@ -107,7 +111,7 @@
     </section>
 
     <section class="finding about" id="data">
-      <h2>About the data</h2>
+      <h2>Liner notes: about the data</h2>
       <p class="placeholder">Rewrite this section in your own words; the facts below are accurate starting points.</p>
       <dl>
         <dt>Source</dt><dd>Spotify Charts (charts.spotify.com), “Daily Top Songs USA.” One CSV per day, downloaded for every date from <span data-f="meta.first_date"></span> to <span data-f="meta.last_date"></span> (<span data-f="meta.days"></span> days).</dd>
