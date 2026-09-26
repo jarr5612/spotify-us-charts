@@ -1,0 +1,470 @@
+{
+ "meta": {
+  "first_date": "2025-01-01",
+  "last_date": "2026-08-31",
+  "days": 608,
+  "rows": 121594
+ },
+ "headline": {
+  "total_streams": 60582505258,
+  "unique_songs": 2651,
+  "unique_lead_artists": 608,
+  "songs_reaching_no1": 54
+ },
+ "s1_artists": {
+  "top10": [
+   {
+    "artist": "Morgan Wallen",
+    "streams": 2859699850,
+    "share_pct": 4.7
+   },
+   {
+    "artist": "Bad Bunny",
+    "streams": 1949586782,
+    "share_pct": 3.2
+   },
+   {
+    "artist": "Kendrick Lamar",
+    "streams": 1881783026,
+    "share_pct": 3.1
+   },
+   {
+    "artist": "Sabrina Carpenter",
+    "streams": 1531550955,
+    "share_pct": 2.5
+   },
+   {
+    "artist": "Drake",
+    "streams": 1506585632,
+    "share_pct": 2.5
+   },
+   {
+    "artist": "Taylor Swift",
+    "streams": 1471496232,
+    "share_pct": 2.4
+   },
+   {
+    "artist": "Ella Langley",
+    "streams": 1203675890,
+    "share_pct": 2.0
+   },
+   {
+    "artist": "sombr",
+    "streams": 1010815210,
+    "share_pct": 1.7
+   },
+   {
+    "artist": "Noah Kahan",
+    "streams": 985906531,
+    "share_pct": 1.6
+   },
+   {
+    "artist": "Olivia Dean",
+    "streams": 955541148,
+    "share_pct": 1.6
+   }
+  ],
+  "top10_share_pct": 25.3,
+  "top1pct_n": 6,
+  "top1pct_share_pct": 18.5,
+  "n_artists": 608
+ },
+ "s2_songs": {
+  "n_songs": 2651,
+  "curve": [
+   {
+    "top_n": 1,
+    "share_pct": 0.8
+   },
+   {
+    "top_n": 10,
+    "share_pct": 6.6
+   },
+   {
+    "top_n": 25,
+    "share_pct": 14.5
+   },
+   {
+    "top_n": 50,
+    "share_pct": 25.6
+   },
+   {
+    "top_n": 100,
+    "share_pct": 40.6
+   },
+   {
+    "top_n": 250,
+    "share_pct": 66.0
+   },
+   {
+    "top_n": 500,
+    "share_pct": 84.5
+   },
+   {
+    "top_n": 1000,
+    "share_pct": 95.7
+   },
+   {
+    "top_n": 2651,
+    "share_pct": 100.0
+   }
+  ],
+  "top10_share_pct": 6.6,
+  "top100_share_pct": 40.6,
+  "top10": [
+   {
+    "track": "luther (with sza)",
+    "artists": "Kendrick Lamar, SZA",
+    "streams": 459402405,
+    "days": 556
+   },
+   {
+    "track": "DtMF",
+    "artists": "Bad Bunny",
+    "streams": 451553966,
+    "days": 603
+   },
+   {
+    "track": "Golden",
+    "artists": "HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",
+    "streams": 445285194,
+    "days": 436
+   },
+   {
+    "track": "Ordinary",
+    "artists": "Alex Warren",
+    "streams": 441559674,
+    "days": 525
+   },
+   {
+    "track": "BIRDS OF A FEATHER",
+    "artists": "Billie Eilish",
+    "streams": 411391221,
+    "days": 606
+   },
+   {
+    "track": "Mr. Brightside",
+    "artists": "The Killers",
+    "streams": 366789131,
+    "days": 608
+   },
+   {
+    "track": "Man I Need",
+    "artists": "Olivia Dean",
+    "streams": 364245038,
+    "days": 377
+   },
+   {
+    "track": "Iris",
+    "artists": "The Goo Goo Dolls",
+    "streams": 354834888,
+    "days": 607
+   },
+   {
+    "track": "No One Noticed",
+    "artists": "The Marías",
+    "streams": 350816689,
+    "days": 584
+   },
+   {
+    "track": "Pink Pony Club",
+    "artists": "Chappell Roan",
+    "streams": 350281237,
+    "days": 583
+   }
+  ]
+ },
+ "s3_no1": {
+  "n_songs": 54,
+  "top10": [
+   {
+    "track": "Choosin' Texas",
+    "artists": "Ella Langley",
+    "days_at_1": 94
+   },
+   {
+    "track": "Golden",
+    "artists": "HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",
+    "days_at_1": 71
+   },
+   {
+    "track": "The Fate of Ophelia",
+    "artists": "Taylor Swift",
+    "days_at_1": 56
+   },
+   {
+    "track": "luther (with sza)",
+    "artists": "Kendrick Lamar, SZA",
+    "days_at_1": 49
+   },
+   {
+    "track": "DtMF",
+    "artists": "Bad Bunny",
+    "days_at_1": 43
+   },
+   {
+    "track": "Rockin' Around The Christmas Tree",
+    "artists": "Brenda Lee",
+    "days_at_1": 30
+   },
+   {
+    "track": "Manchild",
+    "artists": "Sabrina Carpenter",
+    "days_at_1": 25
+   },
+   {
+    "track": "NOKIA",
+    "artists": "Drake",
+    "days_at_1": 24
+   },
+   {
+    "track": "What I Want (feat. Tate McRae)",
+    "artists": "Morgan Wallen, Tate McRae",
+    "days_at_1": 21
+   },
+   {
+    "track": "Die With A Smile",
+    "artists": "Lady Gaga, Bruno Mars",
+    "days_at_1": 14
+   }
+  ],
+  "median_days_at_1": 4.0,
+  "one_day_only": 16
+ },
+ "s4_lifespan": {
+  "histogram": [
+   {
+    "bucket": "1 day",
+    "songs": 653,
+    "share_pct": 24.6
+   },
+   {
+    "bucket": "2-7",
+    "songs": 762,
+    "share_pct": 28.7
+   },
+   {
+    "bucket": "8-30",
+    "songs": 566,
+    "share_pct": 21.4
+   },
+   {
+    "bucket": "31-90",
+    "songs": 311,
+    "share_pct": 11.7
+   },
+   {
+    "bucket": "91-180",
+    "songs": 152,
+    "share_pct": 5.7
+   },
+   {
+    "bucket": "181-365",
+    "songs": 126,
+    "share_pct": 4.8
+   },
+   {
+    "bucket": "366+",
+    "songs": 81,
+    "share_pct": 3.1
+   }
+  ],
+  "median_days": 7.0,
+  "mean_days": 45.9,
+  "one_day_pct": 24.6,
+  "all_days": 4,
+  "all_days_songs": [
+   "Mr. Brightside — The Killers",
+   "Sweater Weather — The Neighbourhood",
+   "No Pole — Don Toliver",
+   "505 — Arctic Monkeys"
+  ]
+ },
+ "s5_debut": {
+  "n_debuts": 1627,
+  "note": "days charted counts only days through 2026-08-31, so recent debuts are cut off",
+  "bands": [
+   {
+    "debut_rank": "1-10",
+    "songs": 184,
+    "median_days": 27.0,
+    "mean_days": 52.1
+   },
+   {
+    "debut_rank": "11-50",
+    "songs": 419,
+    "median_days": 7.0,
+    "mean_days": 20.1
+   },
+   {
+    "debut_rank": "51-100",
+    "songs": 345,
+    "median_days": 2.0,
+    "mean_days": 11.3
+   },
+   {
+    "debut_rank": "101-200",
+    "songs": 679,
+    "median_days": 1.0,
+    "mean_days": 30.6
+   }
+  ]
+ },
+ "s6_collab": [
+  {
+   "type": "Solo",
+   "songs": 2017,
+   "songs_share_pct": 76.1,
+   "streams_share_pct": 79.4,
+   "avg_streams_per_row": 493639,
+   "median_days": 7.0,
+   "median_best_rank": 65.0
+  },
+  {
+   "type": "Collaboration",
+   "songs": 634,
+   "songs_share_pct": 23.9,
+   "streams_share_pct": 20.6,
+   "avg_streams_per_row": 516753,
+   "median_days": 6.0,
+   "median_best_rank": 67.0
+  }
+ ],
+ "s7_weekday": {
+  "by_weekday": [
+   {
+    "weekday": "Monday",
+    "avg_daily_streams": 97646398,
+    "debuts": 72,
+    "debut_share_pct": 4.4
+   },
+   {
+    "weekday": "Tuesday",
+    "avg_daily_streams": 99012012,
+    "debuts": 70,
+    "debut_share_pct": 4.3
+   },
+   {
+    "weekday": "Wednesday",
+    "avg_daily_streams": 99393928,
+    "debuts": 82,
+    "debut_share_pct": 5.0
+   },
+   {
+    "weekday": "Thursday",
+    "avg_daily_streams": 100187229,
+    "debuts": 51,
+    "debut_share_pct": 3.1
+   },
+   {
+    "weekday": "Friday",
+    "avg_daily_streams": 109371847,
+    "debuts": 1178,
+    "debut_share_pct": 72.4
+   },
+   {
+    "weekday": "Saturday",
+    "avg_daily_streams": 100943954,
+    "debuts": 110,
+    "debut_share_pct": 6.8
+   },
+   {
+    "weekday": "Sunday",
+    "avg_daily_streams": 90933336,
+    "debuts": 64,
+    "debut_share_pct": 3.9
+   }
+  ],
+  "friday_debut_share_pct": 72.4
+ },
+ "s8_catalog": {
+  "by_month": [
+   {
+    "month": "2025-01",
+    "catalog_share_pct": 23.7
+   },
+   {
+    "month": "2025-02",
+    "catalog_share_pct": 20.6
+   },
+   {
+    "month": "2025-03",
+    "catalog_share_pct": 22.1
+   },
+   {
+    "month": "2025-04",
+    "catalog_share_pct": 26.6
+   },
+   {
+    "month": "2025-05",
+    "catalog_share_pct": 28.2
+   },
+   {
+    "month": "2025-06",
+    "catalog_share_pct": 32.5
+   },
+   {
+    "month": "2025-07",
+    "catalog_share_pct": 27.8
+   },
+   {
+    "month": "2025-08",
+    "catalog_share_pct": 30.6
+   },
+   {
+    "month": "2025-09",
+    "catalog_share_pct": 31.3
+   },
+   {
+    "month": "2025-10",
+    "catalog_share_pct": 27.7
+   },
+   {
+    "month": "2025-11",
+    "catalog_share_pct": 35.2
+   },
+   {
+    "month": "2025-12",
+    "catalog_share_pct": 29.2
+   },
+   {
+    "month": "2026-01",
+    "catalog_share_pct": 35.9
+   },
+   {
+    "month": "2026-02",
+    "catalog_share_pct": 36.6
+   },
+   {
+    "month": "2026-03",
+    "catalog_share_pct": 35.4
+   },
+   {
+    "month": "2026-04",
+    "catalog_share_pct": 35.0
+   },
+   {
+    "month": "2026-05",
+    "catalog_share_pct": 30.2
+   },
+   {
+    "month": "2026-06",
+    "catalog_share_pct": 32.6
+   },
+   {
+    "month": "2026-07",
+    "catalog_share_pct": 34.9
+   },
+   {
+    "month": "2026-08",
+    "catalog_share_pct": 38.6
+   }
+  ],
+  "overall_share_pct": 30.4,
+  "rows_share_pct": 34.6,
+  "first_month_pct": 23.7,
+  "last_month_pct": 38.6,
+  "avg_streams_catalog": 438432,
+  "avg_streams_current": 529845
+ }
+}
