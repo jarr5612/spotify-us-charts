@@ -67,7 +67,7 @@ python3 scripts/build_dashboard_data.py
 | `dashboard.html` | dashboard page: 7 filters, 5 summary numbers, 4 charts with measure and breakdown switches, a table and a reset button |
 | `assets/style.css` | shared fonts, colors and navigation for both pages |
 | `assets/report.js` | draws the report charts from `data/report.json` |
-| `assets/turntable.js` | the interactive turntable in the report header (start/stop, speed, scratch, optional crackle made in the browser; plays through the top 10 songs from `data/report.json`) |
+| `assets/turntable.js` | the record player beside the report: each finding is a track on the record, the tonearm follows your place as you scroll, and clicking a groove or a track jumps to that finding |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
 | `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
 | `scripts/explore.py` | first exploratory pass used to choose the findings; writes `results/explore.txt` |
