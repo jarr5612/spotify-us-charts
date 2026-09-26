@@ -25,13 +25,81 @@
       <p class="byline"><span class="placeholder">Your name</span> · Financial Data Analytics · Data: Spotify Daily Top Songs USA, <span id="range"></span></p>
       <p class="placeholder">One-paragraph summary: what the data covers (every song on Spotify’s US daily Top 200 for <span data-f="meta.days"></span> days) and what you found.</p>
       </div>
-      <figure class="plate">
-        <div class="mat"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/VictorVPhonograph.jpg"
-             alt="A Victor disc phonograph from about 1907, with an oak cabinet and a large metal petal horn" width="622" height="800"></div>
-        <figcaption>Victor disc phonograph, c. 1907. Photo: Norman Bruderhofer,
-          <a href="https://commons.wikimedia.org/wiki/File:VictorVPhonograph.jpg">Wikimedia Commons</a>,
-          <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a>.</figcaption>
-      </figure>
+      <div class="tt-wrap">
+        <div class="turntable" id="turntable" role="group" aria-label="Interactive turntable: press start to play the most-streamed songs, drag the record to scratch">
+          <div class="tt-deck">
+            <div class="tt-platter">
+              <div class="tt-strobe"></div>
+              <div class="tt-record" title="Drag to scratch">
+                <div class="tt-label">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <defs>
+                      <path id="tt-arc-top" d="M 16 50 A 34 34 0 0 1 84 50"/>
+                      <path id="tt-arc-bot" d="M 12 50 A 38 38 0 0 0 88 50"/>
+                    </defs>
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(246,234,210,.55)" stroke-width=".6"/>
+                    <text class="tt-arc"><textPath href="#tt-arc-top" startOffset="50%" text-anchor="middle">THE US TOP 200</textPath></text>
+                    <text class="tt-arc tt-arc-sm"><textPath href="#tt-arc-bot" startOffset="50%" text-anchor="middle">SPOTIFY DAILY CHART · 2025–2026</textPath></text>
+                    <line x1="24" y1="56" x2="76" y2="56" stroke="rgba(246,234,210,.5)" stroke-width=".4"/>
+                    <text class="tt-label-song" x="50" y="40" text-anchor="middle">Side A</text>
+                    <text class="tt-label-speed" x="50" y="66" text-anchor="middle">33⅓ RPM</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="tt-sheen" aria-hidden="true"></div>
+              <div class="tt-spindle" aria-hidden="true"></div>
+            </div>
+
+            <svg class="tt-arm-svg" viewBox="0 0 600 540" aria-hidden="true">
+              <defs>
+                <linearGradient id="tt-chrome" x1="0" x2="1">
+                  <stop offset="0" stop-color="#6b6b6b"/><stop offset=".35" stop-color="#f4f4f2"/>
+                  <stop offset=".55" stop-color="#b9b9b6"/><stop offset="1" stop-color="#5a5a58"/>
+                </linearGradient>
+                <radialGradient id="tt-base" cx=".4" cy=".35" r=".7">
+                  <stop offset="0" stop-color="#e9e7e1"/><stop offset=".6" stop-color="#9c9a94"/><stop offset="1" stop-color="#55534f"/>
+                </radialGradient>
+                <filter id="tt-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="6" dy="9" stdDeviation="5" flood-color="#000" flood-opacity=".45"/>
+                </filter>
+              </defs>
+              <!-- arm rest -->
+              <rect x="506" y="398" width="18" height="30" rx="3" fill="#2a2420"/>
+              <rect x="502" y="394" width="26" height="8" rx="3" fill="url(#tt-chrome)"/>
+              <!-- pivot base -->
+              <circle cx="515" cy="90" r="44" fill="#1d1916" filter="url(#tt-shadow)"/>
+              <circle cx="515" cy="90" r="38" fill="url(#tt-base)"/>
+              <circle cx="515" cy="90" r="30" fill="none" stroke="rgba(0,0,0,.25)"/>
+              <!-- the arm itself (rotates around the pivot) -->
+              <g class="tt-arm" filter="url(#tt-shadow)">
+                <rect x="509" y="46" width="12" height="44" fill="url(#tt-chrome)"/>
+                <rect x="495" y="10" width="40" height="42" rx="7" fill="url(#tt-chrome)"/>
+                <rect x="495" y="22" width="40" height="3" fill="rgba(0,0,0,.25)"/>
+                <rect x="509.5" y="90" width="11" height="300" rx="5.5" fill="url(#tt-chrome)"/>
+                <g transform="rotate(22 515 392)">
+                  <rect x="500" y="386" width="30" height="56" rx="4" fill="#1b1816"/>
+                  <rect x="503" y="389" width="24" height="50" rx="3" fill="url(#tt-chrome)"/>
+                  <rect x="507" y="418" width="16" height="20" rx="2" fill="#7a1f16"/>
+                  <rect x="528" y="396" width="16" height="4" rx="2" fill="url(#tt-chrome)"/>
+                </g>
+                <circle cx="515" cy="90" r="16" fill="url(#tt-base)" stroke="rgba(0,0,0,.35)"/>
+                <circle cx="515" cy="90" r="5" fill="#2a2724"/>
+              </g>
+            </svg>
+
+            <div class="tt-speed" role="group" aria-label="Speed">
+              <button type="button" data-rpm="33.333" aria-pressed="true">33⅓</button>
+              <button type="button" data-rpm="45" aria-pressed="false">45</button>
+            </div>
+            <span class="tt-led" aria-hidden="true"></span>
+            <button class="tt-power" type="button" aria-pressed="false" aria-label="Play the record"><span>Start</span></button>
+          </div>
+        </div>
+        <div class="tt-under">
+          <p id="tt-now" class="tt-now">Press <b>Start</b> to drop the needle on the most-streamed songs. Drag the record to scratch.</p>
+          <button class="tt-sound" type="button" aria-pressed="false">Crackle: off</button>
+        </div>
+      </div>
     </header>
 
     <section class="headline" aria-label="Headline numbers">
@@ -143,5 +211,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="assets/report.js"></script>
+  <script src="assets/turntable.js"></script>
 </body>
 </html>
