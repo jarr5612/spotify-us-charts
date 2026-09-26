@@ -22,13 +22,13 @@ function baseOptions({ horizontal = false, yLabel = "", xLabel = "", legend = fa
                     title: { display: !!(horizontal ? yLabel : xLabel), text: horizontal ? yLabel : xLabel, color: ink2 } };
   return {
     responsive: true, maintainAspectRatio: false, indexAxis: horizontal ? "y" : "x",
-    interaction: { mode: "index", intersect: false },
+    interaction: { mode: "index", intersect: false, axis: horizontal ? "y" : "x" },
     plugins: { legend: { display: legend, labels: { color: ink2 } },
                tooltip: tip ? { callbacks: { label: tip } } : {} },
     scales: horizontal ? { x: valueAxis, y: catAxis } : { x: catAxis, y: valueAxis },
   };
 }
-const bar = (color) => ({ backgroundColor: color, borderRadius: 4, borderSkipped: "start", maxBarThickness: 36 });
+const bar = (color) => ({ backgroundColor: color, hoverBackgroundColor: css("--brass"), borderRadius: 4, borderSkipped: "start", maxBarThickness: 36, categoryPercentage: .9, barPercentage: .9 });
 
 fetch("data/report.json").then(r => r.json()).then(R => {
   Chart.defaults.font.family = css("--font");

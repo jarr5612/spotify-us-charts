@@ -66,7 +66,7 @@ function barOpts(horizontal, M) {
   const cat = { grid: { display: false }, ticks: { color: ink2, autoSkip: !horizontal,
                 callback: function (v) { const l = this.getLabelForValue(v); return l.length > 28 ? l.slice(0, 27) + "…" : l; } } };
   return { responsive: true, maintainAspectRatio: false, animation: false, indexAxis: horizontal ? "y" : "x",
-           interaction: { mode: "index", intersect: false },
+           interaction: { mode: "index", intersect: false, axis: horizontal ? "y" : "x" },
            plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${M.label}: ${M.fmt(c.raw)}` } } },
            scales: horizontal ? { x: val, y: cat } : { x: cat, y: val } };
 }
