@@ -19,7 +19,8 @@ Live site: https://jarr5612.github.io/spotify-us-charts/
   signed-in users. The CSV for every date from 2025-01-01 through 2026-08-31 was
   downloaded through that feature on 2026-09-24/25 (automated in the browser,
   one date at a time), then combined into one file with a `date` column added.
-- **One row** = one song on the US daily chart on one date.
+- **One row** = one Spotify track (one version of a song) on the US daily chart on one date.
+- **Checked against the source:** the full 200-row charts for 2025-03-17, 2025-12-25 and 2026-07-13 were compared with charts.spotify.com on 2026-09-26; every rank and stream count matched exactly.
 
 ### Columns
 
@@ -33,7 +34,7 @@ Live site: https://jarr5612.github.io/spotify-us-charts/
 | `source` | record label / distributor |
 | `peak_rank` | best rank the song has reached so far |
 | `previous_rank` | rank the day before (`-1` = not on the chart the day before) |
-| `days_on_chart` | number of days the song has been on the chart |
+| `days_on_chart` | total days this track has been on the chart, counted by Spotify since it first charted (includes days before 2025; keeps counting when a song drops off and returns) |
 | `streams` | US streams that day |
 
 ### Known data notes
