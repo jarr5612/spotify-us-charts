@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US Spotify Top 200 — Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand" href="index.html">US Top 200 <span>Charts</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Report</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </div></nav>
+
+  <main>
+    <header class="hero">
+      <h1 class="placeholder">Report title</h1>
+      <p class="byline"><span class="placeholder">Your name</span> · Financial Data Analytics · Data: Spotify Daily Top Songs USA, <span id="range"></span></p>
+      <p class="placeholder">One-paragraph summary: what the data covers (every song on Spotify’s US daily Top 200 for <span data-f="meta.days"></span> days) and what you found.</p>
+    </header>
+
+    <section class="headline" aria-label="Headline numbers">
+      <div class="stat"><div class="value" id="h1"></div><div class="label">US streams on the Top 200</div></div>
+      <div class="stat"><div class="value" id="h2"></div><div class="label">different songs made the chart</div></div>
+      <div class="stat"><div class="value" id="h3"></div><div class="label">different lead artists</div></div>
+      <div class="stat"><div class="value" id="h4"></div><div class="label">songs reached #1</div></div>
+    </section>
+
+    <section class="finding" id="s1">
+      <div class="num">Finding 1 · Artists</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “A few artists take a large share of streams”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k1"></ul>
+      <p class="chart-title">Share of all Top-200 streams, top 10 lead artists</p>
+      <div class="chart-box"><canvas id="c1"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t1"></div></details>
+    </section>
+    <section class="finding" id="s2">
+      <div class="num">Finding 2 · Songs</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “A small set of songs carries the chart”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k2"></ul>
+      <p class="chart-title">Cumulative share of streams held by the top N songs</p>
+      <div class="chart-box"><canvas id="c2"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t2"></div></details>
+    </section>
+    <section class="finding" id="s3">
+      <div class="num">Finding 3 · #1 spot</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Most #1 songs hold the top spot only briefly — a few hold it for months”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k3"></ul>
+      <p class="chart-title">Days at #1, top 10 songs</p>
+      <div class="chart-box"><canvas id="c3"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t3"></div></details>
+    </section>
+    <section class="finding" id="s4">
+      <div class="num">Finding 4 · Lifespan</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Most songs leave the chart within a week”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k4"></ul>
+      <p class="chart-title">Songs by number of days charted</p>
+      <div class="chart-box"><canvas id="c4"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t4"></div></details>
+    </section>
+    <section class="finding" id="s5">
+      <div class="num">Finding 5 · Debuts</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Higher debuts stay on the chart longer”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k5"></ul>
+      <p class="chart-title">Median days charted, by debut rank</p>
+      <div class="chart-box"><canvas id="c5"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t5"></div></details>
+    </section>
+    <section class="finding" id="s6">
+      <div class="num">Finding 6 · Collaborations</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Collaborations perform about the same as solo songs”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k6"></ul>
+      <p class="chart-title">Solo vs. collaboration: share of songs and share of streams</p>
+      <div class="chart-box"><canvas id="c6"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t6"></div></details>
+    </section>
+    <section class="finding" id="s7">
+      <div class="num">Finding 7 · Release day</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Friday is release day”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k7"></ul>
+      <div class="chart-row">
+        <div><p class="chart-title">Share of all debuts (%)</p><div class="chart-box"><canvas id="c7a"></canvas></div></div>
+        <div><p class="chart-title">Average Top-200 streams per day (millions)</p><div class="chart-box"><canvas id="c7b"></canvas></div></div>
+      </div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t7"></div></details>
+    </section>
+    <section class="finding" id="s8">
+      <div class="num">Finding 8 · Catalog</div>
+      <h2 class="placeholder">Heading that states the finding (idea: “Older hits are taking a growing share of streams”)</h2>
+      <p class="placeholder">One or two paragraphs explaining the finding in your own words, using the numbers below.</p>
+      <ul class="keynums" id="k8"></ul>
+      <p class="chart-title">Catalog share of streams by month</p>
+      <div class="chart-box"><canvas id="c8"></canvas></div>
+      <details class="table-view"><summary>Show the numbers behind this chart</summary><div class="table-wrap" id="t8"></div></details>
+    </section>
+
+    <section class="finding about" id="data">
+      <h2>About the data</h2>
+      <p class="placeholder">Rewrite this section in your own words; the facts below are accurate starting points.</p>
+      <dl>
+        <dt>Source</dt><dd>Spotify Charts (charts.spotify.com), “Daily Top Songs USA.” One CSV per day, downloaded for every date from <span data-f="meta.first_date"></span> to <span data-f="meta.last_date"></span> (<span data-f="meta.days"></span> days).</dd>
+        <dt>One row</dt><dd>One song on the US Top 200 on one date — <span data-f="meta.rows"></span> rows in total.</dd>
+        <dt>Rows dropped</dt><dd>None. Every day has 200 rows except 2026-07-13 to 2026-07-18, which have 199 because Spotify’s own chart skips one position on each of those days.</dd>
+        <dt>Streams</dt><dd>US streams counted by Spotify for songs on the Top 200 that day. Songs outside the Top 200 are not included, so totals are Top-200 totals, not all US streaming.</dd>
+        <dt>Share</dt><dd>A group’s streams divided by all Top-200 streams in the period (or in the month, for monthly shares).</dd>
+        <dt>Days charted</dt><dd>The number of dates a song appears in this data (at most <span data-f="meta.days"></span>). Songs that were already charting before 2025 or still charting after August 2026 are cut off at the edges.</dd>
+        <dt>Lead artist</dt><dd>The first credited artist. “Tyler, The Creator” and “Earth, Wind &amp; Fire” are kept as single names.</dd>
+        <dt>Collaboration</dt><dd>A song with more than one credited artist.</dd>
+        <dt>Debut</dt><dd>A song’s first day ever on the chart (not on the chart the day before, and Spotify’s days-on-chart count is 1).</dd>
+        <dt>Catalog</dt><dd>On a given date, a song that has been on the chart for more than 365 days. This measures time on the chart, not release date.</dd>
+        <dt>Median vs. average</dt><dd>Medians are used for days charted because a few very long runs pull the average up.</dd>
+        <dt>Reproduce</dt><dd><code>python3 scripts/build_data.py</code> then <code>python3 scripts/analysis.py</code> rebuilds every number on this page (<code>data/report.json</code>).</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>Data: Spotify Charts, Daily Top Songs USA. Built for Financial Data Analytics. <a href="https://github.com/jarr5612/spotify-us-charts">Source on GitHub</a></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/report.js"></script>
+</body>
+</html>
