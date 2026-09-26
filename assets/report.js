@@ -108,16 +108,21 @@ function v1(R, box) {
   const svg = svgIn(left, 360, 360, "A 10 by 10 grid of records; each record is 1 percent of all streams. Every artist with at least 1 percent has their own records, in order.");
   // grid: every artist with >= 1% (tier top10 / one_pct) in order, then "Everyone else" (tier rest)
   const owner = []; grid.forEach((g, gi) => { for (let k = 0; k < g.cells; k++) owner.push(gi); });
-  const acc = css("--accent"), brass = css("--brass"), second = "#9c8466", rest = "#b9ab94";
+  const brass = css("--brass"), rest = "#b9ab94";
+  // neighbouring artists alternate between two shades (reds for the top 10, browns for #11+),
+  // and each label carries the artist's rank so every artist's records can be picked out
+  const SHADES = { top10: ["#9b2d20", "#c4553f"], one_pct: ["#6f5238", "#a2825c"] };
   const tierOf = gi => grid[gi].tier;
-  const baseLab = gi => tierOf(gi) === "top10" ? acc : tierOf(gi) === "one_pct" ? second : rest;
+  const baseLab = gi => tierOf(gi) === "rest" ? rest : SHADES[tierOf(gi)][gi % 2];
   const recs = owner.map((gi, k) => {
     const cx = 18 + (k % 10) * 36, cy = 18 + Math.floor(k / 10) * 36, isRest = tierOf(gi) === "rest";
     const g = el("g", { class: "v1-rec", "data-g": gi, style: isRest ? "cursor:default" : "" }, svg);
     el("circle", { cx, cy, r: 16, fill: isRest ? "#8d8373" : "#151210", "fill-opacity": isRest ? .35 : 1 }, g);
     for (const r of [13.5, 11.5, 9.5]) el("circle", { cx, cy, r, fill: "none", stroke: isRest ? "#fff" : "#3a3531", "stroke-opacity": isRest ? .25 : .8, "stroke-width": .6 }, g);
-    const lab = el("circle", { cx, cy, r: 5.6, class: "lab", fill: baseLab(gi) }, g);
-    el("circle", { cx, cy, r: 1.1, fill: css("--surface") }, g);
+    const lab = el("circle", { cx, cy, r: isRest ? 5.6 : 8, class: "lab", fill: baseLab(gi) }, g);
+    if (isRest) el("circle", { cx, cy, r: 1.1, fill: css("--surface") }, g);
+    else el("text", { x: cx, y: cy + .3, "text-anchor": "middle", "dominant-baseline": "central", "font-size": gi + 1 > 9 ? 7 : 8, "font-weight": 700, fill: "#fbf1dc",
+                      "pointer-events": "none", style: "font-family: var(--font-display)" }, g).textContent = gi + 1;
     return { g, lab, gi, tier: tierOf(gi) };
   });
   // the list keeps the top 10 plus one "Everyone else" line (artists #11 on, including those with 1%+)
@@ -131,7 +136,12 @@ function v1(R, box) {
     .concat([{ label: `${nOne} more artists with 1%+ each`, sub: `#11–${10 + nOne}: ${mid.slice(0, 3).map(g => g.artist).join(", ")} …`, cells: midCells, share: midShare, key: "mid" },
              { label: "Everyone else", sub: `${fmt(A.rest_artists)} artists, each under 1%`, cells: low.cells, share: low.share_pct, key: "rest" }]);
   const list = document.createElement("ol"); list.className = "v1-legend"; wrap.appendChild(list);
-  list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : r.key === "mid" ? "mid" : ""}"><span class="dot"></span>
+  list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : r.key === "mid" ? "mid" : ""}">` +
+      (typeof r.key === "number"
+        ? `<svg class="dot-num" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11.5" fill="#151210"/>` +
+          `<circle cx="12" cy="12" r="8.5" fill="${baseLab(r.key)}"/><text x="12" y="12.2" text-anchor="middle" dominant-baseline="central" ` +
+          `font-size="${r.key + 1 > 9 ? 8.5 : 10}" font-weight="700" fill="#fbf1dc" style="font-family: var(--font-display)">${r.key + 1}</text></svg>`
+        : `<span class="dot"></span>`) + `
       <span>${esc(r.label)}${r.sub ? `<br><span class="hint">${esc(r.sub)}</span>` : ""}</span>
       <span class="pct"><span class="n">${r.cells}</span> record${r.cells > 1 ? "s" : ""} · ${pct(r.share)}</span></li>`).join("");
   const items = [...list.children];
