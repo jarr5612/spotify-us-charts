@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US Spotify Top 200 — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand" href="index.html">US Top 200 <span>Charts</span></a>
+    <div class="nav-links">
+      <a href="index.html">Report</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+    </div>
+  </div></nav>
+
+  <main>
+    <h1>Explore the chart</h1>
+    <p class="status" id="status">Loading 121,594 chart rows…</p>
+
+    <section class="filters" aria-label="Filters">
+      <div class="field"><label for="f-from">From month</label><select id="f-from"></select></div>
+      <div class="field"><label for="f-to">To month</label><select id="f-to"></select></div>
+      <div class="field"><label for="f-artist">Lead artist</label>
+        <input id="f-artist" list="artist-list" placeholder="All artists"><datalist id="artist-list"></datalist></div>
+      <div class="field"><label for="f-label">Label</label>
+        <input id="f-label" list="label-list" placeholder="All labels"><datalist id="label-list"></datalist></div>
+      <div class="field"><label for="f-type">Song type</label>
+        <select id="f-type"><option value="">All songs</option><option value="0">Solo</option><option value="1">Collaboration</option></select></div>
+      <div class="field"><label for="f-cat">Catalog vs. current</label>
+        <select id="f-cat"><option value="">All</option><option value="0">Current (≤ 365 days on chart)</option><option value="1">Catalog (&gt; 365 days on chart)</option></select></div>
+      <div class="field"><label for="f-rank">Chart positions</label>
+        <select id="f-rank"><option value="200">Top 200 (all)</option><option value="100">Top 100</option><option value="50">Top 50</option><option value="10">Top 10</option></select></div>
+      <div class="field"><button class="btn" id="reset" type="button">Reset all filters</button></div>
+    </section>
+
+    <section class="kpis" aria-label="Summary numbers">
+      <div class="stat"><div class="value" id="k-streams">–</div><div class="label">Total streams</div></div>
+      <div class="stat"><div class="value" id="k-songs">–</div><div class="label">Different songs</div></div>
+      <div class="stat"><div class="value" id="k-artists">–</div><div class="label">Different lead artists</div></div>
+      <div class="stat"><div class="value" id="k-avg">–</div><div class="label">Average streams per chart spot</div></div>
+      <div class="stat"><div class="value" id="k-debuts">–</div><div class="label">Debuts</div></div>
+    </section>
+
+    <section class="switches" aria-label="Chart switches">
+      <div><span class="seg-label">Measure</span>
+        <div class="seg" id="sw-measure">
+          <button data-v="streams" aria-pressed="true">Total streams</button>
+          <button data-v="spots" aria-pressed="false">Chart spots</button>
+          <button data-v="avg" aria-pressed="false">Avg streams per spot</button>
+          <button data-v="songs" aria-pressed="false">Different songs</button>
+        </div></div>
+      <div><span class="seg-label">Break down by</span>
+        <div class="seg" id="sw-dim">
+          <button data-v="artist" aria-pressed="true">Lead artist</button>
+          <button data-v="label" aria-pressed="false">Label</button>
+          <button data-v="song" aria-pressed="false">Song</button>
+          <button data-v="type" aria-pressed="false">Song type</button>
+          <button data-v="status" aria-pressed="false">Entry status</button>
+        </div></div>
+    </section>
+
+    <section class="panel-grid">
+      <div class="panel"><h3 id="ch1-title">By month</h3><p class="sub">Measure per calendar month</p>
+        <div class="chart-box"><canvas id="ch1"></canvas></div></div>
+      <div class="panel"><h3 id="ch2-title">Top 10</h3><p class="sub">Largest groups for the chosen breakdown</p>
+        <div class="chart-box"><canvas id="ch2"></canvas></div></div>
+      <div class="panel"><h3 id="ch3-title">By weekday</h3><p class="sub">Measure by day of the week</p>
+        <div class="chart-box"><canvas id="ch3"></canvas></div></div>
+      <div class="panel"><h3 id="ch4-title">By chart position</h3><p class="sub">Measure by rank band</p>
+        <div class="chart-box"><canvas id="ch4"></canvas></div></div>
+    </section>
+
+    <section class="panel" style="margin-top:1rem">
+      <h3 id="tbl-title">Numbers behind the current view</h3>
+      <p class="sub">Every group for the chosen breakdown, sorted by the chosen measure (top 50 shown)</p>
+      <div class="table-wrap" id="tbl"></div>
+    </section>
+  </main>
+
+  <footer>Data: Spotify Charts, Daily Top Songs USA, 2025-01-01 to 2026-08-31. All numbers are calculated in your browser from <code>data/dashboard.json</code>. <a href="https://github.com/jarr5612/spotify-us-charts">Source on GitHub</a></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

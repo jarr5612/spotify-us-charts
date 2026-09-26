@@ -6,10 +6,10 @@ Author: _[your name]_
 A two-page website built on Spotify's **Daily Top Songs USA** chart from
 **January 1, 2025 to August 31, 2026** (608 days):
 
-- `index.html` — the report: findings, headline numbers and a chart for each finding *(coming)*
-- `dashboard.html` — an interactive dashboard with filters, switches, charts and a table *(coming)*
+- `index.html` — the report: findings, headline numbers and a chart for each finding
+- `dashboard.html` — an interactive dashboard with filters, switches, charts and a table
 
-Live site: _[GitHub Pages URL]_
+Live site: https://jarr5612.github.io/spotify-us-charts/
 
 ## Data source
 
@@ -44,7 +44,13 @@ Live site: _[GitHub Pages URL]_
 
 ## Files
 
-To rebuild everything from the raw data: `python3 scripts/build_data.py`
+To rebuild everything from the raw data:
+
+```
+python3 scripts/build_data.py
+python3 scripts/analysis.py
+python3 scripts/build_dashboard_data.py
+```
 
 
 | path | what it is |
@@ -53,5 +59,14 @@ To rebuild everything from the raw data: `python3 scripts/build_data.py`
 | `data/raw/daily/regional-us-daily-YYYY-MM-DD.csv` | one raw file per day, Spotify's 9 columns |
 | `scripts/split_daily.py` | rebuilds the daily files from the combined file |
 | `scripts/build_data.py` | builds the analysis file from the raw data and prints a quick profile |
+| `scripts/analysis.py` | computes every number and chart on the report page; writes `data/report.json` |
+| `scripts/build_dashboard_data.py` | writes the compact `data/dashboard.json` the dashboard loads |
+| `data/report.json` | report numbers (loaded by `index.html`) |
+| `data/dashboard.json` | all 121,594 rows in a compact column layout (loaded by `dashboard.html`) |
+| `index.html` | report page |
+| `dashboard.html` | dashboard page: 7 filters, 5 summary numbers, 4 charts with measure and breakdown switches, a table and a reset button |
+| `assets/style.css` | shared fonts, colors and navigation for both pages |
+| `assets/report.js` | draws the report charts from `data/report.json` |
+| `assets/dashboard.js` | filters the data and draws the dashboard in the browser |
 | `data/spotify_us_daily.csv` | analysis file: every raw row plus year, month, weekday, lead artist, number of artists, collaboration flag, entry status (debut / re-entry / returning) and rank change |
 | `README.md` | this file |

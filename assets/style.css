@@ -102,3 +102,29 @@ td.n, th.n { text-align: right; }
   .chart-box { height: 280px; }
   .finding { padding: 1rem; }
 }
+
+/* ---------- dashboard ---------- */
+.filters { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+           padding: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+           gap: .75rem 1rem; align-items: end; margin: 1rem 0 1.25rem; }
+.field label { display: block; font-size: .8rem; font-weight: 600; color: var(--ink-2); margin-bottom: .25rem; }
+.field select, .field input { width: 100%; font: inherit; font-size: .9rem; padding: .45rem .5rem;
+           border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); height: 2.4rem; }
+.btn { font: inherit; font-weight: 600; font-size: .9rem; padding: .5rem .9rem; border-radius: 6px;
+       border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; }
+.btn:hover { background: var(--accent-soft); }
+.switches { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-bottom: 1rem; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; flex-wrap: wrap; }
+.seg button { font: inherit; font-size: .85rem; border: 0; background: var(--surface); color: var(--ink-2);
+              padding: .4rem .75rem; cursor: pointer; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.seg-label { font-size: .8rem; font-weight: 600; color: var(--ink-2); display: block; margin-bottom: .25rem; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.25rem; }
+.panel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1rem; }
+@media (max-width: 600px) { .panel-grid { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; min-width: 0; }
+.panel h3 { font-size: 1rem; margin: 0; }
+.panel .sub { font-size: .8rem; color: var(--ink-3); margin: 0 0 .5rem; }
+.panel .chart-box { height: 300px; margin-top: .25rem; }
+.status { font-size: .85rem; color: var(--ink-3); }
