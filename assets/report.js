@@ -77,7 +77,7 @@ function axisY(svg, y, x, ticks, fmtT, x1) {
 }
 
 // =============================================================================
-fetch("data/report.json").then(r => r.json()).then(R => {
+fetch("data/report.json?v=202609262127").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
@@ -124,24 +124,30 @@ function v1(R, box) {
   const top10 = grid.filter(g => g.tier === "top10");
   const topCells = top10.reduce((a, g) => a + g.cells, 0), topShare = A.top10_share_pct;   // exact top-10 share, so the two lines add to 100%
   const nOne = grid.filter(g => g.tier === "one_pct").length;
+  const mid = grid.filter(g => g.tier === "one_pct"), low = grid.find(g => g.tier === "rest");
+  const midCells = mid.reduce((a, g) => a + g.cells, 0);
+  const midShare = Math.round((100 - topShare - low.share_pct) * 10) / 10;   // so the three lines add to 100%
   const legendRows = top10.map((g, gi) => ({ label: g.artist, cells: g.cells, share: g.share_pct, key: gi }))
-    .concat([{ label: "Everyone else", cells: 100 - topCells, share: 100 - topShare, key: "rest" }]);
+    .concat([{ label: `${nOne} more artists with 1%+ each`, sub: `#11–${10 + nOne}: ${mid.slice(0, 3).map(g => g.artist).join(", ")} …`, cells: midCells, share: midShare, key: "mid" },
+             { label: "Everyone else", sub: `${fmt(A.rest_artists)} artists, each under 1%`, cells: low.cells, share: low.share_pct, key: "rest" }]);
   const list = document.createElement("ol"); list.className = "v1-legend"; wrap.appendChild(list);
-  list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : ""}"><span class="dot"></span>
-      <span>${esc(r.label)}${r.key === "rest" ? `<br><span class="hint">${nOne} more artists with 1%+ each, then ${fmt(A.rest_artists)} artists under 1%</span>` : ""}</span>
+  list.innerHTML = legendRows.map(r => `<li data-k="${r.key}" class="${r.key === "rest" ? "rest" : r.key === "mid" ? "mid" : ""}"><span class="dot"></span>
+      <span>${esc(r.label)}${r.sub ? `<br><span class="hint">${esc(r.sub)}</span>` : ""}</span>
       <span class="pct"><span class="n">${r.cells}</span> record${r.cells > 1 ? "s" : ""} · ${pct(r.share)}</span></li>`).join("");
   const items = [...list.children];
-  // focus: an artist index (0..), "rest" = everything outside the top 10, or null = no focus
+  // focus: an artist index (0..), "mid" = artists #11+ with 1%+, "rest" = artists under 1%, or null
+  const isGroup = k => k === "mid" || k === "rest";
   function focus(k) {
     recs.forEach(r => {
-      const on = k === null || (k === "rest" ? r.tier !== "top10" : r.gi === k);
+      const on = k === null || (k === "mid" ? r.tier === "one_pct" : k === "rest" ? r.tier === "rest" : r.gi === k);
       r.g.style.opacity = on ? 1 : .18;
-      r.lab.setAttribute("fill", k !== null && k !== "rest" && r.gi === k ? brass : baseLab(r.gi));
+      r.lab.setAttribute("fill", k !== null && !isGroup(k) && r.gi === k ? brass : baseLab(r.gi));
     });
-    items.forEach(li => li.classList.toggle("on", String(k) === li.dataset.k || (k !== null && k !== "rest" && grid[k].tier !== "top10" && li.dataset.k === "rest")));
+    items.forEach(li => li.classList.toggle("on", String(k) === li.dataset.k ||
+      (k !== null && !isGroup(k) && grid[k].tier === "one_pct" && li.dataset.k === "mid")));
   }
   const tipFor = gi => { const g = grid[gi], rank = gi + 1;
-    return `<span class="m">#${rank} artist${g.tier === "one_pct" ? " · in “Everyone else” in the list" : ""}</span><br><b>${esc(g.artist)}</b><br>` +
+    return `<span class="m">#${rank} artist</span><br><b>${esc(g.artist)}</b><br>` +
       `<span class="v">${pct(g.share_pct, 2)}</span> of all Top-200 streams<br><span class="m">${g.cells} of 100 records (each = 1%, rounded)</span>` +
       (g.top_song ? `<br><span class="m">▶ click to play their top song, “${esc(g.top_song.track)}”</span>` : ""); };
   recs.forEach(r => {
@@ -152,9 +158,9 @@ function v1(R, box) {
     r.g.addEventListener("click", () => play(grid[r.gi].top_song));
   });
   items.forEach(li => {
-    const k = li.dataset.k === "rest" ? "rest" : +li.dataset.k;
+    const k = isGroup(li.dataset.k) ? li.dataset.k : +li.dataset.k;
     li.addEventListener("pointerenter", () => focus(k)); li.addEventListener("pointerleave", () => focus(null));
-    if (k !== "rest") { const ts = grid[k].top_song; li.title = `Play “${ts.track}”`; li.addEventListener("click", () => play(ts)); }
+    if (!isGroup(k)) { const ts = grid[k].top_song; li.title = `Play “${ts.track}”`; li.addEventListener("click", () => play(ts)); }
   });
 }
 

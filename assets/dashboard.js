@@ -144,7 +144,7 @@ function reset() {
   render();
 }
 
-fetch("data/dashboard.json").then(r => r.json()).then(data => {
+fetch("data/dashboard.json?v=202609262127").then(r => r.json()).then(data => {
   D = data;
   Chart.defaults.font.family = css("--font");
   months = [...new Set(D.dates.map(d => d.slice(0, 7)))];
