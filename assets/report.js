@@ -109,8 +109,6 @@ function v1(R, box) {
   // grid: every artist with >= 1% (tier top10 / one_pct) in order, then "Everyone else" (tier rest)
   const owner = []; grid.forEach((g, gi) => { for (let k = 0; k < g.cells; k++) owner.push(gi); });
   const brass = css("--brass"), rest = "#b9ab94";
-  // neighbouring artists alternate between two shades (reds for the top 10, browns for #11+),
-  // and each label carries the artist's rank so every artist's records can be picked out
   // each artist gets its own shade: reds for the top 10, browns for #11+. Neighbouring artists
   // alternate between the darker and lighter half of the range (and step within each half),
   // so the change from one artist to the next is easy to see
@@ -122,14 +120,16 @@ function v1(R, box) {
   const idxIn = gi => grid.slice(0, gi).filter(g => g.tier === tierOf(gi)).length;
   const nIn = tier => grid.filter(g => g.tier === tier).length;
   const zig = (i, n) => { const nd = Math.ceil(n / 2), nl = Math.floor(n / 2);          // even i: dark half, odd i: light half
-    return i % 2 === 0 ? (nd > 1 ? (i / 2) / (nd - 1) : 0) * .42 : .58 + (nl > 1 ? ((i - 1) / 2) / (nl - 1) : 0) * .42; };
+    return i % 2 === 0 ? (nd > 1 ? (i / 2) / (nd - 1) : 0) * .36 : .64 + (nl > 1 ? ((i - 1) / 2) / (nl - 1) : 0) * .36; };
   const baseLab = gi => tierOf(gi) === "rest" ? rest : ramp(STOPS[tierOf(gi)], zig(idxIn(gi), nIn(tierOf(gi))));
   const recs = owner.map((gi, k) => {
     const cx = 18 + (k % 10) * 36, cy = 18 + Math.floor(k / 10) * 36, isRest = tierOf(gi) === "rest";
     const g = el("g", { class: "v1-rec", "data-g": gi, style: isRest ? "cursor:default" : "" }, svg);
+    // alternate a shaded tile behind every other artist, so each artist's run of records reads as its own block
+    if (!isRest) el("rect", { x: cx - 18, y: cy - 18, width: 36, height: 36, fill: css("--ink"), "fill-opacity": gi % 2 ? .13 : 0 }, g);
     el("circle", { cx, cy, r: 16, fill: isRest ? "#8d8373" : "#151210", "fill-opacity": isRest ? .35 : 1 }, g);
     for (const r of [13.5, 11.5, 9.5]) el("circle", { cx, cy, r, fill: "none", stroke: isRest ? "#fff" : "#3a3531", "stroke-opacity": isRest ? .25 : .8, "stroke-width": .6 }, g);
-    const lab = el("circle", { cx, cy, r: isRest ? 5.6 : 7, class: "lab", fill: baseLab(gi) }, g);
+    const lab = el("circle", { cx, cy, r: isRest ? 5.6 : 8.5, class: "lab", fill: baseLab(gi) }, g);
     el("circle", { cx, cy, r: 1.1, fill: css("--surface") }, g);
     return { g, lab, gi, tier: tierOf(gi) };
   });
