@@ -29,6 +29,7 @@
   window.playSong = function (song) {
     if (!song || !song.track_id) return;
     current = song; setCaption(song);
+    document.body.classList.add("music-on");
     if (dock) dock.hidden = false;
     if (!ctl) { wantPlay = true; return; }
     wantPlay = true;

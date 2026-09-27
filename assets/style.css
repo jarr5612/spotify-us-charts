@@ -79,7 +79,7 @@ footer { max-width: 1080px; margin: 0 auto; padding: 1.5rem 16px 3rem; color: va
 main.page { max-width: 1240px; display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 2.5rem; align-items: start; }
 .rail { position: sticky; top: 76px; }
 @media (max-width: 1060px) {
-  main.page { grid-template-columns: 1fr; }
+  main.page { grid-template-columns: minmax(0, 1fr); }
   .rail { position: static; order: -1; max-width: 420px; margin: 0 auto; width: 100%; }
 }
 
@@ -273,3 +273,37 @@ td.n, th.n { text-align: right; }
 .music-dock-k { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-display);
   text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; font-weight: 700; color: var(--brass); margin-bottom: .35rem; }
 .music-dock-x { background: none; border: 0; font-size: 1.2rem; color: var(--ink-3); cursor: pointer; line-height: 1; }
+
+/* ---------- phones (700px and narrower). Nothing below changes the laptop view. ---------- */
+.rail-toggle { display: none; }
+@media (max-width: 700px) {
+  /* shorter nav bar: brand and links on one line */
+  .nav-inner { flex-wrap: nowrap; padding: .5rem 12px; gap: .75rem; }
+  .brand { font-size: 1rem; white-space: nowrap; }
+  .nav-links { gap: .9rem; }
+  .nav-links a { font-size: .74rem; }
+  main, main.page { padding: 1.5rem 12px 3rem; gap: 1.5rem; }
+  .hero h1 { font-size: 1.9rem; }
+
+  /* the record player becomes a small player bar pinned to the bottom of the screen */
+  body.has-rail { padding-bottom: 88px; }
+  body.has-rail.music-on { padding-bottom: 180px; }
+  .rail { position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 30; order: 0; max-width: none; width: auto;
+    margin: 0; max-height: 78vh; overflow-y: auto; background: var(--surface); border-top: 3px solid var(--brass);
+    box-shadow: 0 -8px 24px -10px rgba(40, 20, 8, .5); padding: .45rem 12px calc(.5rem + env(safe-area-inset-bottom)); }
+  .player { display: grid; grid-template-columns: 58px minmax(0, 1fr) auto; column-gap: .7rem; align-items: center;
+    grid-template-areas: "deck now btn" "booth booth booth" "list list list"; }
+  .player .deck { grid-area: deck; width: 58px; pointer-events: none; }
+  .player-now { grid-area: now; margin: 0; min-height: 0; }
+  .player-now .k { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: .1em; }
+  .player-now .t { display: block; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .rail-toggle { display: block; grid-area: btn; font: 600 .78rem var(--font); color: var(--accent); background: transparent;
+    border: 1.5px solid var(--accent); border-radius: 999px; padding: .35rem .8rem; cursor: pointer; }
+  .booth { grid-area: booth; margin: .5rem 0 0; }
+  .booth-now, .booth-note { display: none; }
+  body:not(.music-on) .rail:not(.open) .booth { position: absolute; left: -9999px; width: 320px; }   /* kept loaded, just off screen */
+  .rail.open .booth-note { display: block; }
+  .tracklist { grid-area: list; display: none; columns: 1; margin-top: .6rem; }
+  .rail.open .tracklist { display: block; }
+  .finding { scroll-margin-top: 60px; }
+}

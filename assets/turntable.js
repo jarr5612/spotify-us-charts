@@ -264,3 +264,14 @@
   });
   update();
 })();
+
+// Phones: the rail is a player bar at the bottom of the screen; the button opens the track list.
+(function () {
+  const rail = document.querySelector(".rail"), btn = document.getElementById("rail-toggle");
+  if (!rail || !btn) return;
+  document.body.classList.add("has-rail");
+  const set = open => { rail.classList.toggle("open", open); btn.setAttribute("aria-expanded", open);
+    btn.textContent = open ? "Close ▾" : "Tracks ▴"; };
+  btn.addEventListener("click", () => set(!rail.classList.contains("open")));
+  document.getElementById("tracklist").addEventListener("click", () => set(false));
+})();
