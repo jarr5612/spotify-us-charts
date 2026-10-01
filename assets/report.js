@@ -77,7 +77,7 @@ function axisY(svg, y, x, ticks, fmtT, x1) {
 }
 
 // =============================================================================
-fetch("data/report.json?v=202610012303").then(r => r.json()).then(R => {
+fetch("data/report.json?v=202610012304").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
@@ -395,7 +395,7 @@ function race(R, box) {
     L.forEach(([s, c], k) => {
       const slot = slots[k];
       if (slot.dataset.song !== String(s)) { slot.dataset.song = s; slot.hidden = false;
-        slot.innerHTML = `${k ? " · " : ""}${playBtn(song(s))}${songLink(song(s))} <b></b>`; }
+        slot.innerHTML = `${k ? " · " : ""}${songLink(song(s))} <b></b>`; }
       const b = slot.querySelector("b"); if (b.textContent !== String(c)) b.textContent = c;
     });
     for (let k = L.length; k < 3; k++) { slots[k].hidden = true; slots[k].dataset.song = ""; }
