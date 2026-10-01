@@ -77,7 +77,7 @@ function axisY(svg, y, x, ticks, fmtT, x1) {
 }
 
 // =============================================================================
-fetch("data/report.json?v=202610012253").then(r => r.json()).then(R => {
+fetch("data/report.json?v=202610012301").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
@@ -356,6 +356,7 @@ function race(R, box) {
   }
   let cur = 0, playing = false, lastT = 0, spin = 0;
   // each bar glides toward its place for the current day (snaps when scrubbing)
+  let leadHtml = "";
   const live = {};                              // song -> { p: shown position, v: shown streams }
   function draw(t, dt) {
     const i = Math.min(N - 1, Math.round(t)), A = D[i][1], target = {};
@@ -388,8 +389,10 @@ function race(R, box) {
     dateBig.textContent = mon(d); dateSmall.textContent = `${nice(d)} · day ${Math.round(t) + 1} of ${N}`;
     slider.value = t;
     const L = leaders[Math.round(Math.min(N - 1, t))];
-    lead.innerHTML = `<span class="hint">Most days at #1 so far:</span> ` + L.map(([s, c], k) =>
-      `${k ? " · " : ""}<i>${esc(S[s][0])}</i> <b>${c}</b>`).join("");
+    // song names are play buttons; only rebuilt when the leaders change, so a click is never lost mid-animation
+    const html = `<span class="hint">Most days at #1 so far:</span> ` + L.map(([s, c], k) =>
+      `${k ? " · " : ""}${playBtn(song(s))}${songLink(song(s))} <b>${c}</b>`).join("");
+    if (html !== leadHtml) { lead.innerHTML = html; leadHtml = html; }
   }
   function setBtn() { btn.textContent = playing ? "❚❚ Pause" : (cur >= N - 1 ? "↺ Replay" : "▶ Play the race"); }
   function tick(ts) {
