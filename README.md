@@ -70,7 +70,10 @@ python3 scripts/check_numbers.py   # confirms the numbers
 | `index.html` | report page |
 | `dashboard.html` | dashboard page: 7 filters, 5 summary numbers, 4 charts with measure and breakdown switches, a table and a reset button |
 | `assets/style.css` | shared fonts, colors and navigation for both pages |
-| `assets/report.js` | draws the report charts from `data/report.json` |
+| `assets/report.js` | draws the report charts from `data/report.json`, including the animated #1 race in Track 3 |
+| `assets/scenes3d.js` | the two 3D scenes on the report, built with three.js: the record player at the top (drag to look around, spin the record, drop the needle to play music) and the Track 1 "skyline", where each top-10 artist's monthly streams rise as columns out of a record |
+| `assets/vendor/three.module.min.js` | three.js r160, the 3D library (copied into the repo so the site does not depend on another server) |
+| `assets/vendor/three-LICENSE.txt` | three.js's MIT licence |
 | `assets/turntable.js` | the record player beside the report: each finding is a track on the record, the tonearm follows your place as you scroll, and clicking a groove or a track jumps to that finding |
 | `assets/music.js` | plays songs with Spotify's official embed player (30-second previews, or full songs for visitors logged in to Spotify); any ▶ button or clickable song on the site plays in the listening booth, and the turntable spins while music plays |
 | `assets/dashboard.js` | filters the data and draws the dashboard in the browser |

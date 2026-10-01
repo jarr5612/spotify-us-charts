@@ -106,5 +106,18 @@ check("artists with at least 1% of streams (text: 25 = top 10 + fifteen more)", 
 check("#11 artist (text: Tyler, The Creator 1.56%)", (ranked[10][0], round(ranked[10][1] / total * 100, 2)), ("Tyler, The Creator", 1.56))
 check("artists under 1% (text: 583)", sum(v / total < .01 for _, v in ranked), 583)
 
+# the #1 race (Track 3) and the 3D skyline (Track 1)
+race = R["s3_no1"]["race"]
+check("race: days", len(race["days"]), 608)
+check("race: #1 on every day matches the raw chart",
+      all(race["songs"][d[1][0][0]][2] and d[1][0][1] == 1 for d in race["days"]), True)
+race_no1 = collections.Counter(race["songs"][d[1][0][0]][0] for d in race["days"])
+check("race: most days at #1 at the end (text: Choosin' Texas 104)", race_no1.most_common(1)[0], ("Choosin' Texas", 104))
+row1 = {r["date"]: int(r["streams"]) for r in rows if r["rank"] == "1"}
+check("race: #1 streams on every day match the raw file", all(row1[d[0]] == d[1][0][2] for d in race["days"]), True)
+bm = R["s1_artists"]["by_month"]
+for name, monthly in zip(bm["artists"], bm["streams"]):
+    check(f"skyline: {name} months add up to their total", sum(monthly), lead_streams[name])
+
 print("\nall numbers match" if not bad else f"\n{bad} number(s) differ")
 sys.exit(1 if bad else 0)

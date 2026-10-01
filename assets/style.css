@@ -274,6 +274,21 @@ td.n, th.n { text-align: right; }
   text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; font-weight: 700; color: var(--brass); margin-bottom: .35rem; }
 .music-dock-x { background: none; border: 0; font-size: 1.2rem; color: var(--ink-3); cursor: pointer; line-height: 1; }
 
+/* ---------- 3D stages (assets/scenes3d.js) ---------- */
+.stage3d { position: relative; margin: 1.6rem 0 .4rem; height: 460px; border-radius: 14px; overflow: hidden;
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(184,134,43,.16), transparent 72%),
+              radial-gradient(ellipse at 50% 100%, rgba(60,36,20,.10), transparent 60%); }
+.stage3d[hidden] { display: none; }
+.stage-canvas { position: absolute; inset: 0; }
+.stage-canvas canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: move; }
+.stage-btn { position: absolute; top: .9rem; right: .9rem; background: var(--surface); }
+.stage-hint { position: absolute; left: 1rem; bottom: .55rem; margin: 0; font-size: .78rem; font-style: italic; color: var(--ink-3); pointer-events: none; }
+.stage-now { position: absolute; left: 1rem; top: .9rem; right: 13rem; margin: 0; font-size: .92rem; color: var(--ink-2); pointer-events: none; }
+.stage-now .k { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; font-weight: 700; color: var(--brass); margin-right: .35rem; }
+.stage-now i { color: var(--ink); font-weight: 600; }
+.skyline { height: 520px; margin-top: .6rem; }
+.skyline .stage-now { top: auto; bottom: .6rem; right: 1rem; pointer-events: auto; }
+
 /* ---------- the #1 race ---------- */
 .race-ctl { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: .2rem 0 .4rem; }
 .race-ctl .play { min-width: 9.5rem; }
@@ -314,4 +329,9 @@ td.n, th.n { text-align: right; }
   .tracklist { grid-area: list; display: none; columns: 1; margin-top: .6rem; }
   .rail.open .tracklist { display: block; }
   .finding { scroll-margin-top: 60px; }
+  .stage3d { height: 330px; }
+  .skyline { height: 380px; }
+  .stage-now { right: 1rem; top: auto; bottom: 2.2rem; font-size: .82rem; }
+  .stage-btn { top: .6rem; right: .6rem; font-size: .76rem; }
+  .stage-hint { font-size: .7rem; }
 }
