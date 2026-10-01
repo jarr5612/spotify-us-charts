@@ -38,6 +38,8 @@
     announce();
   };
 
+  window.pauseSong = function () { wantPlay = false; if (ctl) ctl.pause(); };
+
   document.addEventListener("click", e => {
     const b = e.target.closest("[data-play-id]"); if (!b) return;
     e.preventDefault(); e.stopPropagation();
