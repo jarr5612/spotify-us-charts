@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 # earlier notes, kept out of the repo for now
 spotify_charts/
+results/submission.txt
