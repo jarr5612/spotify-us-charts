@@ -77,7 +77,7 @@ function axisY(svg, y, x, ticks, fmtT, x1) {
 }
 
 // =============================================================================
-fetch("data/report.json?v=202610012301").then(r => r.json()).then(R => {
+fetch("data/report.json?v=202610012303").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
@@ -320,6 +320,8 @@ function race(R, box) {
   let speed = 3;                                 // days per second
   toggle(bar, [[1.5, "Slow"], [3, "Normal"], [8, "Fast"]], 3, v => { speed = +v; });
   const lead = document.createElement("p"); lead.className = "viz-readout race-lead"; box.appendChild(lead);
+  lead.innerHTML = `<span class="hint">Most days at #1 so far:</span> <span></span><span></span><span></span>`;
+  const slots = [...lead.querySelectorAll("span:not(.hint)")];
 
   // drawn at the box's real width, so the text stays readable on phones
   const W = Math.max(340, Math.min(800, Math.round(box.clientWidth) || 800)), narrow = W < 600;
@@ -356,7 +358,6 @@ function race(R, box) {
   }
   let cur = 0, playing = false, lastT = 0, spin = 0;
   // each bar glides toward its place for the current day (snaps when scrubbing)
-  let leadHtml = "";
   const live = {};                              // song -> { p: shown position, v: shown streams }
   function draw(t, dt) {
     const i = Math.min(N - 1, Math.round(t)), A = D[i][1], target = {};
@@ -389,10 +390,15 @@ function race(R, box) {
     dateBig.textContent = mon(d); dateSmall.textContent = `${nice(d)} · day ${Math.round(t) + 1} of ${N}`;
     slider.value = t;
     const L = leaders[Math.round(Math.min(N - 1, t))];
-    // song names are play buttons; only rebuilt when the leaders change, so a click is never lost mid-animation
-    const html = `<span class="hint">Most days at #1 so far:</span> ` + L.map(([s, c], k) =>
-      `${k ? " · " : ""}${playBtn(song(s))}${songLink(song(s))} <b>${c}</b>`).join("");
-    if (html !== leadHtml) { lead.innerHTML = html; leadHtml = html; }
+    // song names are play buttons. A slot's buttons are only rebuilt when a different song moves into it;
+    // the day counts are updated in place, so the buttons stay put and can be clicked mid-race
+    L.forEach(([s, c], k) => {
+      const slot = slots[k];
+      if (slot.dataset.song !== String(s)) { slot.dataset.song = s; slot.hidden = false;
+        slot.innerHTML = `${k ? " · " : ""}${playBtn(song(s))}${songLink(song(s))} <b></b>`; }
+      const b = slot.querySelector("b"); if (b.textContent !== String(c)) b.textContent = c;
+    });
+    for (let k = L.length; k < 3; k++) { slots[k].hidden = true; slots[k].dataset.song = ""; }
   }
   function setBtn() { btn.textContent = playing ? "❚❚ Pause" : (cur >= N - 1 ? "↺ Replay" : "▶ Play the race"); }
   function tick(ts) {
