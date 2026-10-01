@@ -239,5 +239,24 @@ ndays = df.groupby("month").date.nunique()
 R["s8_catalog"]["by_month_streams"] = [{"month": m, "catalog_per_day": int(round(mm.loc[m, True] / ndays[m])),
                                         "current_per_day": int(round(mm.loc[m, False] / ndays[m]))} for m in mm.index]
 
+# 3 — the #1 race: the chart's top 10 on every day, in chart order, with each song's streams that day.
+#     One row per song: if two versions of a song are in the top 10 on the same day, the higher one is kept.
+t10 = df[df["rank"] <= 10].sort_values(["date", "rank"]).drop_duplicates(["date", "song_id"])
+race_ids = list(dict.fromkeys(t10.song_id))
+rix = {sid: i for i, sid in enumerate(race_ids)}
+R["s3_no1"]["race"] = {
+    "songs": [[songs.loc[sid].track, songs.loc[sid].artists, songs.loc[sid].track_id] for sid in race_ids],
+    "days": [[str(d.date()), [[rix[sid], int(rk), int(st)] for sid, rk, st in zip(g.song_id, g["rank"], g.streams)]]
+             for d, g in t10.groupby("date")],
+}
+
+# 1 — skyline: each top-10 artist's Top-200 streams in every calendar month
+top10a = list(a.head(10).index)
+months = sorted(df.month.unique())
+bm = (df[df.lead_artist.isin(top10a)].groupby(["lead_artist", "month"]).streams.sum()
+        .unstack(fill_value=0).reindex(index=top10a, columns=months, fill_value=0))
+R["s1_artists"]["by_month"] = {"months": [str(m) for m in months], "artists": top10a,
+                               "streams": [[int(v) for v in bm.loc[n]] for n in top10a]}
+
 (ROOT / "data" / "report.json").write_text(json.dumps(R, indent=1, ensure_ascii=False), encoding="utf-8")
 print(json.dumps(R, indent=1, ensure_ascii=False))

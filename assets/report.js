@@ -87,7 +87,8 @@ fetch("data/report.json?v=202609262127").then(r => r.json()).then(R => {
   $("h4").textContent = fmt(H.songs_reaching_no1);
 
   const draws = [v1, v2, v3, v4, v5, v6, v7, v8];
-  const drawAll = () => draws.forEach((f, i) => { const box = $("v" + (i + 1)); box.innerHTML = ""; try { f(R, box); } catch (e) { console.error(e); } });
+  const drawAll = () => { draws.forEach((f, i) => { const box = $("v" + (i + 1)); box.innerHTML = ""; try { f(R, box); } catch (e) { console.error(e); } });
+    const rb = $("race"); if (rb) { rb.innerHTML = ""; try { race(R, rb); } catch (e) { console.error(e); } } };
   drawAll();
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawAll);
 }).catch(err => {
@@ -297,6 +298,110 @@ function v3(R, box) {
     read.innerHTML = `${nice(dateOf(i))}: <i>${esc(r.track)}</i> — ${esc(r.artists)} · run of <b>${r.days}</b> day${r.days > 1 ? "s" : ""}`;
   });
   hit.addEventListener("pointerleave", () => { hideTip(); cross.setAttribute("stroke-opacity", 0); blocks.forEach(q => q.b.setAttribute("stroke", "none")); });
+}
+
+// ---- 3b. The #1 race: the chart's top 10, day by day, as an animated bar race ----
+function race(R, box) {
+  const RC = R.s3_no1.race, S = RC.songs, D = RC.days, N = D.length;
+  const nice = s => new Date(s + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  const mon = s => new Date(s + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  const song = i => ({ track: S[i][0], artists: S[i][1], track_id: S[i][2] });
+  // running count of days at #1, and the leaders so far, for every day
+  const cnt = {}, leaders = [];
+  D.forEach(([, rows]) => { if (rows[0][1] === 1) cnt[rows[0][0]] = (cnt[rows[0][0]] || 0) + 1;
+    leaders.push(Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, v]) => [+k, v])); });
+  const at1 = (i, s) => { let c = 0; for (let k = 0; k <= i; k++) if (D[k][1][0][0] === s && D[k][1][0][1] === 1) c++; return c; };
+
+  // controls
+  const bar = document.createElement("div"); bar.className = "race-ctl"; box.appendChild(bar);
+  const btn = document.createElement("button"); btn.type = "button"; btn.className = "play"; bar.appendChild(btn);
+  const slider = document.createElement("input"); slider.type = "range"; slider.min = 0; slider.max = N - 1; slider.step = "any"; slider.value = 0;
+  slider.setAttribute("aria-label", "Day"); bar.appendChild(slider);
+  let speed = 8;
+  toggle(bar, [[3, "Slow"], [8, "Normal"], [20, "Fast"]], 8, v => { speed = +v; });
+  const lead = document.createElement("p"); lead.className = "viz-readout race-lead"; box.appendChild(lead);
+
+  const W = 800, rowH = 36, bh = 26, m = { l: 40, r: 96, t: 8 }, Ht = m.t + 10 * rowH + 8;
+  const svg = svgIn(box, W, Ht, "Animated race of the top 10 songs on the US chart, day by day");
+  const pal = [css("--accent"), "#1b7fa3", css("--brass"), "#6f4e32", "#cf5a3f", "#2f6f5e", "#7a3b69", "#a88257"];
+  const colorOf = i => pal[(i * 5) % pal.length];
+  const dateBig = el("text", { x: W - m.r + 80, y: Ht - 46, "text-anchor": "end", "font-size": 46, "font-family": "Playfair Display, serif",
+    "font-weight": 700, "font-style": "italic", fill: css("--ink"), "fill-opacity": .13 }, svg);
+  const dateSmall = el("text", { x: W - m.r + 80, y: Ht - 18, "text-anchor": "end", "font-size": 13, fill: css("--ink-3") }, svg);
+  const rows = el("g", {}, svg);
+  const els = {};
+  function rowFor(s) {
+    if (els[s]) return els[s];
+    const g = el("g", { class: "race-row", style: "cursor:pointer" }, rows);
+    const r = el("rect", { x: m.l, y: 0, height: bh, rx: 4, fill: colorOf(s) }, g);
+    const cap = el("g", {}, g);                                        // a little record at the end of each bar
+    el("circle", { r: bh / 2 + 1, fill: "#151210" }, cap);
+    el("circle", { r: bh / 2 - 4, fill: "none", stroke: "#3a3531", "stroke-width": .8 }, cap);
+    el("circle", { r: 5, fill: colorOf(s) }, cap);
+    el("circle", { r: 1.2, fill: "#fbf6ea" }, cap);
+    const sheen = el("path", { d: `M0 0 L${bh / 2} -3 A${bh / 2} ${bh / 2} 0 0 1 ${bh / 2 - 3} 7 Z`, fill: "#fff", "fill-opacity": .12 }, cap);
+    const name = el("text", { x: m.l + 9, y: bh / 2 + 4.5, "font-size": 13, "font-weight": 700, fill: "#fff8ee" }, g);
+    const val = el("text", { y: bh / 2 + 4.5, "font-size": 12.5, fill: css("--ink-2") }, g);
+    const rk = el("text", { x: m.l - 10, y: bh / 2 + 4.5, "text-anchor": "end", "font-size": 13, "font-weight": 700, fill: css("--ink-3") }, g);
+    const t = S[s][0], a = (S[s][1].match(/^(Tyler, The Creator|Earth, Wind & Fire)/) || [S[s][1].split(",")[0]])[0];
+    g.addEventListener("click", () => play(song(s)));
+    g.addEventListener("pointermove", e => { const i = Math.min(N - 1, Math.round(cur)), row = D[i][1].find(q => q[0] === s);
+      showTip(`<span class="m">${nice(D[i][0])}</span><br><b>${esc(t)}</b><br>${esc(S[s][1])}<br>` +
+        (row ? `<span class="v">#${row[1]} · ${fmt(row[2])} streams that day</span><br>` : "") +
+        `<span class="m">Days at #1 so far: ${at1(i, s)}</span>` + CLICK, e); });
+    g.addEventListener("pointerleave", hideTip);
+    return (els[s] = { g, r, cap, sheen, name, val, rk, label: (t.length > 30 ? t.slice(0, 29) + "…" : t) + "  ·  " + a, shown: false, rot: 0 });
+  }
+  let cur = 0, playing = false, lastT = 0, spin = 0;
+  function draw(t) {
+    const i = Math.min(N - 1, Math.floor(t)), f = Math.min(1, t - i), j = Math.min(N - 1, i + 1);
+    const A = D[i][1], B = D[j][1], pos = {}, vals = {};
+    const ease = f * f * (3 - 2 * f);
+    A.forEach((q, k) => { pos[q[0]] = [k, 10.6]; vals[q[0]] = [q[2], q[2] * .85]; });
+    B.forEach((q, k) => { pos[q[0]] = [pos[q[0]] ? pos[q[0]][0] : 10.6, k]; vals[q[0]] = [vals[q[0]] ? vals[q[0]][0] : q[2] * .85, q[2]]; });
+    const max = (A[0][2] * (1 - f) + B[0][2] * f) * 1.04;
+    const x = v => m.l + Math.max(0, v) / max * (W - m.l - m.r);
+    Object.values(els).forEach(e => { e.g.style.display = "none"; });
+    for (const s of Object.keys(pos)) {
+      const e = rowFor(+s), p = pos[s][0] + (pos[s][1] - pos[s][0]) * ease, v = vals[s][0] + (vals[s][1] - vals[s][0]) * f;
+      const y = m.t + p * rowH, w = Math.max(30, x(v) - m.l);
+      e.g.style.display = ""; e.g.setAttribute("transform", `translate(0 ${y})`);
+      e.g.setAttribute("opacity", Math.max(0, Math.min(1, 10.4 - p)));
+      e.r.setAttribute("width", w);
+      e.cap.setAttribute("transform", `translate(${m.l + w} ${bh / 2}) rotate(${spin})`);
+      e.name.textContent = e.label; e.name.setAttribute("x", m.l + 9);
+      const fits = e.name.getComputedTextLength ? e.name.getComputedTextLength() < w - 22 : true;
+      e.name.setAttribute("fill", fits ? "#fff8ee" : css("--ink")); if (!fits) e.name.setAttribute("x", m.l + w + 18);
+      e.val.setAttribute("x", (fits ? m.l + w + 18 : m.l + w + 18 + e.name.getComputedTextLength() + 10)); e.val.textContent = big(v);
+      const rkNow = Math.round(p); const rowNow = (f < .5 ? A : B).find(q => q[0] === +s);
+      e.rk.textContent = rowNow ? rowNow[1] : ""; e.rk.setAttribute("fill", rowNow && rowNow[1] === 1 ? css("--accent") : css("--ink-3"));
+    }
+    const d = D[Math.round(Math.min(N - 1, t))][0];
+    dateBig.textContent = mon(d); dateSmall.textContent = `${nice(d)} · day ${Math.round(t) + 1} of ${N}`;
+    slider.value = t;
+    const L = leaders[Math.round(Math.min(N - 1, t))];
+    lead.innerHTML = `<span class="hint">Most days at #1 so far:</span> ` + L.map(([s, c], k) =>
+      `${k ? " · " : ""}<i>${esc(S[s][0])}</i> <b>${c}</b>`).join("");
+  }
+  function setBtn() { btn.textContent = playing ? "❚❚ Pause" : (cur >= N - 1 ? "↺ Replay" : "▶ Play the race"); }
+  function tick(ts) {
+    if (!playing) return;
+    const dt = lastT ? Math.min(.1, (ts - lastT) / 1000) : 0; lastT = ts;
+    cur = Math.min(N - 1, cur + dt * speed); spin = (spin + dt * 200) % 360;
+    draw(cur);
+    if (cur >= N - 1) { playing = false; setBtn(); return; }
+    requestAnimationFrame(tick);
+  }
+  function start() { if (cur >= N - 1) cur = 0; playing = true; lastT = 0; setBtn(); requestAnimationFrame(tick); }
+  function stop() { playing = false; setBtn(); }
+  btn.addEventListener("click", () => playing ? stop() : start());
+  slider.addEventListener("input", () => { stop(); cur = +slider.value; draw(cur); });
+  draw(0); setBtn();
+  // start on its own the first time the race scrolls into view
+  if (!reduce && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); start(); } }, { threshold: .6 });
+    io.observe(svg);
+  }
 }
 
 // ---- 4. Lifespan: survival curve with a slider -------------------------------
