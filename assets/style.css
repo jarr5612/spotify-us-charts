@@ -329,9 +329,12 @@ td.n, th.n { text-align: right; }
   .tracklist { grid-area: list; display: none; columns: 1; margin-top: .6rem; }
   .rail.open .tracklist { display: block; }
   .finding { scroll-margin-top: 60px; }
-  .stage3d { height: 330px; }
-  .skyline { height: 380px; }
-  .stage-now { right: 1rem; top: auto; bottom: 2.2rem; font-size: .82rem; }
+  /* phones: captions sit under the 3D scene instead of on top of it */
+  .stage3d { height: auto; overflow: visible; }
+  .stage-canvas { position: relative; height: 300px; }
+  .skyline .stage-canvas { height: 340px; }
+  .stage-now, .skyline .stage-now { position: static; margin: .4rem .2rem 0; font-size: .85rem; }
+  .stage-hint { position: static; margin: .2rem .2rem 0; font-size: .72rem; }
   .stage-btn { top: .6rem; right: .6rem; font-size: .76rem; }
-  .stage-hint { font-size: .7rem; }
+  .viz.race > svg { min-width: 0; }
 }

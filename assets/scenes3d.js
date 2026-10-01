@@ -288,7 +288,7 @@ function turntable(host, R) {
 // ============================================================================
 function skyline(host, R) {
   const B = R.s1_artists.by_month, A = B.artists, M = B.months, S = B.streams, top = R.s1_artists.top10;
-  const st = makeStage(host.querySelector(".stage-canvas"), { az: 0.3, el: 0.86, dist: small ? 17 : 17.5, target: [0, 0.9, 0], minEl: 0.25, maxEl: 1.35, azLimit: 9 });
+  const st = makeStage(host.querySelector(".stage-canvas"), { az: 0.3, el: 0.86, dist: small ? 13.5 : 17.5, target: [0, small ? 0.5 : 0.9, 0], minEl: 0.25, maxEl: 1.35, azLimit: 9 });
   const { scene } = st;
   const read = host.querySelector(".stage-now");
   // the same shades as the record grid above: neighbours alternate dark / light reds

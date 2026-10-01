@@ -77,7 +77,7 @@ function axisY(svg, y, x, ticks, fmtT, x1) {
 }
 
 // =============================================================================
-fetch("data/report.json?v=202610012239").then(r => r.json()).then(R => {
+fetch("data/report.json?v=202610012253").then(r => r.json()).then(R => {
   document.querySelectorAll("[data-f]").forEach(e => { const v = get(R, e.dataset.f); e.textContent = typeof v === "number" ? fmt(v) : v; });
   $("range").textContent = `${R.meta.first_date} to ${R.meta.last_date}`;
   const H = R.headline;
@@ -317,17 +317,19 @@ function race(R, box) {
   const btn = document.createElement("button"); btn.type = "button"; btn.className = "play"; bar.appendChild(btn);
   const slider = document.createElement("input"); slider.type = "range"; slider.min = 0; slider.max = N - 1; slider.step = "any"; slider.value = 0;
   slider.setAttribute("aria-label", "Day"); bar.appendChild(slider);
-  let speed = 8;
-  toggle(bar, [[3, "Slow"], [8, "Normal"], [20, "Fast"]], 8, v => { speed = +v; });
+  let speed = 3;                                 // days per second
+  toggle(bar, [[1.5, "Slow"], [3, "Normal"], [8, "Fast"]], 3, v => { speed = +v; });
   const lead = document.createElement("p"); lead.className = "viz-readout race-lead"; box.appendChild(lead);
 
-  const W = 800, rowH = 36, bh = 26, m = { l: 40, r: 96, t: 8 }, Ht = m.t + 10 * rowH + 8;
+  // drawn at the box's real width, so the text stays readable on phones
+  const W = Math.max(340, Math.min(800, Math.round(box.clientWidth) || 800)), narrow = W < 600;
+  const rowH = narrow ? 32 : 36, bh = narrow ? 24 : 26, m = { l: 30, r: narrow ? 62 : 96, t: 8 }, Ht = m.t + 10 * rowH + 8;
   const svg = svgIn(box, W, Ht, "Animated race of the top 10 songs on the US chart, day by day");
   const pal = [css("--accent"), "#1b7fa3", css("--brass"), "#6f4e32", "#cf5a3f", "#2f6f5e", "#7a3b69", "#a88257"];
   const colorOf = i => pal[(i * 5) % pal.length];
-  const dateBig = el("text", { x: W - m.r + 80, y: Ht - 46, "text-anchor": "end", "font-size": 46, "font-family": "Playfair Display, serif",
+  const dateBig = el("text", { x: W - 8, y: Ht - 46, "text-anchor": "end", "font-size": narrow ? 30 : 46, "font-family": "Playfair Display, serif",
     "font-weight": 700, "font-style": "italic", fill: css("--ink"), "fill-opacity": .13 }, svg);
-  const dateSmall = el("text", { x: W - m.r + 80, y: Ht - 18, "text-anchor": "end", "font-size": 13, fill: css("--ink-3") }, svg);
+  const dateSmall = el("text", { x: W - 8, y: Ht - 18, "text-anchor": "end", "font-size": 13, fill: css("--ink-3") }, svg);
   const rows = el("g", {}, svg);
   const els = {};
   function rowFor(s) {
@@ -350,31 +352,37 @@ function race(R, box) {
         (row ? `<span class="v">#${row[1]} · ${fmt(row[2])} streams that day</span><br>` : "") +
         `<span class="m">Days at #1 so far: ${at1(i, s)}</span>` + CLICK, e); });
     g.addEventListener("pointerleave", hideTip);
-    return (els[s] = { g, r, cap, sheen, name, val, rk, label: (t.length > 30 ? t.slice(0, 29) + "…" : t) + "  ·  " + a, shown: false, rot: 0 });
+    return (els[s] = { g, r, cap, sheen, name, val, rk, label: narrow ? (t.length > 20 ? t.slice(0, 19) + "…" : t) : (t.length > 30 ? t.slice(0, 29) + "…" : t) + "  ·  " + a, shown: false, rot: 0 });
   }
   let cur = 0, playing = false, lastT = 0, spin = 0;
-  function draw(t) {
-    const i = Math.min(N - 1, Math.floor(t)), f = Math.min(1, t - i), j = Math.min(N - 1, i + 1);
-    const A = D[i][1], B = D[j][1], pos = {}, vals = {};
-    const ease = f * f * (3 - 2 * f);
-    A.forEach((q, k) => { pos[q[0]] = [k, 10.6]; vals[q[0]] = [q[2], q[2] * .85]; });
-    B.forEach((q, k) => { pos[q[0]] = [pos[q[0]] ? pos[q[0]][0] : 10.6, k]; vals[q[0]] = [vals[q[0]] ? vals[q[0]][0] : q[2] * .85, q[2]]; });
-    const max = (A[0][2] * (1 - f) + B[0][2] * f) * 1.04;
+  // each bar glides toward its place for the current day (snaps when scrubbing)
+  const live = {};                              // song -> { p: shown position, v: shown streams }
+  function draw(t, dt) {
+    const i = Math.min(N - 1, Math.round(t)), A = D[i][1], target = {};
+    A.forEach((q, k) => { target[q[0]] = { p: k, v: q[2], rk: q[1] }; });
+    const k = dt == null ? 1 : Math.min(1, dt * 12);
+    for (const s of Object.keys(target)) if (!live[s]) live[s] = { p: dt == null ? target[s].p : 10.8, v: target[s].v * .9 };
+    for (const s of Object.keys(live)) {
+      const g = target[s] ? target[s] : { p: 10.8, v: live[s].v * .9 };
+      live[s].p += (g.p - live[s].p) * k; live[s].v += (g.v - live[s].v) * k;
+      if (!target[s] && live[s].p > 10.6) { delete live[s]; if (els[s]) els[s].g.style.display = "none"; }
+    }
+    const max = Math.max(...Object.values(live).map(q => q.v)) * 1.04;
     const x = v => m.l + Math.max(0, v) / max * (W - m.l - m.r);
-    Object.values(els).forEach(e => { e.g.style.display = "none"; });
-    for (const s of Object.keys(pos)) {
-      const e = rowFor(+s), p = pos[s][0] + (pos[s][1] - pos[s][0]) * ease, v = vals[s][0] + (vals[s][1] - vals[s][0]) * f;
+    Object.entries(els).forEach(([s, e]) => { if (!live[s]) e.g.style.display = "none"; });
+    for (const s of Object.keys(live)) {
+      const e = rowFor(+s), p = live[s].p, v = live[s].v;
       const y = m.t + p * rowH, w = Math.max(30, x(v) - m.l);
       e.g.style.display = ""; e.g.setAttribute("transform", `translate(0 ${y})`);
-      e.g.setAttribute("opacity", Math.max(0, Math.min(1, 10.4 - p)));
+      e.g.setAttribute("opacity", Math.max(0, Math.min(1, 10.5 - p)));
       e.r.setAttribute("width", w);
       e.cap.setAttribute("transform", `translate(${m.l + w} ${bh / 2}) rotate(${spin})`);
       e.name.textContent = e.label; e.name.setAttribute("x", m.l + 9);
-      const fits = e.name.getComputedTextLength ? e.name.getComputedTextLength() < w - 22 : true;
+      const tl = e.name.getComputedTextLength(), fits = tl < w - 22;
       e.name.setAttribute("fill", fits ? "#fff8ee" : css("--ink")); if (!fits) e.name.setAttribute("x", m.l + w + 18);
-      e.val.setAttribute("x", (fits ? m.l + w + 18 : m.l + w + 18 + e.name.getComputedTextLength() + 10)); e.val.textContent = big(v);
-      const rkNow = Math.round(p); const rowNow = (f < .5 ? A : B).find(q => q[0] === +s);
-      e.rk.textContent = rowNow ? rowNow[1] : ""; e.rk.setAttribute("fill", rowNow && rowNow[1] === 1 ? css("--accent") : css("--ink-3"));
+      e.val.setAttribute("x", fits ? m.l + w + 18 : m.l + w + 18 + tl + 10); e.val.textContent = big(v);
+      const tg = target[s]; e.rk.textContent = tg ? tg.rk : "";
+      e.rk.setAttribute("fill", tg && tg.rk === 1 ? css("--accent") : css("--ink-3"));
     }
     const d = D[Math.round(Math.min(N - 1, t))][0];
     dateBig.textContent = mon(d); dateSmall.textContent = `${nice(d)} · day ${Math.round(t) + 1} of ${N}`;
@@ -388,8 +396,8 @@ function race(R, box) {
     if (!playing) return;
     const dt = lastT ? Math.min(.1, (ts - lastT) / 1000) : 0; lastT = ts;
     cur = Math.min(N - 1, cur + dt * speed); spin = (spin + dt * 200) % 360;
-    draw(cur);
-    if (cur >= N - 1) { playing = false; setBtn(); return; }
+    draw(cur, dt);
+    if (cur >= N - 1) { playing = false; draw(cur); setBtn(); return; }
     requestAnimationFrame(tick);
   }
   function start() { if (cur >= N - 1) cur = 0; playing = true; lastT = 0; setBtn(); requestAnimationFrame(tick); }
@@ -399,7 +407,7 @@ function race(R, box) {
   draw(0); setBtn();
   // start on its own the first time the race scrolls into view
   if (!reduce && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); start(); } }, { threshold: .6 });
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); start(); } }, { threshold: .4 });
     io.observe(svg);
   }
 }
